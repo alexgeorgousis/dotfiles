@@ -38,11 +38,12 @@ alias ncr='cd /Users/AGI53/repos/glados/disco-ml-nbcu-ncr'
 alias dep='cd /Users/AGI53/repos/glados/disco-mlops-deployments'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias c='config'
-alias cst='config status'
-alias ca='config add'
-alias cm='config commit'
-alias ccam='config commit -a -m'
-alias cpush='config push'
+alias cgst='config status'
+alias cga='config add'
+alias cgc='config commit'
+alias cgam='config commit -a -m'
+alias cgp='config push'
+alias cgd='config diff'
 
 # Enable auto-completion for kubectl and kubebuilder
 source <(kubectl completion zsh)
