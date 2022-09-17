@@ -31,6 +31,17 @@ source $ZSH/oh-my-zsh.sh
 
 export PYTHONDONTWRITEBYTECODE=1
 
+#######
+# Nix #
+#######
+# Required by home-manager
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
+# >If you do not plan on having Home Manager manage your shell configuration then you must source the following (source: https://nix-community.github.io/home-manager/index.html#sec-install-standalone)
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+
+###########
+# Aliases #
+###########
 alias kb='kubectl'
 alias kbb='kubebuilder'
 alias ncr='cd /Users/AGI53/repos/glados/disco-ml-nbcu-ncr'
@@ -48,12 +59,12 @@ alias cgd='config diff'
 source <(kubectl completion zsh)
 source <(kubebuilder completion zsh)
 
-# Path to your gcloud credentials json file.
+#########
+# Paths #
+#########
 export GOOGLE_APPLICATION_CREDENTIALS=/Users/AGI53/.config/gcloud/application_default_credentials.json
-
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export GOPATH="$(go env GOPATH)"
-
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH="$(asdf where poetry):$PATH"
@@ -64,7 +75,6 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"  # ruby installed with brew (added h
 export PATH="/usr/local/lib/ruby/gems/3.1.0/bin:$PATH"  # location of binaries installed by gem
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.asdf/bin:$PATH"
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/AGI53/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/AGI53/google-cloud-sdk/path.zsh.inc'; fi
 
