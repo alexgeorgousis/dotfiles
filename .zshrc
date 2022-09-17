@@ -33,7 +33,6 @@ export PYTHONDONTWRITEBYTECODE=1
 
 alias kb='kubectl'
 alias kbb='kubebuilder'
-alias c='clear'
 alias ncr='cd /Users/AGI53/repos/glados/disco-ml-nbcu-ncr'
 alias dep='cd /Users/AGI53/repos/glados/disco-mlops-deployments'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
