@@ -23,6 +23,12 @@
   home.packages = with pkgs; [
     grpcui
     grpcurl
+    ghz
+    docker
+    kubectl
+    kubernetes-helm
+    watch
+    openconnect
   ];
 
   programs.git = {
@@ -30,6 +36,53 @@
     userName = "Alex Georgousis";
     userEmail = "alex.georgousis@outlook.com";
     signing.key = "B770E04EDC3185F9";
-    pull.rebase = true;
+    extraConfig.pull.rebase = true;
+  };
+
+  programs.zsh = {
+    enable = true;
+    dotDir = ".config/zsh";
+    enableSyntaxHighlighting = true;
+    enableAutosuggestions = true;
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell";
+      plugins = [
+        "git"
+        "web-search"
+        "vi-mode"
+      ];
+    };
+
+    initExtra = ''
+      bindkey -v                         # enable vi-mode
+      bindkey -M viins 'jk' vi-cmd-mode  # map 'jk' to Esc
+    '';
+
+    sessionVariables = {
+      VI_MODE_SET_CURSOR="true";
+    };
+
+    shellAliases = {
+      kb="kubectl";
+      kbb="kubebuilder";
+      ncr="cd /Users/AGI53/repos/glados/disco-ml-nbcu-ncr";
+      dep="cd /Users/AGI53/repos/glados/disco-mlops-deployments";
+      config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
+      c="config";
+      cgst="config status";
+      cga="config add";
+      cgc="config commit";
+      cgam="config commit -a -m";
+      cgp="config push";
+      cgd="config diff";
+      hm="home-manager";
+    };
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }
