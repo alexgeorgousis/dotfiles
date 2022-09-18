@@ -1,13 +1,11 @@
 " Save copied text (yy) in clipboard
-set clipboard=unnamed
+" Note: Unfortunately this breaks copying with vim enabled in home-manager
+" (feel free to test if this is still the case)
+" set clipboard=unnamed
 
-" Syntax highlighting
-syntax on
-
-:set splitright
-
-" Enable fzf integration
-set rtp+=/usr/local/opt/fzf
+syntax on                            "syntax highlighting
+:set number                          "show line numbers
+:set splitright                      "open vertical splits to the right
 
 " Key maps
 imap jk <Esc>

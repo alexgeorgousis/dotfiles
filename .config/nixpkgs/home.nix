@@ -31,6 +31,8 @@
     openconnect
   ];
 
+  programs.zsh = import ./zsh.nix;
+
   programs.git = {
     enable = true;
     userName = "Alex Georgousis";
@@ -41,51 +43,7 @@
 
   programs.vim = {
     enable = true;
-    extraConfig = builtins.readFile "$HOME/vim/.vimrc";
-  };
-
-  programs.zsh = {
-    enable = true;
-    dotDir = ".config/zsh";
-    enableSyntaxHighlighting = true;
-    enableAutosuggestions = true;
-
-    oh-my-zsh = {
-      enable = true;
-      theme = "robbyrussell";
-      plugins = [
-        "git"
-        "web-search"
-        "vi-mode"
-      ];
-    };
-
-    initExtra = ''
-      bindkey -v                         # enable vi-mode
-      bindkey -M viins 'jk' vi-cmd-mode  # map 'jk' to Esc
-    '';
-
-    sessionVariables = {
-      VI_MODE_SET_CURSOR="true";
-      PYTHONDONTWRITEBYTECODE=1;  # don't generate .pyc files (source: https://news.ycombinator.com/item?id=23366924)
-      GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json";
-    };
-
-    shellAliases = {
-      kb="kubectl";
-      kbb="kubebuilder";
-      ncr="cd /Users/AGI53/repos/glados/disco-ml-nbcu-ncr";
-      dep="cd /Users/AGI53/repos/glados/disco-mlops-deployments";
-      config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
-      c="config";
-      cgst="config status";
-      cga="config add";
-      cgc="config commit";
-      cgam="config commit -a -m";
-      cgp="config push";
-      cgd="config diff";
-      hm="home-manager";
-    };
+    extraConfig = builtins.readFile ./.vimrc;
   };
 
   programs.fzf = {
