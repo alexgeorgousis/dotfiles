@@ -39,6 +39,10 @@
     extraConfig.pull.rebase = true;
   };
 
+  programs.vim = {
+    enable = true;
+  };
+
   programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";
@@ -62,6 +66,8 @@
 
     sessionVariables = {
       VI_MODE_SET_CURSOR="true";
+      PYTHONDONTWRITEBYTECODE=1;  # don't generate .pyc files (source: https://news.ycombinator.com/item?id=23366924)
+      GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json";
     };
 
     shellAliases = {
