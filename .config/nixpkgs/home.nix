@@ -41,6 +41,7 @@
 
   programs.vim = {
     enable = true;
+    extraConfig = builtins.readFile "$HOME/vim/.vimrc";
   };
 
   programs.zsh = {
