@@ -7,6 +7,11 @@ syntax on                            "syntax highlighting
 :set number                          "show line numbers
 :set splitright                      "open vertical splits to the right
 
+" Switch between thin and block cursor between normal and insert mode
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
 " Key maps
 imap jk <Esc>
 nmap j gj
