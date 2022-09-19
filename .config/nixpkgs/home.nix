@@ -49,5 +49,6 @@
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+    historyWidgetOptions = [ "--height=10%" ];  # 10% seems to be the minimum
   };
 }
