@@ -29,6 +29,7 @@
     kubernetes-helm
     watch
     openconnect
+    istioctl
   ];
 
   programs.zsh = import ./zsh.nix;
