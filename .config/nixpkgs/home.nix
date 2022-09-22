@@ -30,6 +30,7 @@
     watch
     openconnect
     istioctl
+    asdf-vm
   ];
 
   programs.zsh = import ./zsh.nix;
