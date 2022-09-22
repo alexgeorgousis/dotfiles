@@ -25,7 +25,7 @@
     PYTHONDONTWRITEBYTECODE=1;  # don't generate .pyc files (source: https://news.ycombinator.com/item?id=23366924)
     EDITOR = "vim";             # sets default editor for home-manager edit command
     GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json";
-    PATH="$HOME/.nix-profile/bin:$HOME/.asdf/shims:$PATH";
+    PATH="$HOME/.nix-profile/bin:$HOME/.asdf/shims:$HOME/google-cloud-sdk/bin:$PATH";
   };
 
   shellAliases = {
