@@ -53,4 +53,17 @@
     enableZshIntegration = true;
     historyWidgetOptions = [ "--height=10%" ];  # 10% seems to be the minimum
   };
+
+  programs.vscode = {
+    enable = true;
+    # TODO: Can I do `with pkgs.vscode-extensions;` ?
+    extensions = with pkgs; [
+      vscode-extensions.vscodevim.vim
+      vscode-extensions.ms-python.python
+      vscode-extensions.eamodio.gitlens
+      vscode-extensions.scalameta.metals
+      vscode-extensions.zxh404.vscode-proto3
+    ];
+  };
+
 }
