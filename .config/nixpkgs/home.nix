@@ -64,6 +64,10 @@
       vscode-extensions.scalameta.metals
       vscode-extensions.zxh404.vscode-proto3
     ];
+    userSettings = {
+      "vim.vimrc.enable" = true;
+      "vim.vimrc.path" = "$HOME/.config/nixpkgs/.vimrc";
+    };
   };
 
 }
