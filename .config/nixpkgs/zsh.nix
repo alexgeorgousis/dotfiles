@@ -29,6 +29,7 @@
   };
 
   shellAliases = {
+    kcuc="kubectl config use-context";
     kbb="kubebuilder";
     ncr="cd /Users/AGI53/repos/glados/disco-ml-nbcu-ncr";
     dep="cd /Users/AGI53/repos/glados/disco-mlops-deployments";
@@ -46,7 +47,7 @@
   };
 
   shellGlobalAliases = {
-    kb="kubectl";
+    kb="kubectl";  # added to global aliases so that `watch kb ...` works
   };
 
 }
