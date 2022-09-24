@@ -47,7 +47,10 @@
     enable = true;
     extraConfig = builtins.readFile ./.vimrc;
     # Note: vim-sensible is included by default, but I've enabled it explicitly for transparency.
-    plugins = [ pkgs.vimPlugins.vim-sensible ];
+    plugins = with pkgs.vimPlugins; [
+      vim-sensible
+      auto-pairs
+    ];
   };
 
   programs.fzf = {
@@ -58,13 +61,12 @@
 
   programs.vscode = {
     enable = true;
-    # TODO: Can I do `with pkgs.vscode-extensions;` ?
-    extensions = with pkgs; [
-      vscode-extensions.vscodevim.vim
-      vscode-extensions.ms-python.python
-      vscode-extensions.eamodio.gitlens
-      vscode-extensions.scalameta.metals
-      vscode-extensions.zxh404.vscode-proto3
+    extensions = with pkgs.vscode-extensions; [
+      vscodevim.vim
+      ms-python.python
+      eamodio.gitlens
+      scalameta.metals
+      zxh404.vscode-proto3
     ];
     userSettings = {
       "vim.vimrc.enable" = true;
