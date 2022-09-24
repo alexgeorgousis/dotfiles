@@ -46,6 +46,8 @@
   programs.vim = {
     enable = true;
     extraConfig = builtins.readFile ./.vimrc;
+    # Note: vim-sensible is included by default, but I've enabled it explicitly for transparency.
+    plugins = [ pkgs.vimPlugins.vim-sensible ];
   };
 
   programs.fzf = {
