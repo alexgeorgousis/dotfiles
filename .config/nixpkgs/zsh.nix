@@ -36,7 +36,8 @@
     config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
     c="config";
     cgst="config status";
-    cga="config add";
+    cga="config add";   
+    cgau="config add --update";  # Add all currently tracked files
     cgc="config commit";
     cgam="config commit -a -m";
     cgp="config push";
