@@ -52,3 +52,12 @@ let g:netrw_browse_split = 4  " Open files in previous window
 let g:netrw_winsize = 25      " Set explorer width
 let g:netrw_altv=1            " Open split view ("v") on the right
 
+
+" --------------------------------
+" FZF
+" --------------------------------
+"  GitHub repo: https://github.com/junegunn/fzf.vim/
+
+" Search window position
+let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.25, 'relative': v:true, 'yoffset': -1.0 } }
+
