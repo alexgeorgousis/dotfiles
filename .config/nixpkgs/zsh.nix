@@ -43,6 +43,8 @@
     cgp="config push";
     cgd="config diff";
     hm="home-manager";  
+    hms="home-manager switch";  
+    hme="home-manager edit";  
     evim="vim $HOME/.config/nixpkgs/.vimrc";
     ezsh="vim $HOME/.config/nixpkgs/zsh.nix";
   };
