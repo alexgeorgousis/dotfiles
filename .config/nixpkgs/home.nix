@@ -1,5 +1,21 @@
 { config, pkgs, ... }:
 
+let
+  ctrlsf = pkgs.vimUtils.buildVimPlugin {
+    name = "ctrlsf";
+    src = pkgs.fetchFromGitHub {
+      owner = "dyng";
+      repo = "ctrlsf.vim";
+      rev = "master";
+      /* 
+       * I'm not sure what this SHA-256 is used for and I didn't know how to generate it.
+       * I left it blank and home-manager switch threw an error saying "expected <...>"
+       * so I just copy-pasted the SHA it said it expected. ¯\_(ツ)_/¯
+       */
+      sha256 = "td8eE5t1t5xBAxYq19U5fQXMXS1ZIxAzl2Q6nsIRR6Q=";
+    };
+  };
+in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -57,6 +73,7 @@
       vim-sensible  # sensible default settings
       auto-pairs    # auto-close brackets, quotes etc.
       fzf-vim       # fuzzy search
+      ctrlsf        # search text in files
     ];
   };
 
