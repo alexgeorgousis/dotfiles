@@ -18,7 +18,7 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 
 " --------------------------------
-" Key maps
+" Basic key maps
 " --------------------------------
 
 imap jk <Esc>
@@ -28,7 +28,6 @@ nmap H ^
 nmap L $
 vmap H ^
 vmap L $
-nmap <C-P> :FZF<CR>
 
 
 " --------------------------------
@@ -59,5 +58,10 @@ let g:netrw_altv=1            " Open split view ("v") on the right
 "  GitHub repo: https://github.com/junegunn/fzf.vim/
 
 " Search window position
-let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.25, 'relative': v:true, 'yoffset': -1.0 } }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.25, 'relative': v:true, 'yoffset': -1.0 } }
+
+" Map Ctrl-P to FZF file search
+nmap <C-P> :FZF<CR>
+" Map Ctrl-F to FZF text search (silver-searcher)
+nmap <C-F> :Ag<CR>
 
