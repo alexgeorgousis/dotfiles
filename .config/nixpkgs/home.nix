@@ -31,6 +31,11 @@
     openconnect
     istioctl
     asdf-vm
+
+    /*
+    * Used to search for text through multiple files
+    * Mostly by FZF (:Ag or C-F) but also by CtrlSF vim plugin under the hood
+    */
     silver-searcher
   ];
 
@@ -49,9 +54,9 @@
     extraConfig = builtins.readFile ./.vimrc;
     # Note: vim-sensible is included by default, but I've enabled it explicitly for transparency.
     plugins = with pkgs.vimPlugins; [
-      vim-sensible
-      auto-pairs
-      fzf-vim
+      vim-sensible  # sensible default settings
+      auto-pairs    # auto-close brackets, quotes etc.
+      fzf-vim       # fuzzy search
     ];
   };
 

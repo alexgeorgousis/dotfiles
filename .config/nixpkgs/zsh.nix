@@ -37,7 +37,7 @@
     c="config";
     cgst="config status";
     cga="config add";   
-    cgau="config add --update";  # Add all currently tracked files
+    cgau="config add --update";  # Adds all currently tracked files
     cgc="config commit";
     cgam="config commit -a -m";
     cgp="config push";
