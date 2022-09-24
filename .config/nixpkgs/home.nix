@@ -50,13 +50,18 @@
     plugins = with pkgs.vimPlugins; [
       vim-sensible
       auto-pairs
+      fzf-vim
     ];
   };
 
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
-    historyWidgetOptions = [ "--height=10%" ];  # 10% seems to be the minimum
+
+    # Options for Ctrl + R (command history search)
+    historyWidgetOptions = [
+      "--height=10%"  # 10% seems to be the minimum
+    ];
   };
 
   programs.vscode = {
