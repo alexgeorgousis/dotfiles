@@ -62,6 +62,36 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.25, 'relative': v:tru
 
 " Map Ctrl-P to FZF file search
 nmap <C-P> :FZF<CR>
-" Map Ctrl-F to FZF text search (silver-searcher)
-nmap <C-F> :Ag<CR>
+
+
+" --------------------------------
+" CtrlSF
+" --------------------------------
+"  See full list of configuration options: https://github.com/dyng/ctrlsf.vim#configuration 
+
+" Don't close search window when opening file
+  " 'normal' refers to ctrlsf normal (as opposed to compact) window mode
+let g:ctrlsf_auto_close = { "normal": 0 }
+
+" Automatically focus results window when search begins
+let g:ctrlsf_auto_focus = { "at": "start" }
+
+" Automatically focus results window when search begins
+let g:ctrlsf_winsize = "25%"
+
+" Adds :CtrlSF to the command line
+nmap <C-F>f <Plug>CtrlSFPrompt
+
+" Searches the currently highlighted word
+vmap <C-F>f <Plug>CtrlSFVwordExec
+
+" Searches the word under the cursor
+nmap <C-F>n <Plug>CtrlSFCwordExec
+
+" Opens last search results window (without re-executing search)
+nnoremap <C-F>o :CtrlSFOpen<CR>
+
+" Toggle last search results window in normal mode and insert mode
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
