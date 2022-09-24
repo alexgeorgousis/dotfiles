@@ -31,6 +31,7 @@
     openconnect
     istioctl
     asdf-vm
+    silver-searcher
   ];
 
   programs.zsh = import ./zsh.nix;
