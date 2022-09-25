@@ -20,6 +20,16 @@ set tabstop=2      " Length of \t char
 set shiftwidth=2   " Length of 1 level of indentation
 set softtabstop=2  " Length of tab and backspace keypresses 
 
+" Set indentation for python files (you can use ftypes plugin to more easily manage multiple languages)
+au BufNewFile,BufRead *.py
+			\ set tabstop=4       |
+			\ set softtabstop=4   |
+			\ set shiftwidth=4    |
+			\ set textwidth=79    |
+			\ set expandtab       |
+			\ set autoindent      |
+			\ set fileformat=unix |
+
 " Cursor style: block in normal mode and line in insert mode 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
