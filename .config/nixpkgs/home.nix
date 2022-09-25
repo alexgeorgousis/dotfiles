@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 let
+  # Manually package CtrlSF vim plugin
   ctrlsf = pkgs.vimUtils.buildVimPlugin {
     name = "ctrlsf";
     src = pkgs.fetchFromGitHub {
@@ -47,10 +48,11 @@ in
     openconnect
     istioctl
     asdf-vm
+    vifm
 
     /*
     * Used to search for text through multiple files
-    * Mostly by FZF (:Ag or C-F) but also by CtrlSF vim plugin under the hood
+    * Mostly used by FZF (:Ag or C-F) but also by CtrlSF vim plugin under the hood
     */
     silver-searcher
   ];
@@ -76,6 +78,7 @@ in
       ctrlsf               # search text in files
       nerdtree             # file explorer
       nerdtree-git-plugin  # Display icons next to files based on git status
+      vifm-vim             # vifm integration for vim (requires vifm package)
     ];
   };
 
