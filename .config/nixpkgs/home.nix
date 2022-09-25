@@ -70,11 +70,12 @@ in
     extraConfig = builtins.readFile ./.vimrc;
     # Note: vim-sensible is included by default, but I've enabled it explicitly for transparency.
     plugins = with pkgs.vimPlugins; [
-      vim-sensible  # sensible default settings
-      auto-pairs    # auto-close brackets, quotes etc.
-      fzf-vim       # fuzzy search
-      ctrlsf        # search text in files
-      nerdtree      # file explorer
+      vim-sensible         # sensible default settings
+      auto-pairs           # auto-close brackets, quotes etc.
+      fzf-vim              # fuzzy search
+      ctrlsf               # search text in files
+      nerdtree             # file explorer
+      nerdtree-git-plugin  # Display icons next to files based on git status
     ];
   };
 
