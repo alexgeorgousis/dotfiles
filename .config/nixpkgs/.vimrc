@@ -11,8 +11,14 @@ set number      " Show line numbers
 set splitbelow  " Open horizontal splits below
 set splitright  " Open vertical splits to the right
 set mouse=a     " Enable mouse drag on window splits
-set tabstop=2   " Set Tab to 2 spaces
 set noswapfile  " Don't create swap (.swp) files
+
+" Set tab to 2 spaces
+" Good article explaining tab settings in vim:
+" https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990
+set tabstop=2      " Length of \t char 
+set shiftwidth=2   " Length of 1 level of indentation
+set softtabstop=2  " Length of tab and backspace keypresses 
 
 " Cursor style: block in normal mode and line in insert mode 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
