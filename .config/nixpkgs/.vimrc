@@ -11,6 +11,7 @@ set number      " Show line numbers
 set splitbelow  " Open horizontal splits below
 set splitright  " Open vertical splits to the right
 set mouse=a     " Enable mouse drag on window splits
+set tabstop=2   " Set Tab to 2 spaces
 
 " Cursor style: block in normal mode and line in insert mode 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -48,6 +49,7 @@ tmap <Leader>t <c-w>:term ++close<cr>
 " ----------------------------------------------------------------
 
 let g:NERDTreeShowHidden=1  " Show hidden files
+let g:NERDTreeWinSize=40    " Show hidden files
 
 " If file in open buffer changes name or path, automatically replace file in buffer with new file
 let g:NERDTreeAutoDeleteBuffer=1  
