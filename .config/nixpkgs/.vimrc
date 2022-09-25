@@ -8,6 +8,7 @@
 " set clipboard=unnamed
 
 set number      " Show line numbers
+set splitbelow  " Open horizontal splits below
 set splitright  " Open vertical splits to the right
 set mouse=a     " Enable mouse drag on window splits
 
