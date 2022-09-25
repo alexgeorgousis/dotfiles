@@ -29,6 +29,7 @@ nmap H ^
 nmap L $
 vmap H ^
 vmap L $
+let mapleader = " "  " Map Leader key to Space
 
 
 " --------------------------------
