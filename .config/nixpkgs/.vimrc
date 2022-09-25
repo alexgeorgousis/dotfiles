@@ -24,6 +24,7 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 " Basic key maps
 " ----------------------------------------------------------------
 
+let mapleader = " "
 imap jk <Esc>
 nmap j gj
 nmap k gk
@@ -31,7 +32,7 @@ nmap H ^
 nmap L $
 vmap H ^
 vmap L $
-let mapleader = " "  " Map Leader key to Space
+nmap Y y$
 
 
 " ----------------------------------------------------------------
