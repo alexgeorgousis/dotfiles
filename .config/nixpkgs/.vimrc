@@ -1,6 +1,6 @@
-" --------------------------------
+" ----------------------------------------------------------------
 " Basic settings
-" --------------------------------
+" ----------------------------------------------------------------
 
 " Save copied text (yy) in clipboard
 " Note: Unfortunately this breaks copying with vim enabled in home-manager
@@ -18,9 +18,9 @@ let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 
-" --------------------------------
+" ----------------------------------------------------------------
 " Basic key maps
-" --------------------------------
+" ----------------------------------------------------------------
 
 imap jk <Esc>
 nmap j gj
@@ -32,9 +32,9 @@ vmap L $
 let mapleader = " "  " Map Leader key to Space
 
 
-" --------------------------------
+" ----------------------------------------------------------------
 " Terminal
-" --------------------------------
+" ----------------------------------------------------------------
 
 " \+t opens terminal in split window
 map <Leader>t :vertical terminal ++close<cr>
@@ -43,20 +43,27 @@ map <Leader>t :vertical terminal ++close<cr>
 tmap <Leader>t <c-w>:term ++close<cr>
 
 
-" --------------------------------
-" netrw
-" --------------------------------
+" ----------------------------------------------------------------
+" NERDTree
+" ----------------------------------------------------------------
 
-let g:netrw_liststyle = 3     " Set tree list view as default for netrw
-let g:netrw_banner = 0        " Remove top banner
-let g:netrw_browse_split = 4  " Open files in previous window
-let g:netrw_winsize = 25      " Set explorer width
-let g:netrw_altv=1            " Open split view ("v") on the right
+let g:NERDTreeShowHidden=1  " Show hidden files
+
+" If file in open buffer changes name or path, automatically replace file in buffer with new file
+let g:NERDTreeAutoDeleteBuffer=1  
+
+" Map <Leader>n to the following:
+" if NERDTree is already open, close it
+" else if a file is open in the current buffer, open NERDTree with said file highlighted
+" else open NERDTree
+nnoremap <silent> <expr> <Leader>n 
+			\ g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" :
+			\ bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 
-" --------------------------------
+" ----------------------------------------------------------------
 " FZF
-" --------------------------------
+" ----------------------------------------------------------------
 "  GitHub repo: https://github.com/junegunn/fzf.vim/
 
 " Search window position
@@ -66,9 +73,9 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.25, 'relative': v:tru
 nmap <C-P> :FZF<CR>
 
 
-" --------------------------------
+" ----------------------------------------------------------------
 " CtrlSF
-" --------------------------------
+" ----------------------------------------------------------------
 "  See full list of configuration options: https://github.com/dyng/ctrlsf.vim#configuration 
 
 " Don't close search window when opening file

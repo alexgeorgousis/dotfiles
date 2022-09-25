@@ -74,6 +74,7 @@ in
       auto-pairs    # auto-close brackets, quotes etc.
       fzf-vim       # fuzzy search
       ctrlsf        # search text in files
+      nerdtree      # file explorer
     ];
   };
 
