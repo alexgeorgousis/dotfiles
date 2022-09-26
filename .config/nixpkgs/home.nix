@@ -49,6 +49,7 @@ in
     istioctl
     asdf-vm
     vifm
+    pre-commit
 
     /*
     * Used to search for text through multiple files
