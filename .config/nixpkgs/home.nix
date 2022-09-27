@@ -50,12 +50,7 @@ in
     asdf-vm
     vifm
     pre-commit
-
-    /*
-    * Used to search for text through multiple files
-    * Mostly used by FZF (:Ag or C-F) but also by CtrlSF vim plugin under the hood
-    */
-    silver-searcher
+    silver-searcher  # used by FZF (:Ag) and CtrlSF to search for text in files
   ];
 
   programs.zsh = import ./zsh.nix;
@@ -106,6 +101,10 @@ in
       "vim.vimrc.enable" = true;
       "vim.vimrc.path" = "$HOME/.config/nixpkgs/.vimrc";
     };
+  };
+
+  programs.sbt = {
+    enable = true;
   };
 
 }
