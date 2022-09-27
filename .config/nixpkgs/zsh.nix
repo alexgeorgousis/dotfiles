@@ -31,8 +31,9 @@
   shellAliases = {
     kcuc="kubectl config use-context";
     kbb="kubebuilder";
-    ncr="cd /Users/AGI53/repos/glados/disco-ml-nbcu-ncr";
-    dep="cd /Users/AGI53/repos/glados/disco-mlops-deployments";
+    ncr="cd $HOME/repos/glados/disco-ml-nbcu-ncr";
+    dep="cd $HOME/repos/glados/disco-mlops-deployments";
+    mms="cd $HOME/repos/glados/disco-ml-model-service";
     config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
     c="config";
     cgst="config status";
