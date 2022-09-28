@@ -29,19 +29,23 @@
   };
 
   shellAliases = {
+    kccc="kubectl config current-context";
+    kcgc="kubectl config get-contexts";
     kcuc="kubectl config use-context";
-    kbb="kubebuilder";
     ncr="cd $HOME/repos/glados/disco-ml-nbcu-ncr";
     dep="cd $HOME/repos/glados/disco-mlops-deployments";
     mms="cd $HOME/repos/glados/disco-ml-model-service";
     config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
     c="config";
     cgst="config status";
+    cglg="config log --stat";
     cga="config add";   
     cgau="config add --update";  # Adds all currently tracked files
-    cgc="config commit";
-    cgam="config commit -a -m";
+    cgc="config commit -v";
+    "cgca!"="config commit -v -a --amend";
     cgp="config push";
+    cgpf="config push --force";
+    cgl="config pull";
     cgd="config diff";
     hm="home-manager";  
     hms="home-manager switch";  
@@ -51,7 +55,9 @@
   };
 
   shellGlobalAliases = {
-    kb="kubectl";  # added to global aliases so that `watch kb ...` works
+    # These aliases will work in the middle of a command (e.g. `watch k get pods`)
+    k="kubectl";
+    kd="kubectl describe";
   };
 
 }
