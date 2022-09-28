@@ -73,7 +73,8 @@ tmap <Leader>t <c-w>:term ++close<cr>
 " ----------------------------------------------------------------
 
 let g:NERDTreeShowHidden=1  " Show hidden files
-let g:NERDTreeWinSize=40    " Show hidden files
+let g:NERDTreeWinSize=40    " Set window width
+let g:NERDTreeMinimalUI=1   " Remove help message at the top
 
 " If file in open buffer changes name or path, automatically replace file in buffer with new file
 let g:NERDTreeAutoDeleteBuffer=1  
