@@ -63,11 +63,12 @@ in
     extraConfig.pull.rebase = true;
   };
 
-  programs.vim = {
+  programs.neovim = {
     enable = true;
+    vimAlias = true;  # run nvim using "vim" alias
     extraConfig = builtins.readFile ./.vimrc;
     plugins = with pkgs.vimPlugins; [
-      vim-sensible         # sensible default settings (included by default but settings explicitly for transparency)
+			vim-nix
       auto-pairs           # auto-close brackets, quotes etc.
       fzf-vim              # fuzzy search
       ctrlsf               # search text in files
@@ -78,7 +79,8 @@ in
       vim-fugitive         # full-featured git plugin
       vim-commentary       # easily comment code lines
       vim-airline          # pretty status bar
-    ];
+      dracula-vim
+		];
   };
 
   programs.fzf = {

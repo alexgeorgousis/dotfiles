@@ -23,7 +23,7 @@
   sessionVariables = {
     VI_MODE_SET_CURSOR="true";  # changes cursor style in insert mode (in zsh line editor)
     PYTHONDONTWRITEBYTECODE=1;  # don't generate .pyc files (source: https://news.ycombinator.com/item?id=23366924)
-    EDITOR = "vim";             # sets default editor for home-manager edit command
+    EDITOR = "nvim";             # sets default editor for home-manager edit command
     GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json";
     PATH="$HOME/.nix-profile/bin:$HOME/.asdf/shims:$HOME/google-cloud-sdk/bin:$PATH";
   };
