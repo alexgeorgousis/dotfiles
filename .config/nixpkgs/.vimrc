@@ -131,3 +131,17 @@ nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
+
+" ----------------------------------------------------------------
+" vim-gitgutter
+" ----------------------------------------------------------------
+set updatetime=100                            " update diff markers every x ms
+let g:gitgutter_show_msg_on_hunk_jumping = 0  " don't display "Hunk 1 of 2" messages
+
+
+" ----------------------------------------------------------------
+" Fugitive
+" ----------------------------------------------------------------
+" Open git window to the left and resize it
+nmap <leader>g :vert G<CR><C-w>H:vertical resize 50<CR>
+

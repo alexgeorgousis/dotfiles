@@ -66,15 +66,16 @@ in
   programs.vim = {
     enable = true;
     extraConfig = builtins.readFile ./.vimrc;
-    # Note: vim-sensible is included by default, but I've enabled it explicitly for transparency.
     plugins = with pkgs.vimPlugins; [
-      vim-sensible         # sensible default settings
+      vim-sensible         # sensible default settings (included by default but settings explicitly for transparency)
       auto-pairs           # auto-close brackets, quotes etc.
       fzf-vim              # fuzzy search
       ctrlsf               # search text in files
       nerdtree             # file explorer
-      nerdtree-git-plugin  # Display icons next to files based on git status
+      nerdtree-git-plugin  # display icons next to files based on git status
       vifm-vim             # vifm integration for vim (requires vifm package)
+      vim-gitgutter        # shows markers next to modified lines, adds keybinds for hunk manipulation
+      vim-fugitive         # full-featured git plugin
     ];
   };
 
