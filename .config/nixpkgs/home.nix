@@ -48,7 +48,7 @@ in
     openconnect
     istioctl
     asdf-vm
-    vifm
+    vifm             # vim-like file manager
     pre-commit
     silver-searcher  # used by FZF (:Ag) and CtrlSF to search for text in files
   ];
@@ -76,6 +76,8 @@ in
       vifm-vim             # vifm integration for vim (requires vifm package)
       vim-gitgutter        # shows markers next to modified lines, adds keybinds for hunk manipulation
       vim-fugitive         # full-featured git plugin
+      vim-commentary       # easily comment code lines
+      vim-airline          # pretty status bar
     ];
   };
 

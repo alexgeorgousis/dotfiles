@@ -16,9 +16,9 @@ set noswapfile  " Don't create swap (.swp) files
 " Set tab to 2 spaces
 " Good article explaining tab settings in vim:
 " https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990
-set tabstop=2      " Length of \t char 
+set tabstop=2      " Length of \t char
 set shiftwidth=2   " Length of 1 level of indentation
-set softtabstop=2  " Length of tab and backspace keypresses 
+set softtabstop=2  " Length of tab and backspace keypresses
 
 " Set indentation for python files (you can use ftypes plugin to more easily manage multiple languages)
 au BufNewFile,BufRead *.py
@@ -30,7 +30,7 @@ au BufNewFile,BufRead *.py
 			\ set autoindent      |
 			\ set fileformat=unix |
 
-" Cursor style: block in normal mode and line in insert mode 
+" Cursor style: block in normal mode and line in insert mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -50,7 +50,7 @@ vmap H ^
 vmap L $
 nmap Y y$
 
-" Window navigation
+" Split navigation
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-h> <C-w>h
@@ -144,4 +144,12 @@ let g:gitgutter_show_msg_on_hunk_jumping = 0  " don't display "Hunk 1 of 2" mess
 " ----------------------------------------------------------------
 " Open git window to the left and resize it
 nmap <leader>g :vert G<CR><C-w>H:vertical resize 50<CR>
+
+
+
+" ----------------------------------------------------------------
+" Airline
+" ----------------------------------------------------------------
+let g:airline_section_y = ''  " Remove file encoding section
+let g:airline_section_z = ''  " Remove line/column section
 
