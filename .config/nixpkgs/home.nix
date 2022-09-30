@@ -100,6 +100,11 @@ in
     userSettings = {
       "vim.vimrc.enable" = true;
       "vim.vimrc.path" = "$HOME/.config/nixpkgs/.vimrc";
+      "files.watcherExclude" = {
+        "**/.bloop" = true;
+        "**/.metals" = true;
+        "**/.ammonite" = true;
+        };
     };
   };
 
