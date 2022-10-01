@@ -67,6 +67,7 @@ in
     enable = true;
     vimAlias = true;  # run nvim using "vim" alias
     extraConfig = builtins.readFile ../nvim/vimrc;
+
     plugins = with pkgs.vimPlugins; [
 			vim-nix
       auto-pairs           # auto-close brackets, quotes etc.
@@ -81,6 +82,11 @@ in
       vim-airline          # pretty status bar
       dracula-vim
 		];
+
+    coc = {
+      enable = true;
+      pluginConfig = builtins.readFile ../coc/coc.vim;
+    };
   };
 
   programs.fzf = {
