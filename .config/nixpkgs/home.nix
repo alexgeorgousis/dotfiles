@@ -81,6 +81,7 @@ in
       vim-commentary       # easily comment code lines
       vim-airline          # pretty status bar
       dracula-vim
+      coc-pyright          # python LSP server plugin for CoC
 		];
 
     coc = {
