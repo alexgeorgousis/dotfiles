@@ -66,7 +66,7 @@ in
   programs.neovim = {
     enable = true;
     vimAlias = true;  # run nvim using "vim" alias
-    extraConfig = builtins.readFile ./.vimrc;
+    extraConfig = builtins.readFile ../nvim/vimrc;
     plugins = with pkgs.vimPlugins; [
 			vim-nix
       auto-pairs           # auto-close brackets, quotes etc.
