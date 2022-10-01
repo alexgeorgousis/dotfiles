@@ -62,6 +62,11 @@ nmap <C-k> <C-w>k
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
 
+" Split resizing
+" Note: <C-_> is Ctrl followed by minus (-) key
+nnoremap <silent> <C-=> :vertical resize +5<CR>
+nnoremap <silent> <C-_> :vertical resize -5<CR>
+
 
 " ----------------------------------------------------------------
 " Terminal
