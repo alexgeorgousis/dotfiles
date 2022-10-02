@@ -62,7 +62,10 @@ in
     userName = "Alex Georgousis";
     userEmail = "alex.georgousis@outlook.com";
     signing.key = "B770E04EDC3185F9";
-    extraConfig.pull.rebase = true;
+    extraConfig = {
+      pull.rebase = true;
+      rebase.autosquash = true;  # automatically squash --fixup commits
+    };
 
     diff-so-fancy = {
       enable = true;
