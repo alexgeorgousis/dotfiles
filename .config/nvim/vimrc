@@ -55,6 +55,7 @@ nmap L $
 vmap H ^
 vmap L $
 nmap Y y$
+nmap // :nohlsearch<CR>
 
 " Split navigation
 nmap <C-j> <C-w>j
