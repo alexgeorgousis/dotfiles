@@ -6,8 +6,16 @@
 	<string>49CE90BA-44A7-44D0-B552-093990141D71</string>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>Hotkey</key>
+	<true/>
+	<key>HotkeyChar</key>
+	<integer>32</integer>
+	<key>HotkeyCode</key>
+	<integer>49</integer>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>HotkeyModifiers</key>
+	<integer>524288</integer>
 	<key>NeverWarnAboutShortLivedSessions_49CE90BA-44A7-44D0-B552-093990141D71</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_49CE90BA-44A7-44D0-B552-093990141D71_selection</key>
