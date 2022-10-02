@@ -63,6 +63,11 @@ in
     userEmail = "alex.georgousis@outlook.com";
     signing.key = "B770E04EDC3185F9";
     extraConfig.pull.rebase = true;
+
+    diff-so-fancy = {
+      enable = true;
+    };
+
   };
 
   programs.neovim = {
