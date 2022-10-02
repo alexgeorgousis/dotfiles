@@ -35,11 +35,15 @@
     dep = "cd $HOME/repos/glados/disco-mlops-deployments";
     mms = "cd $HOME/repos/glados/disco-ml-model-service";
 
+    # Git aliases
+    glp = "git log --pretty=format:'%C(yellow)%h%C(cyan)%x09%an%Creset%x09%C(magenta)%ar%x09%Creset%s' -20";
+
     # Git aliases for dotfiles
     config  = "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
     c       = "config";
     cgst    = "config status";
     cglg    = "config log --stat";
+    cglp    = "config log --pretty=format:'%C(yellow)%h%C(cyan)%x09%an%Creset%x09%C(magenta)%ar%x09%Creset%s' -20";
     cga     = "config add";
     cgau    = "config add --update";  # Stages all currently tracked files
     cgc     = "config commit -v";
