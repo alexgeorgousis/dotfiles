@@ -1,3 +1,13 @@
+" Set leader key
+"
+" Note: This is already set in the vimrc file, but unfortunately home-manager
+" places the CoC config before the vimrc config in init.vim, so all CoC
+" key mappings that use the leader key are set with the default leader ("\").
+" Ideally, home-manager would offer a way to add some config at the beginning
+" of the init.vim file, but it doesn't seem to, so this is the best workaround
+" I've come up with so far.
+let mapleader = " "
+
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup

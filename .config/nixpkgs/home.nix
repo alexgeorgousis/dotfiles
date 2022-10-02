@@ -98,6 +98,7 @@ in
       enable = true;
       pluginConfig = builtins.readFile ../coc/coc.vim;
     };
+
   };
 
   programs.fzf = {
