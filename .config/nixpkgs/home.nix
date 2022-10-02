@@ -52,6 +52,7 @@ in
     pre-commit
     silver-searcher  # used by FZF (:Ag) and CtrlSF to search for text in files
     k9s
+    exa
   ];
 
   programs.zsh = import ./zsh.nix;
