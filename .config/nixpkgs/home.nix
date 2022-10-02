@@ -64,7 +64,8 @@ in
     signing.key = "B770E04EDC3185F9";
     extraConfig = {
       pull.rebase = true;
-      rebase.autosquash = true;  # automatically squash --fixup commits
+      rebase.autosquash = true;  # automatically squash fixup commits
+      diff.tool = "vimdiff";     # run `git difftool [-y]` to get side-by-side diff using vimdiff
     };
 
     diff-so-fancy = {
@@ -74,9 +75,10 @@ in
   };
 
   programs.neovim = {
-    enable = true;
-    vimAlias = true;  # run nvim using "vim" alias
-    extraConfig = builtins.readFile ../nvim/vimrc;
+    enable       = true;
+    vimAlias     = true;  # alias `vim` to `nvim`
+    vimdiffAlias = true;  # alias `vimdiff` to `nvim -d`
+    extraConfig  = builtins.readFile ../nvim/vimrc;
 
     plugins = with pkgs.vimPlugins; [
 			vim-nix
