@@ -70,6 +70,12 @@
     ll  = "exa --long --group --git";
     lla = "exa --long --group --git --all";
     llt = "exa --long --group --git --tree";
+
+    # CLI alternatives
+    cat  = "bat";
+    find = "fd";
+    df   = "duf";
+    top  = "htop";
   };
 
   # Global aliases work anywhere in a command (e.g. `watch k get pods`)

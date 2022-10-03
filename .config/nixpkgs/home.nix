@@ -52,7 +52,11 @@ in
     pre-commit
     silver-searcher  # used by FZF (:Ag) and CtrlSF to search for text in files
     k9s
-    exa
+    exa              # prettier ls
+    bat              # prettier cat
+    fd               # prettier and better find
+    duf              # prettier alternative to df - displays disk usage
+    htop             # process viewer - alternative to top
   ];
 
   programs.zsh = import ./zsh.nix;
@@ -111,6 +115,13 @@ in
     historyWidgetOptions = [
       "--height=10%"  # 10% seems to be the minimum
     ];
+
+    # Options for Ctrl + T (File search)
+    fileWidgetOptions = [
+      # Use bat in preview window
+      "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+    ];
+
   };
 
   programs.vscode = {
