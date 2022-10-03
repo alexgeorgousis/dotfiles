@@ -57,6 +57,7 @@ in
     fd               # prettier and better find
     duf              # prettier alternative to df - displays disk usage
     htop             # process viewer - alternative to top
+    nerdfonts
   ];
 
   programs.zsh = import ./zsh.nix;
