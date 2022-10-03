@@ -141,6 +141,7 @@ in
         "**/.metals" = true;
         "**/.ammonite" = true;
         };
+      "editor.minimap.enabled" = false;
     };
   };
 
