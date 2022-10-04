@@ -82,7 +82,7 @@ local config = {
     -- Modify the color palette for the default theme
     colors = {
       fg = "#abb2bf",
-      bg = "#1e222a",
+      bg = "NONE",
     },
     -- enable or disable highlighting for extra plugins
     plugins = {
