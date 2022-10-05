@@ -4,8 +4,20 @@
 <dict>
 	<key>Default Bookmark Guid</key>
 	<string>49CE90BA-44A7-44D0-B552-093990141D71</string>
+	<key>DimBackgroundWindows</key>
+	<false/>
+	<key>DimInactiveSplitPanes</key>
+	<true/>
+	<key>DimOnlyText</key>
+	<false/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>HideActivityIndicator</key>
+	<true/>
+	<key>HideScrollbar</key>
+	<true/>
+	<key>HideTabNumber</key>
+	<true/>
 	<key>Hotkey</key>
 	<true/>
 	<key>HotkeyChar</key>
@@ -841,6 +853,8 @@
 	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
+	<key>PerPaneBackgroundImage</key>
+	<true/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -878,14 +892,32 @@
 	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
+	<key>SeparateStatusBarsPerPane</key>
+	<false/>
 	<key>ShowFullScreenTabBar</key>
+	<false/>
+	<key>ShowNewOutputIndicator</key>
+	<false/>
+	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>SplitPaneDimmingAmount</key>
+	<real>0.19999999999999984</real>
+	<key>StretchTabsToFillBar</key>
+	<false/>
+	<key>TabsHaveCloseButton</key>
+	<false/>
+	<key>TerminalMargin</key>
+	<integer>5</integer>
+	<key>TerminalVMargin</key>
+	<integer>15</integer>
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Profiles</string>
 	</array>
+	<key>UseBorder</key>
+	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>findMode_iTerm</key>
