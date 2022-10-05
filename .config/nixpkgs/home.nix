@@ -57,6 +57,7 @@ in
     fd               # prettier and better find
     duf              # prettier alternative to df - displays disk usage
     htop             # process viewer - alternative to top
+    nerdfonts
   ];
 
   programs.zsh = import ./zsh.nix;
@@ -79,32 +80,7 @@ in
   };
 
   programs.neovim = {
-    enable       = true;
-    vimAlias     = true;  # alias `vim` to `nvim`
-    vimdiffAlias = true;  # alias `vimdiff` to `nvim -d`
-    extraConfig  = builtins.readFile ../nvim/vimrc;
-
-    plugins = with pkgs.vimPlugins; [
-			vim-nix
-      auto-pairs           # auto-close brackets, quotes etc.
-      fzf-vim              # fuzzy search
-      ctrlsf               # search text in files
-      nerdtree             # file explorer
-      nerdtree-git-plugin  # display icons next to files based on git status
-      vifm-vim             # vifm integration for vim (requires vifm package)
-      vim-gitgutter        # shows markers next to modified lines, adds keybinds for hunk manipulation
-      vim-fugitive         # full-featured git plugin
-      vim-commentary       # easily comment code lines
-      vim-airline          # pretty status bar
-      dracula-vim
-      coc-pyright          # python LSP server plugin for CoC
-		];
-
-    coc = {
-      enable = true;
-      pluginConfig = builtins.readFile ../coc/coc.vim;
-    };
-
+    enable = true;
   };
 
   programs.fzf = {
@@ -135,13 +111,14 @@ in
     ];
     userSettings = {
       "vim.vimrc.enable" = true;
-      "vim.vimrc.path" = "$HOME/.config/nvim/vimrc";
+      "vim.vimrc.path" = "$HOME/.config/nvim.bak/vimrc";
       "files.watcherExclude" = {
-        "**/.bloop" = true;
-        "**/.metals" = true;
+        "**/.bloop"    = true;
+        "**/.metals"   = true;
         "**/.ammonite" = true;
         };
-      "editor.minimap.enabled" = false;
+      "editor.minimap.enabled"  = false;
+      "workbench.startupEditor" = "none";
     };
   };
 

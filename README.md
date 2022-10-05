@@ -14,3 +14,8 @@ Sidenote: Unforutunately, the keybind for the Clear Buffer command can only be c
 [manually via App Shortcuts](https://superuser.com/questions/1154896/remapping-iterm-2s-shortcut-for-clear-buffer)
 and not via iTerm2 config, so loading the iTerm2 configuration file is not sufficient.
 
+## AstroNvim
+I'm using [AstroNvim](https://astronvim.github.io/) as my Neovim config. Because it's a git repo,
+I've added it to the project as a git submodule. Read the
+[official docs](https://www.git-scm.com/book/en/v2/Git-Tools-Submodules) on how to work with submodules.
+
