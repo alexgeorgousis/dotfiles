@@ -113,13 +113,14 @@ in
     userSettings = {
       "vim.vimrc.enable" = true;
       "vim.vimrc.path" = "$HOME/.config/nvim.bak/vimrc";
+      "editor.minimap.enabled"  = false;
+      "workbench.startupEditor" = "none";
+      "editor.formatOnSave" = true;
       "files.watcherExclude" = {
         "**/.bloop"    = true;
         "**/.metals"   = true;
         "**/.ammonite" = true;
         };
-      "editor.minimap.enabled"  = false;
-      "workbench.startupEditor" = "none";
     };
   };
 
