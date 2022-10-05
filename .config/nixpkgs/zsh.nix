@@ -60,7 +60,7 @@
     hm   = "home-manager";
     hms  = "home-manager switch";
     hme  = "home-manager edit";
-    evim = "vim $HOME/.config/nvim/vimrc";
+    evim = "vim $HOME/.config/astronvim/lua/user/init.lua";
     ezsh = "vim $HOME/.config/nixpkgs/zsh.nix";
 
     # exa (improved ls)
