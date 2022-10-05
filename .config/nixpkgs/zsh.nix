@@ -16,9 +16,11 @@
   };
 
   initExtra = ''
-    bindkey -v                         # enable vi-mode
     bindkey -M viins 'jk' vi-cmd-mode  # map 'jk' to Esc
+    bindkey -s '^g' 'clear && git status\n'
   '';
+
+  defaultKeymap = "viins";
 
   sessionVariables = {
     VI_MODE_SET_CURSOR             = "true";  # changes cursor style in insert mode (in zsh line editor)
