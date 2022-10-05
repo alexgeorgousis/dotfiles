@@ -109,6 +109,7 @@ in
       eamodio.gitlens
       scalameta.metals
       zxh404.vscode-proto3
+      dracula-theme.theme-dracula
     ];
     userSettings = {
       "vim.vimrc.enable" = true;
@@ -116,6 +117,7 @@ in
       "editor.minimap.enabled"  = false;
       "workbench.startupEditor" = "none";
       "editor.formatOnSave" = true;
+      "workbench.colorTheme" = "Dracula";
       "files.watcherExclude" = {
         "**/.bloop"    = true;
         "**/.metals"   = true;
