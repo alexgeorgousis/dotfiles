@@ -58,6 +58,7 @@ in
     duf              # prettier alternative to df - displays disk usage
     htop             # process viewer - alternative to top
     nerdfonts
+    metals           # scala language server (used by AstroNvim)
   ];
 
   programs.zsh = import ./zsh.nix;
