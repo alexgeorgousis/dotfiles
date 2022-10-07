@@ -1,3 +1,3 @@
-[submodule "/Users/AGI53/.config/nvim"]
-	path = /Users/AGI53/.config/nvim
+[submodule ".config/nvim"]
+	path = .config/nvim
 	url = https://github.com/AstroNvim/AstroNvim
