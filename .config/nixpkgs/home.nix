@@ -33,6 +33,7 @@
     neovim
     alacritty
     google-chrome
+    gcc              # C compiler - required by AstroNvim (prevents error)
   ];
 
   programs.zsh = import ./zsh.nix;
