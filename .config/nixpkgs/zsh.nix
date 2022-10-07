@@ -52,6 +52,8 @@
     "cgca!" = "config commit -v -a --amend";
     cgp     = "config push";
     cgpf    = "config push --force";
+    # Doesn't work with the dotfiles bare repo setup - looks for the current branch in a git repo in the current working directory :(
+    # cgpsup  = "config push --set-upstream origin $(git_current_branch)";
     cgl     = "config pull";
     cgd     = "config diff";
     cgb     = "config branch";
