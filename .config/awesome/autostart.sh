@@ -9,3 +9,6 @@ xcape -e 'Control_L=Escape'
 # 45 keys per sec
 xset r rate 200 45
 
+# Start picom
+picom -b
+

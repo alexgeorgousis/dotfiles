@@ -34,6 +34,7 @@
     alacritty
     google-chrome
     gcc              # C compiler - required by AstroNvim (prevents error)
+    picom            # compositor - used to enable visual window features like transparency
   ];
 
   programs.zsh = import ./zsh.nix;
