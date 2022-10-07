@@ -32,6 +32,8 @@
   };
 
   shellAliases = {
+    vim = "nvim";
+    
     # Aliases for frequently accessed repos
     ncr = "cd $HOME/repos/glados/disco-ml-nbcu-ncr";
     dep = "cd $HOME/repos/glados/disco-mlops-deployments";
@@ -41,7 +43,7 @@
     glp = "git log --pretty=format:'%C(yellow)%h%C(cyan)%x09%an%Creset%x09%C(magenta)%ar%x09%Creset%s' -20";
 
     # Git aliases for dotfiles
-    config  = "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
+    config  = "$(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME";
     c       = "config";
     cgst    = "config status";
     cglg    = "config log --stat";
@@ -52,6 +54,7 @@
     "cgca!" = "config commit -v -a --amend";
     cgp     = "config push";
     cgpf    = "config push --force";
+    cgpsup  = "config push --set-upstream origin $(git_current_branch)";
     cgl     = "config pull";
     cgd     = "config diff";
     cgb     = "config branch";
