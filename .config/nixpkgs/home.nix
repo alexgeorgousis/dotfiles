@@ -59,6 +59,7 @@ in
     htop             # process viewer - alternative to top
     nerdfonts
     metals           # scala language server (used by AstroNvim)
+    colima           # docker runtime (replacement for Docker Desktop)
   ];
 
   programs.zsh = import ./zsh.nix;
