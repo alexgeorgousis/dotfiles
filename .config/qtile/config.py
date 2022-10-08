@@ -104,27 +104,25 @@ for i in range(len(groups)):
 # Screens
 #***************************************************************************
 
-def get_screen():
+def get_screen(include_systray=False):
+    widgets = [
+        widget.GroupBox(),
+        widget.Prompt(),
+        widget.WindowName(),
+        widget.Clock(format="%d-%m-%Y %a %I:%M %p"),
+    ]
+
+    if include_systray:
+        widgets.insert(3, widget.Systray())
+
     screen = Screen (
-        top=bar.Bar(
-            [
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Systray(),
-                widget.Clock(format="%d-%m-%Y %a %I:%M %p"),
-            ],
-            24,
-            background="#282a36",
-            opacity=0.95,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-        ),
+        top=bar.Bar(widgets, 24, background="#282a36", opacity=0.95),
     )
     return screen
 
 num_screens = 3
-screens = [get_screen() for _ in range(num_screens)]
+# Note: There can only be 1 instance of widget.Systray() across all screens
+screens = [get_screen(include_systray=True) if i == 0 else get_screen() for i in range(num_screens)]
 
 #***************************************************************************
 # Layouts
