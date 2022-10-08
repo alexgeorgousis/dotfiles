@@ -112,25 +112,28 @@ for g in groups:
 # Screens
 #***************************************************************************
 
-screens = []
-for _ in range(3):
-    screens.append(
-        Screen(
-            top=bar.Bar(
-                [
-                    widget.GroupBox(),
-                    widget.Prompt(),
-                    widget.WindowName(),
-                    widget.Systray(),
-                    widget.Clock(format="%d-%m-%Y %a %I:%M %p"),
-                ],
-                24,
-                # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-                # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-            ),
+def get_screen():
+    screen = Screen (
+        top=bar.Bar(
+            [
+                widget.GroupBox(),
+                widget.Prompt(),
+                widget.WindowName(),
+                widget.Systray(),
+                widget.Clock(format="%d-%m-%Y %a %I:%M %p"),
+            ],
+            24,
+            background="#282a36",
+            opacity=0.95,
+            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
     )
-    
+    return screen
+
+num_screens = 3
+screens = [get_screen() for _ in range(num_screens)]
+
 #***************************************************************************
 # Layouts
 #***************************************************************************
@@ -142,8 +145,8 @@ layouts = [
         border_width=3,
         border_on_single=True,
         insert_position=1,  # create new window below currently focused one
-        margin=7,
-        margin_on_single=10,
+        margin=6,
+        margin_on_single=6,
     ),
 ]
 
