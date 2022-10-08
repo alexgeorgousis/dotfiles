@@ -36,6 +36,7 @@
     gcc              # C compiler - required by AstroNvim (prevents error)
     picom            # compositor - used to enable visual window features like transparency
     nitrogen         # wallpaper manager
+    neofetch         # displays pretty ASCII art when opening terminal :)
   ];
 
   programs.zsh = import ./zsh.nix;

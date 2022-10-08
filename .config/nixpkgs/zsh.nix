@@ -18,6 +18,7 @@
   initExtra = ''
     bindkey -M viins 'jk' vi-cmd-mode  # map 'jk' to Esc
     bindkey -s '^g' 'clear && git status\n'
+    neofetch  # displays pretty ascii
   '';
 
   defaultKeymap = "viins";

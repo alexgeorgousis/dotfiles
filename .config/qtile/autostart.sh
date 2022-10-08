@@ -17,4 +17,5 @@ xrandr --output eDP --mode 3840x2160 --pos 4920x0 --rotate normal --output Displ
 
 # Run utils
 nitrogen --restore
+blueman-applet &
 
