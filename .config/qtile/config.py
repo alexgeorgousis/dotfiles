@@ -75,11 +75,11 @@ keys = [
     Key([alt, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
     
     Key([mod                    ], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod                    ], "c", lazy.window.kill(), desc="Kill focused window"),
-    Key([alt                    ], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([alt, "shift"           ], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([alt, "shift", "control"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([alt, "shift"           ], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([mod                    ], "c",      lazy.window.kill(), desc="Kill focused window"),
+    Key([alt                    ], "space",  lazy.spawn("dmenu_run"), desc="Run dmenu"),
+    Key([alt, "shift"           ], "r",      lazy.reload_config(), desc="Reload the config"),
+    Key([alt, "shift", "control"], "r",      lazy.reload_config(), desc="Reload the config"),
+    Key([alt, "shift"           ], "q",      lazy.shutdown(), desc="Shutdown Qtile"),
 
 ]
 
@@ -105,20 +105,15 @@ for i in range(len(groups)):
 #***************************************************************************
 
 def get_screen(include_systray=False):
-    widgets = [
-        widget.GroupBox(),
-        widget.Prompt(),
-        widget.WindowName(),
-        widget.Clock(format="%d-%m-%Y %a %I:%M %p"),
-    ]
-
+    widgets = []
+    widgets.append(widget.GroupBox())
+    widgets.append(widget.Prompt())
+    widgets.append(widget.Spacer())
     if include_systray:
-        widgets.insert(3, widget.Systray())
+        widgets.append(widget.Systray())
+    widgets.append(widget.Clock(format="%d-%m-%Y %a %I:%M %p"))
 
-    screen = Screen (
-        top=bar.Bar(widgets, 24, background="#282a36", opacity=0.95),
-    )
-    return screen
+    return Screen(top=bar.Bar(widgets, 24, background="#282a36", opacity=0.95))
 
 num_screens = 3
 # Note: There can only be 1 instance of widget.Systray() across all screens

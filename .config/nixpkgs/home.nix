@@ -37,6 +37,7 @@
     picom            # compositor - used to enable visual window features like transparency
     nitrogen         # wallpaper manager
     neofetch         # displays pretty ASCII art when opening terminal :)
+    dmenu
   ];
 
   programs.zsh = import ./zsh.nix;
