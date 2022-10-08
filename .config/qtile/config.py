@@ -90,7 +90,7 @@ keys = [
 groups = [
     Group("dev",   spawn=[terminal]),
     Group("www",   spawn=[browser]),
-    Group("notes", spawn=[browser]),
+    Group("notes", spawn=[terminal + " --command joplin"]),
 ]
 
 for i in range(len(groups)):
