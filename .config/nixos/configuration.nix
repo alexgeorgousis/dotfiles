@@ -15,37 +15,38 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking = {
+    # Enable networking
+    networkmanager.enable = true;
+    hostName = "nixos"; # Define your hostname.
+    # Configure network proxy if necessary
+    # proxy.default = "http://user:password@proxy:port/";
+    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  };
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  services.xserver = {
+    enable = true;
+    windowManager.qtile.enable = true;
+    displayManager = {
+      sddm.enable = true;
+      defaultSession = "none+qtile";
+    };
+    
+    # Configure keymap in X11
+    layout = "us";
+    xkbVariant = "";
+  };
 
-  # Enable networking
-  networking.networkmanager.enable = true;
-
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.pulseaudio.enable = true;
+  services.blueman.enable = true;
+  
   # Set your time zone.
   time.timeZone = "Europe/London";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.utf8";
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
-
-  # Enable the Qtile Window Manager
-  services.xserver = {
-    enable = true;
-    displayManager = {
-      sddm.enable = true;
-      # defaultSession = "";
-    };
-    windowManager.qtile.enable = true;
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alex = {
