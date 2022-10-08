@@ -65,26 +65,21 @@ keys = [
     Key([alt, "shift"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([alt, "shift"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([alt, "shift"], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod         ], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen for current window"),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key(
-        [alt, "shift"],
-        "Return",
-        lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack",
-    ),
+    Key([alt, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
     
-    # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "c", lazy.window.kill(), desc="Kill focused window"),
-    Key([alt], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([alt, "control"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([alt, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([mod                    ], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod                    ], "c", lazy.window.kill(), desc="Kill focused window"),
+    Key([alt                    ], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([alt, "shift"           ], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([alt, "shift", "control"], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([alt, "shift"           ], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+
 ]
 
 groups = [Group(i) for i in "123"]
@@ -144,9 +139,10 @@ layouts = [
     layout.Columns(
         border_focus_stack=["#d75f5f", "#8f3d3d"],
         border_width=4,
+        border_on_single=True,
         insert_position=1,  # create new window below currently focused one
         margin=7,
-        margin_on_single=0
+        margin_on_single=15,
     ),
 ]
 
