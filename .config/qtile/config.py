@@ -24,10 +24,17 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+
+import os
+import subprocess
+
+#***************************************************************************
+# Key bindings
+#***************************************************************************
 
 mod = "mod4"
 alt = "mod1"
@@ -75,7 +82,7 @@ keys = [
     
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "c", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([alt], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([alt, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([alt, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 ]
@@ -106,6 +113,33 @@ for g in groups:
         ]
     )
 
+#***************************************************************************
+# Screens
+#***************************************************************************
+
+screens = []
+for _ in range(3):
+    screens.append(
+        Screen(
+            top=bar.Bar(
+                [
+                    widget.GroupBox(),
+                    widget.Prompt(),
+                    widget.WindowName(),
+                    widget.Systray(),
+                    widget.Clock(format="%d-%m-%Y %a %I:%M %p"),
+                ],
+                24,
+                # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+                # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            ),
+        ),
+    )
+    
+#***************************************************************************
+# Layouts
+#***************************************************************************
+
 layouts = [
     layout.Columns(
         border_focus_stack=["#d75f5f", "#8f3d3d"],
@@ -113,20 +147,19 @@ layouts = [
         insert_position=1,  # create new window below currently focused one
         margin=7,
         margin_on_single=0
-        ),
-    # layout.Max(),
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
+    ),
 ]
+
+#***************************************************************************
+# Misc
+#***************************************************************************
+
+# Run autostart script - as described in the docs:
+# https://docs.qtile.org/en/latest/manual/config/hooks.html#autostart
+@hook.subscribe.startup
+def autostart():
+    path = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.run(['sh', path])
 
 widget_defaults = dict(
     font="sans",
@@ -134,81 +167,6 @@ widget_defaults = dict(
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
-
-screens = [
-    Screen(
-        top=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
-            ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-        ),
-    ),
-    Screen(
-        top=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
-            ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-        ),
-    ),
-    Screen(
-        top=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
-            ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-        ),
-    ),
-]
 
 # Drag floating layouts.
 mouse = [
@@ -234,6 +192,7 @@ floating_layout = layout.Floating(
         Match(title="pinentry"),  # GPG key password entry
     ]
 )
+
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
