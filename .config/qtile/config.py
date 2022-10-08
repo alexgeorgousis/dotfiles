@@ -39,6 +39,7 @@ import subprocess
 mod = "mod4"
 alt = "mod1"
 terminal = "alacritty"
+browser = "google-chrome-stable"
 
 keys = [
 
@@ -82,31 +83,22 @@ keys = [
 
 ]
 
-groups = [Group(i) for i in "123"]
+#***************************************************************************
+# Groups
+#***************************************************************************
 
-for g in groups:
-    keys.extend(
-        [
-            # alt + letter of group = switch to group
-            Key(
-                [alt],
-                g.name,
-                lazy.group[g.name].toscreen(),
-                desc="Switch to group {}".format(g.name),
-            ),
-            # alt + shift + letter of group = switch to & move focused window to group
-            Key(
-                [alt, "shift"],
-                g.name,
-                lazy.window.togroup(g.name),
-                desc="Switch to & move focused window to group {}".format(g.name),
-            ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], g.name, lazy.window.togroup(g.name),
-            #     desc="move focused window to group {}".format(g.name)),
-        ]
-    )
+groups = [
+    Group("dev",   spawn=[terminal]),
+    Group("www",   spawn=[browser]),
+    Group("notes", spawn=[browser]),
+]
+
+for i in range(len(groups)):
+    name = groups[i].name
+    idx = i + 1
+    
+    keys.append(Key([alt         ], str(idx), lazy.group[name].toscreen(), desc="Switch to group"))
+    keys.append(Key([alt, "shift"], str(idx), lazy.window.togroup(name), desc="Move window to group"))
 
 #***************************************************************************
 # Screens
@@ -140,7 +132,6 @@ screens = [get_screen() for _ in range(num_screens)]
 
 layouts = [
     layout.Columns(
-        # border_focus_stack=["#d75f5f", "#8f3d3d"],
         border_focus="#ffffff",
         border_width=3,
         border_on_single=True,
