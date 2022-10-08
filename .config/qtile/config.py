@@ -137,12 +137,13 @@ for _ in range(3):
 
 layouts = [
     layout.Columns(
-        border_focus_stack=["#d75f5f", "#8f3d3d"],
-        border_width=4,
+        # border_focus_stack=["#d75f5f", "#8f3d3d"],
+        border_focus="#ffffff",
+        border_width=3,
         border_on_single=True,
         insert_position=1,  # create new window below currently focused one
         margin=7,
-        margin_on_single=15,
+        margin_on_single=10,
     ),
 ]
 
