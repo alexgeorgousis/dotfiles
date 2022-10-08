@@ -38,7 +38,6 @@
     nitrogen         # wallpaper manager
     neofetch         # displays pretty ASCII art when opening terminal :)
     dmenu
-    joplin
   ];
 
   programs.zsh = import ./zsh.nix;
