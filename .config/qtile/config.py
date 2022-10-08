@@ -38,7 +38,7 @@ import subprocess
 
 mod = "mod4"
 alt = "mod1"
-terminal = guess_terminal()
+terminal = "alacritty"
 
 keys = [
 
