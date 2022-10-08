@@ -37,14 +37,14 @@
     xkbVariant = "";
   };
 
-  # Enable the Awesome Window Manager
+  # Enable the Qtile Window Manager
   services.xserver = {
     enable = true;
     displayManager = {
       sddm.enable = true;
-      defaultSession = "none+awesome";
+      # defaultSession = "";
     };
-    windowManager.awesome.enable = true;
+    windowManager.qtile.enable = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -52,7 +52,7 @@
     isNormalUser = true;
     description = "Alex Georgousis";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ vim alacritty xcape git google-chrome ];
+    packages = with pkgs; [];
   };
 
   # Allow user to install nixpkgs
