@@ -32,14 +32,15 @@ from libqtile.utils import guess_terminal
 import os
 import subprocess
 
+terminal = "alacritty"
+browser = "google-chrome-stable"
+
 #***************************************************************************
 # Key bindings
 #***************************************************************************
 
 mod = "mod4"
 alt = "mod1"
-terminal = "alacritty"
-browser = "google-chrome-stable"
 
 keys = [
 
@@ -106,14 +107,13 @@ for i in range(len(groups)):
 
 def get_screen(include_systray=False):
     widgets = []
-    widgets.append(widget.GroupBox())
-    widgets.append(widget.Prompt())
+    widgets.append(widget.GroupBox(highlight_method="line", highlight_color="#282a36"))
     widgets.append(widget.Spacer())
     if include_systray:
         widgets.append(widget.Systray())
     widgets.append(widget.Clock(format="%d-%m-%Y %a %I:%M %p"))
 
-    return Screen(top=bar.Bar(widgets, 24, background="#282a36", opacity=0.95))
+    return Screen(top=bar.Bar(widgets, 24, opacity=0.95))
 
 num_screens = 3
 # Note: There can only be 1 instance of widget.Systray() across all screens
@@ -146,9 +146,10 @@ def autostart():
     subprocess.run(['sh', path])
 
 widget_defaults = dict(
-    font="sans",
-    fontsize=12,
-    padding=3,
+    font="Ubuntu Bold",
+    fontsize=14,
+    padding=16,
+    background="#282a36"
 )
 extension_defaults = widget_defaults.copy()
 
