@@ -77,7 +77,7 @@ keys = [
     
     Key([mod                    ], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod                    ], "c",      lazy.window.kill(), desc="Kill focused window"),
-    Key([alt                    ], "space",  lazy.spawn("dmenu_run"), desc="Run dmenu"),
+    Key([mod                    ], "p",      lazy.spawn("dmenu_run"), desc="Run dmenu"),
     Key([alt, "shift"           ], "r",      lazy.reload_config(), desc="Reload the config"),
     Key([alt, "shift", "control"], "r",      lazy.reload_config(), desc="Reload the config"),
     Key([alt, "shift"           ], "q",      lazy.shutdown(), desc="Shutdown Qtile"),
