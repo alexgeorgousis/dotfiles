@@ -70,19 +70,18 @@
     evim = "vim $HOME/.config/astronvim/lua/user/init.lua";
     ezsh = "vim $HOME/.config/nixpkgs/zsh.nix";
 
-    # exa (improved ls)
-    ls  = "exa";
-    la  = "exa --all";
-    lt  = "exa --tree";
-    ll  = "exa --long --group --git";
-    lla = "exa --long --group --git --all";
-    llt = "exa --long --group --git --tree";
-
     # CLI alternatives
+    ls   = "exa";
+    la   = "exa --all";
+    lt   = "exa --tree";
+    ll   = "exa --long --group --git";
+    lla  = "exa --long --group --git --all";
+    llt  = "exa --long --group --git --tree";
     cat  = "bat";
     find = "fd";
     df   = "duf";
     top  = "htop";
+    ps   = "procs";
   };
 
   # Global aliases work anywhere in a command (e.g. `watch k get pods`)
