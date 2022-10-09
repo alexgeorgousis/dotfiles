@@ -40,6 +40,7 @@
     dmenu
     procs            # ps replacement
     ripgrep          # grep replacement
+    wget
   ];
 
   programs.zsh = import ./zsh.nix;
