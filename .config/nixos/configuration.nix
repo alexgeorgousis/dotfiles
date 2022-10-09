@@ -56,14 +56,21 @@
     packages = with pkgs; [];
   };
 
-  # Allow user to install nixpkgs
-  nix.allowedUsers = [ "alex" ];
-
   # Enable automatic login for the user.
   services.getty.autologinUser = "alex";
 
+  # Allow user to install nixpkgs
+  nix.allowedUsers = [ "alex" ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Automatically run garbage collection
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 3d";
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
