@@ -125,12 +125,12 @@ screens = [get_screen(include_systray=True) if i == 0 else get_screen() for i in
 
 layouts = [
     layout.Columns(
-        border_focus="#ffffff",
-        border_width=3,
+        border_focus="#caa9fa",
+        border_width=1,
         border_on_single=True,
         insert_position=1,  # create new window below currently focused one
-        margin=6,
-        margin_on_single=6,
+        margin=8,
+        margin_on_single=8,
     ),
 ]
 
