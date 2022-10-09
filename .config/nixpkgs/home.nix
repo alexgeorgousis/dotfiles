@@ -30,6 +30,11 @@
     duf              # prettier alternative to df - displays disk usage
     htop             # process viewer - alternative to top
     xcape            # util used to map caspslock to escape and control
+    
+    # I'm installing neovim as a package and not as a program via `programs.neovim`
+    # because home-manager automatically generates an init.vim file under ~/.config/nvim/,
+    # which conflicts with the init.lua file, if one exists. Hopefully in the future home-manager
+    # will check if an init.vim or init.lua file already exists.
     neovim
     alacritty
     google-chrome
