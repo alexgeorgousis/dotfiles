@@ -28,7 +28,10 @@
     enable = true;
     windowManager.qtile.enable = true;
     displayManager = {
-      sddm.enable = true;
+      lightdm = {
+        enable = true;
+        background = pkgs.nixos-artwork.wallpapers.dracula.gnomeFilePath;
+      };
       defaultSession = "none+qtile";
     };
     
