@@ -84,19 +84,20 @@
     kcuc = "kubectl config use-context";
     
     # CLI alternatives
-    ls   = "exa";
-    la   = "exa --all";
-    lt   = "exa --tree";
-    ll   = "exa --long --group --git";
-    lla  = "exa --long --group --git --all";
-    llt  = "exa --long --group --git --tree";
-    cat  = "bat";
-    find = "fd";
-    df   = "duf";
-    top  = "htop";
-    ps   = "procs";
-    grep = "rg";
-    G    = "|rg";
+    ls    = "exa";
+    la    = "exa --all";
+    lt    = "exa --tree";
+    ll    = "exa --long --group --git";
+    lla   = "exa --long --group --git --all";
+    llt   = "exa --long --group --git --tree";
+    cat   = "bat";
+    find  = "fd";
+    df    = "duf";
+    top   = "htop";
+    ps    = "procs";
+    grep  = "rg";
+    G     = "|rg";
+    mkdir = "mkdir -p";
     
   };
 
