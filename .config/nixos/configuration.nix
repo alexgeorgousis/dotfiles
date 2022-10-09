@@ -33,6 +33,10 @@
         background = pkgs.nixos-artwork.wallpapers.dracula.gnomeFilePath;
       };
       defaultSession = "none+qtile";
+      autoLogin = {
+        enable = true;
+        user = "alex";
+      };
     };
     
     # Configure keymap in X11
@@ -58,9 +62,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
-
-  # Enable automatic login for the user.
-  services.getty.autologinUser = "alex";
 
   # Allow user to install nixpkgs
   nix.allowedUsers = [ "alex" ];
