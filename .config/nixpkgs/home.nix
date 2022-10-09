@@ -39,6 +39,7 @@
     neofetch         # displays pretty ASCII art when opening terminal :)
     dmenu
     procs            # ps replacement
+    ripgrep          # grep replacement
   ];
 
   programs.zsh = import ./zsh.nix;

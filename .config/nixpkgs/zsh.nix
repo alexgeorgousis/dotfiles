@@ -34,6 +34,7 @@
   };
 
   shellAliases = {
+  
     vim = "nvim";
     
     # Aliases for frequently accessed repos
@@ -70,6 +71,18 @@
     evim = "vim $HOME/.config/astronvim/lua/user/init.lua";
     ezsh = "vim $HOME/.config/nixpkgs/zsh.nix";
 
+  };
+
+  # Global aliases work anywhere in a command (e.g. `watch k get pods`)
+  shellGlobalAliases = {
+
+    # kubectl
+    k    = "kubectl";
+    kd   = "kubectl describe";
+    kccc = "kubectl config current-context";
+    kcgc = "kubectl config get-contexts";
+    kcuc = "kubectl config use-context";
+    
     # CLI alternatives
     ls   = "exa";
     la   = "exa --all";
@@ -82,15 +95,9 @@
     df   = "duf";
     top  = "htop";
     ps   = "procs";
-  };
-
-  # Global aliases work anywhere in a command (e.g. `watch k get pods`)
-  shellGlobalAliases = {
-    k    = "kubectl";
-    kd   = "kubectl describe";
-    kccc = "kubectl config current-context";
-    kcgc = "kubectl config get-contexts";
-    kcuc = "kubectl config use-context";
+    grep = "rg";
+    G    = "|rg";
+    
   };
 
 }
