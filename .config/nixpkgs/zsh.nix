@@ -7,7 +7,7 @@
 
   oh-my-zsh = {
     enable  = true;
-    theme   = "robbyrussell";
+    theme   = "gozilla";
     plugins = [
       "git"
       "web-search"
