@@ -49,26 +49,26 @@
     gwa  = "git worktree add";
 
     # Git aliases for dotfiles
-    config  = "$(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME";
-    c       = "config";
-    cgst    = "config status";
-    cglg    = "config log --stat";
-    cglp    = "config log --pretty=format:'%C(yellow)%h%C(cyan)%x09%an%Creset%x09%C(magenta)%ar%x09%Creset%s' -20";
-    cga     = "config add";
-    cgau    = "config add --update";  # Stages all currently tracked files
-    cgc     = "config commit -v";
-    "cgca!" = "config commit -v -a --amend";
-    cgp     = "config push";
-    cgpf    = "config push --force";
-    cgpsup  = "config push --set-upstream origin $(git_current_branch)";
-    cgl     = "config pull";
-    cgd     = "config diff";
-    cgb     = "config branch";
-    cgco    = "config checkout";
-    cgcm    = "config checkout main";
-    cgw     = "config worktree";
-    cgwl    = "config worktree list";
-    cgwa    = "config worktree add";
+    config = "$(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME";
+    c      = "config";
+    cgst   = "config status";
+    cglg   = "config log --stat";
+    cglp   = "config log --pretty=format:'%C(yellow)%h%C(cyan)%x09%an%Creset%x09%C(magenta)%ar%x09%Creset%s' -20";
+    cga    = "config add";
+    cgau   = "config add --update";  # Stages all currently tracked files
+    cgc    = "config commit -v";
+    "cgc!" = "config commit -v --amend";
+    cgp    = "config push";
+    cgpf   = "config push --force";
+    cgpsup = "config push --set-upstream origin $(git_current_branch)";
+    cgl    = "config pull";
+    cgd    = "config diff";
+    cgb    = "config branch";
+    cgco   = "config checkout";
+    cgcm   = "config checkout main";
+    cgw    = "config worktree";
+    cgwl   = "config worktree list";
+    cgwa   = "config worktree add";
 
     # Managing dotfiles
     hm   = "home-manager";
