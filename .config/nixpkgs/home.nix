@@ -29,6 +29,8 @@
     fd               # prettier and better find
     duf              # prettier alternative to df - displays disk usage
     htop             # process viewer - alternative to top
+    procs            # ps replacement
+    ripgrep          # grep replacement
     xcape            # util used to map caspslock to escape and control
     
     # I'm installing neovim as a package and not as a program via `programs.neovim`
@@ -43,8 +45,6 @@
     nitrogen         # wallpaper manager
     neofetch         # displays pretty ASCII art when opening terminal :)
     dmenu
-    procs            # ps replacement
-    ripgrep          # grep replacement
     wget
   ];
 

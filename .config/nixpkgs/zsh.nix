@@ -43,7 +43,10 @@
     mms = "cd $HOME/repos/glados/disco-ml-model-service";
 
     # Git aliases
-    glp = "git log --pretty=format:'%C(yellow)%h%C(cyan)%x09%an%Creset%x09%C(magenta)%ar%x09%Creset%s' -20";
+    glp  = "git log --pretty=format:'%C(yellow)%h%C(cyan)%x09%an%Creset%x09%C(magenta)%ar%x09%Creset%s' -20";
+    gw   = "git worktree";
+    gwl  = "git worktree list";
+    gwa  = "git worktree add";
 
     # Git aliases for dotfiles
     config  = "$(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME";
@@ -63,6 +66,9 @@
     cgb     = "config branch";
     cgco    = "config checkout";
     cgcm    = "config checkout main";
+    cgw     = "config worktree";
+    cgwl    = "config worktree list";
+    cgwa    = "config worktree add";
 
     # Managing dotfiles
     hm   = "home-manager";

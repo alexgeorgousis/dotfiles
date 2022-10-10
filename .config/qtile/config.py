@@ -107,8 +107,15 @@ for i in range(len(groups)):
 
 def get_screen(include_systray=False):
     widgets = []
-    widgets.append(widget.GroupBox(highlight_method="line", highlight_color="#282a36"))
+
+    widgets.append(widget.GroupBox(
+        highlight_method="line",
+        highlight_color="#282a36",
+        block_highlight_text_color="#caa9fa",
+    ))
+
     widgets.append(widget.Spacer())
+
     if include_systray:
         widgets.append(widget.Systray())
     widgets.append(widget.Clock(format="%d-%m-%Y %a %I:%M %p"))
@@ -149,7 +156,7 @@ widget_defaults = dict(
     font="Ubuntu Bold",
     fontsize=14,
     padding=16,
-    background="#282a36"
+    background="#282a36",
 )
 extension_defaults = widget_defaults.copy()
 
