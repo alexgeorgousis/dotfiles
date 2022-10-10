@@ -59,6 +59,7 @@
     cgb     = "config branch";
     cgco    = "config checkout";
     cgcm    = "config checkout main";
+    cgrs    = "config restore";
 
     # Managing dotfiles
     hm   = "home-manager";
