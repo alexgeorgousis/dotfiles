@@ -26,6 +26,7 @@ augroup end
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
+  print("Something went wrong while loading Packer :(")
   return
 end
 
@@ -44,6 +45,7 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim"    -- Used by many plugins
   use "nvim-lua/plenary.nvim"  -- Used by many plugins
+  use {"dracula/vim", as = "dracula"}
   use "nvim-telescope/telescope.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
