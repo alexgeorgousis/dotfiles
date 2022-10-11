@@ -40,8 +40,6 @@
     neovim
     alacritty
     google-chrome
-    gcc              # C compiler - required by AstroNvim (prevents error)
-    nodePackages.npm # required by AstroNvim to install language servers
     picom            # compositor - used to enable visual window features like transparency
     nitrogen         # wallpaper manager
     neofetch         # displays pretty ASCII art when opening terminal :)
