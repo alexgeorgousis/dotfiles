@@ -18,7 +18,8 @@ local options = {
   termguicolors = true,
   cursorline = true,
   numberwidth = 2,      -- set number column width (default: 4)
-  signcolumn="yes",     -- always shows sign column (otherwise the text shifts when a sign pops up)
+  signcolumn = "yes",     -- always shows sign column (otherwise the text shifts when a sign pops up)
+  hlsearch = false,
 }
 
 vim.opt.shortmess:append "c"  -- hides some annoying messages (see :help shortmess for more info)
