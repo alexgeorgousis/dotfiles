@@ -69,6 +69,7 @@
     cgw    = "config worktree";
     cgwl   = "config worktree list";
     cgwa   = "config worktree add";
+    cgrbm  = "config rebase main";
 
     # Managing dotfiles
     hm   = "home-manager";
