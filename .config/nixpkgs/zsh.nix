@@ -76,7 +76,7 @@
     # Managing dotfiles
     hm   = "home-manager";
     hms  = "home-manager switch";
-    hme  = "home-manager edit";
+    hme  = "vim ~/.config/nixpkgs/home.nix##template.j2cli";
     evim = "vim $HOME/.config/astronvim/lua/user/init.lua";
     ezsh = "vim $HOME/.config/nixpkgs/zsh.nix";
 
