@@ -60,6 +60,7 @@ in
     nerdfonts
     metals           # scala language server (used by AstroNvim)
     colima           # docker runtime (replacement for Docker Desktop)
+    neovim
   ];
 
   programs.zsh = import ./zsh.nix;
@@ -79,11 +80,6 @@ in
       enable = true;
     };
 
-  };
-
-  programs.neovim = {
-    enable = true;
-    vimAlias = true;
   };
 
   programs.fzf = {

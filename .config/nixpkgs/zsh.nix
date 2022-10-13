@@ -32,6 +32,8 @@
   };
 
   shellAliases = {
+    vim = "nvim";
+
     # Aliases for frequently accessed repos
     ncr = "cd $HOME/repos/glados/disco-ml-nbcu-ncr";
     dep = "cd $HOME/repos/glados/disco-mlops-deployments";
