@@ -28,7 +28,7 @@
     EDITOR                         = "nvim";  # sets default editor for home-manager edit command
     GOOGLE_APPLICATION_CREDENTIALS = "$HOME/.config/gcloud/application_default_credentials.json";
     XDG_CONFIG_HOME                = "$HOME/.config";
-    PATH                           = "$HOME/.nix-profile/bin:$HOME/.asdf/shims:$HOME/google-cloud-sdk/bin:$PATH";
+    PATH                           = "$HOME/.nix-profile/bin:$HOME/.asdf/shims:$HOME/google-cloud-sdk/bin:$PATH:$HOME/cli/bin";
   };
 
   shellAliases = {
