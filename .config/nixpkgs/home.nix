@@ -3,8 +3,11 @@
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
+  
+  
   home.username = "alex";
   home.homeDirectory = "/home/alex";
+  
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -37,6 +40,7 @@
     ripgrep          # grep replacement
     wget
     j2cli
+    watch
     
     
     xcape            # util used to map caspslock to escape and control
@@ -84,5 +88,6 @@
     ];
 
   };
+  
 
 }
