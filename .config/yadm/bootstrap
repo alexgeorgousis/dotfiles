@@ -1,0 +1,3 @@
+# Compile templates and generate symlinks to alt files
+yadm alt
+
