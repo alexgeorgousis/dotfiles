@@ -18,6 +18,7 @@
   initExtra = ''
     bindkey -M viins 'jk' vi-cmd-mode  # map 'jk' to Esc
     bindkey -s '^g' 'clear && git status\n'
+    neofetch  # displays pretty ascii
   '';
 
   defaultKeymap = "viins";
@@ -28,19 +29,24 @@
     EDITOR                         = "nvim";  # sets default editor for home-manager edit command
     GOOGLE_APPLICATION_CREDENTIALS = "$HOME/.config/gcloud/application_default_credentials.json";
     XDG_CONFIG_HOME                = "$HOME/.config";
-    PATH                           = "$HOME/.nix-profile/bin:$HOME/.asdf/shims:$HOME/google-cloud-sdk/bin:$PATH:$HOME/cli/bin";
+    PATH                           = "$HOME/.nix-profile/bin:$HOME/.asdf/shims:$HOME/google-cloud-sdk/bin:$HOME/cli/bin:$PATH";
+    NIX_PATH = "$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels:$NIX_PATH";  # required by home-manager
   };
 
   shellAliases = {
+  
     vim = "nvim";
-
+    
     # Aliases for frequently accessed repos
     ncr = "cd $HOME/repos/glados/disco-ml-nbcu-ncr";
     dep = "cd $HOME/repos/glados/disco-mlops-deployments";
     mms = "cd $HOME/repos/glados/disco-ml-model-service";
 
     # Git aliases
-    glp = "git log --pretty=format:'%C(yellow)%h%C(cyan)%x09%an%Creset%x09%C(magenta)%ar%x09%Creset%s' -20";
+    glp  = "git log --pretty=format:'%C(yellow)%h%C(cyan)%x09%an%Creset%x09%C(magenta)%ar%x09%Creset%s' -20";
+    gw   = "git worktree";
+    gwl  = "git worktree list";
+    gwa  = "git worktree add";
 
     # Git aliases for dotfiles
     config  = "yadm";
@@ -61,6 +67,10 @@
     cgb     = "config branch";
     cgco    = "config checkout";
     cgcm    = "config checkout main";
+    cgw    = "config worktree";
+    cgwl   = "config worktree list";
+    cgwa   = "config worktree add";
+    cgrbm  = "config rebase main";
     cgrs    = "config restore";
 
     # Managing dotfiles
@@ -70,28 +80,34 @@
     evim = "vim $HOME/.config/astronvim/lua/user/init.lua";
     ezsh = "vim $HOME/.config/nixpkgs/zsh.nix";
 
-    # exa (improved ls)
-    ls  = "exa";
-    la  = "exa --all";
-    lt  = "exa --tree";
-    ll  = "exa --long --group --git";
-    lla = "exa --long --group --git --all";
-    llt = "exa --long --group --git --tree";
-
-    # CLI alternatives
-    cat  = "bat";
-    find = "fd";
-    df   = "duf";
-    top  = "htop";
   };
 
   # Global aliases work anywhere in a command (e.g. `watch k get pods`)
   shellGlobalAliases = {
+
+    # kubectl
     k    = "kubectl";
     kd   = "kubectl describe";
     kccc = "kubectl config current-context";
     kcgc = "kubectl config get-contexts";
     kcuc = "kubectl config use-context";
+    
+    # CLI alternatives
+    ls    = "exa";
+    la    = "exa --all";
+    lt    = "exa --tree";
+    ll    = "exa --long --group --git";
+    lla   = "exa --long --group --git --all";
+    llt   = "exa --long --group --git --tree";
+    cat   = "bat";
+    find  = "fd";
+    df    = "duf";
+    top   = "htop";
+    ps    = "procs";
+    grep  = "rg";
+    G     = "|rg";
+    mkdir = "mkdir -p";
+    
   };
 
 }

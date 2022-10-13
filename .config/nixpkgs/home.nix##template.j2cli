@@ -3,11 +3,14 @@
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  
-  
+  {% if YADM_OS == "Darwin" %}
+  home.username = "AGI53";
+  home.homeDirectory = "/Users/AGI53";
+  {% endif %}
+  {% if YADM_OS == "Linux" %}
   home.username = "alex";
   home.homeDirectory = "/home/alex";
-  
+  {% endif %}
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -41,8 +44,19 @@
     wget
     j2cli
     watch
-    
-    
+    {% if YADM_OS == "Darwin" %}
+    asdf-vm
+    grpcui
+    grpcurl
+    ghz
+    docker
+    kubectl
+    kubernetes-helm
+    openconnect
+    istioctl
+    pre-commit
+    {% endif %}
+    {% if YADM_OS == "Linux" %}
     xcape            # util used to map caspslock to escape and control
     alacritty
     google-chrome
@@ -50,7 +64,7 @@
     nitrogen         # wallpaper manager
     neofetch         # displays pretty ASCII art when opening terminal :)
     dmenu
-    
+    {% endif %}
   ];
 
   programs.zsh = import ./zsh.nix;
@@ -88,6 +102,35 @@
     ];
 
   };
-  
+  {% if YADM_OS == "Darwin" %}
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      vscodevim.vim
+      ms-python.python
+      eamodio.gitlens
+      scalameta.metals
+      zxh404.vscode-proto3
+      dracula-theme.theme-dracula
+    ];
+    userSettings = {
+      "vim.vimrc.enable" = true;
+      "vim.vimrc.path" = "$HOME/.config/nvim.bak/vimrc";
+      "editor.minimap.enabled"  = false;
+      "workbench.startupEditor" = "none";
+      "editor.formatOnSave" = true;
+      "workbench.colorTheme" = "Dracula";
+      "files.watcherExclude" = {
+        "**/.bloop"    = true;
+        "**/.metals"   = true;
+        "**/.ammonite" = true;
+        };
+    };
+  };
+
+  programs.sbt = {
+    enable = true;
+  };
+  {% endif %}
 
 }
