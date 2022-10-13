@@ -1,0 +1,88 @@
+{ config, pkgs, ... }:
+
+{
+  # Home Manager needs a bit of information about you and the
+  # paths it should manage.
+  home.username = "alex";
+  home.homeDirectory = "/home/alex";
+
+  # This value determines the Home Manager release that your
+  # configuration is compatible with. This helps avoid breakage
+  # when a new Home Manager release introduces backwards
+  # incompatible changes.
+  #
+  # You can update Home Manager without changing this value. See
+  # the Home Manager release notes for a list of state version
+  # changes in each release.
+  home.stateVersion = "22.05";
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
+  # Packages that should be installed to the user profile
+  home.packages = with pkgs; [
+    # I'm installing neovim as a package and not as a program via `programs.neovim`
+    # because home-manager automatically generates an init.vim file under ~/.config/nvim/,
+    # which conflicts with the init.lua file, if one exists. Hopefully in the future home-manager
+    # will check if an init.vim or init.lua file already exists.
+    neovim
+    vifm             # vim-like file manager
+    silver-searcher  # used by FZF (:Ag) and CtrlSF to search for text in files
+    exa              # prettier ls
+    bat              # prettier cat
+    fd               # prettier and better find
+    duf              # prettier alternative to df - displays disk usage
+    htop             # process viewer - alternative to top
+    procs            # ps replacement
+    ripgrep          # grep replacement
+    wget
+    j2cli
+    
+    
+    xcape            # util used to map caspslock to escape and control
+    alacritty
+    google-chrome
+    picom            # compositor - used to enable visual window features like transparency
+    nitrogen         # wallpaper manager
+    neofetch         # displays pretty ASCII art when opening terminal :)
+    dmenu
+    
+  ];
+
+  programs.zsh = import ./zsh.nix;
+
+  programs.git = {
+    enable = true;
+    userName = "Alex Georgousis";
+    userEmail = "alex.georgousis@outlook.com";
+    signing.key = "B770E04EDC3185F9";
+    extraConfig = {
+      pull.rebase = true;
+      rebase.autosquash = true;  # automatically squash fixup commits
+      diff.tool = "vimdiff";     # run `git difftool [-y]` to get side-by-side diff using vimdiff
+    };
+
+    diff-so-fancy = {
+      enable = true;
+    };
+
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+
+    # Options for Ctrl + R (command history search)
+    historyWidgetOptions = [
+      "--height=10%"  # 10% seems to be the minimum
+    ];
+
+    # Options for Ctrl + T (File search)
+    fileWidgetOptions = [
+      # Use bat in preview window
+      "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+    ];
+
+  };
+
+}
