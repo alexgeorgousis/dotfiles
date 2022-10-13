@@ -7,6 +7,9 @@ Approach explained in
 I'm using [yadm](https://yadm.io/) to manage these dotfiles. Unfortunately there's not a nix package for it yet,
 so I've installed it manually under ~/.cli/bin.
 
+TODO: How to make a config file or directory OS-specific
+TODO: How to turn a config file into a template
+
 ## iTerm2
 ### Clear Buffer keybind
 
