@@ -21,7 +21,11 @@
 
   # Packages that should be installed to the user profile
   home.packages = with pkgs; [
-    asdf-vm
+    # I'm installing neovim as a package and not as a program via `programs.neovim`
+    # because home-manager automatically generates an init.vim file under ~/.config/nvim/,
+    # which conflicts with the init.lua file, if one exists. Hopefully in the future home-manager
+    # will check if an init.vim or init.lua file already exists.
+    neovim
     vifm             # vim-like file manager
     silver-searcher  # used by FZF (:Ag) and CtrlSF to search for text in files
     exa              # prettier ls
@@ -31,20 +35,20 @@
     htop             # process viewer - alternative to top
     procs            # ps replacement
     ripgrep          # grep replacement
+    wget
+    j2cli
+    {% if YADM_OS == "Darwin" %}
+    asdf-vm
+    {% endif %}
+    {% if YADM_OS == "Linux" %}
     xcape            # util used to map caspslock to escape and control
-    
-    # I'm installing neovim as a package and not as a program via `programs.neovim`
-    # because home-manager automatically generates an init.vim file under ~/.config/nvim/,
-    # which conflicts with the init.lua file, if one exists. Hopefully in the future home-manager
-    # will check if an init.vim or init.lua file already exists.
-    neovim
     alacritty
     google-chrome
     picom            # compositor - used to enable visual window features like transparency
     nitrogen         # wallpaper manager
     neofetch         # displays pretty ASCII art when opening terminal :)
     dmenu
-    wget
+    {% endif %}
   ];
 
   programs.zsh = import ./zsh.nix;
