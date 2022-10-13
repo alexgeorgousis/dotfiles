@@ -103,7 +103,7 @@
     ];
     userSettings = {
       "vim.vimrc.enable" = true;
-      "vim.vimrc.path" = "$HOME/.config/nvim.bak/vimrc";
+      "vim.vimrc.path" = "$HOME/.config/vscode/vimrc";
       "editor.minimap.enabled"  = false;
       "workbench.startupEditor" = "none";
       "editor.formatOnSave" = true;
