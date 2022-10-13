@@ -43,6 +43,7 @@
     wget
     j2cli
     watch
+    neofetch         # displays pretty ASCII art when opening terminal :)
     {% if YADM_OS == "Darwin" %}
     asdf-vm
     grpcui
@@ -62,7 +63,6 @@
     google-chrome
     picom            # compositor - used to enable visual window features like transparency
     nitrogen         # wallpaper manager
-    neofetch         # displays pretty ASCII art when opening terminal :)
     dmenu
     {% endif %}
   ];

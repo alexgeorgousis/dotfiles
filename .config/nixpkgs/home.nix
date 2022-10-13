@@ -40,6 +40,7 @@
     wget
     j2cli
     watch
+    neofetch         # displays pretty ASCII art when opening terminal :)
     
     asdf-vm
     grpcui
