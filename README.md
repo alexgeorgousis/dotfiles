@@ -3,6 +3,10 @@
 Approach explained in
 [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles).
 
+## yadm
+I'm using [yadm](https://yadm.io/) to manage these dotfiles. Unfortunately there's not a nix package for it yet,
+so I've installed it manually under ~/.cli/bin.
+
 ## iTerm2
 ### Clear Buffer keybind
 
