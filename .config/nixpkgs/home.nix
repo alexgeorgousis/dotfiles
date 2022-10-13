@@ -4,9 +4,9 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   
+  home.username = "AGI53";
+  home.homeDirectory = "/Users/AGI53";
   
-  home.username = "alex";
-  home.homeDirectory = "/home/alex";
   
 
   # This value determines the Home Manager release that your
@@ -36,20 +36,22 @@
     fd               # prettier and better find
     duf              # prettier alternative to df - displays disk usage
     htop             # process viewer - alternative to top
-    procs            # ps replacement
     ripgrep          # grep replacement
     wget
     j2cli
     watch
     
+    asdf-vm
+    grpcui
+    grpcurl
+    ghz
+    docker
+    kubectl
+    kubernetes-helm
+    openconnect
+    istioctl
+    pre-commit
     
-    xcape            # util used to map caspslock to escape and control
-    alacritty
-    google-chrome
-    picom            # compositor - used to enable visual window features like transparency
-    nitrogen         # wallpaper manager
-    neofetch         # displays pretty ASCII art when opening terminal :)
-    dmenu
     
   ];
 
@@ -87,6 +89,35 @@
       "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
     ];
 
+  };
+  
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      vscodevim.vim
+      ms-python.python
+      eamodio.gitlens
+      scalameta.metals
+      zxh404.vscode-proto3
+      dracula-theme.theme-dracula
+    ];
+    userSettings = {
+      "vim.vimrc.enable" = true;
+      "vim.vimrc.path" = "$HOME/.config/nvim.bak/vimrc";
+      "editor.minimap.enabled"  = false;
+      "workbench.startupEditor" = "none";
+      "editor.formatOnSave" = true;
+      "workbench.colorTheme" = "Dracula";
+      "files.watcherExclude" = {
+        "**/.bloop"    = true;
+        "**/.metals"   = true;
+        "**/.ammonite" = true;
+        };
+    };
+  };
+
+  programs.sbt = {
+    enable = true;
   };
   
 
