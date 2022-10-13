@@ -8,7 +8,10 @@ I'm using [yadm](https://yadm.io/) to manage these dotfiles. Unfortunately there
 so I've installed it manually under ~/.cli/bin.
 
 TODO: How to make a config file or directory OS-specific
+
 TODO: How to turn a config file into a template
+
+TODO: How to edit a template (and apply the changes)
 
 ## iTerm2
 ### Clear Buffer keybind
