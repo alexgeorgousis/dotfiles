@@ -51,6 +51,7 @@
     grpcurl
     ghz
     docker
+    colima
     kubectl
     kubernetes-helm
     openconnect
