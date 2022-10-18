@@ -24,6 +24,11 @@ local options = {
 
 vim.opt.shortmess:append "c"  -- hides some annoying messages (see :help shortmess for more info)
 
+-- Netrw --
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
+vim.g.netrw_winsize = 20
+
 for k, v in pairs(options) do
   vim.opt[k] = options[k]
 end

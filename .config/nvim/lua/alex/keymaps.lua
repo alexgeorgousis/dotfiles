@@ -18,7 +18,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>c", "<C-w>c", opts)
 keymap("n", "<leader>d", ":bd<CR>", opts)  -- Delete (close) current buffer
 
-keymap("n", "<leader>e", ":Lex 12<CR>", opts)  -- <leader>e opens file explorer with set width
+keymap("n", "<leader>e", ":Lex<CR>", opts)  -- <leader>e opens file explorer (netrw)
 
 -- Save & exit
 keymap("n", "<leader>w", ":w<CR>", opts)
