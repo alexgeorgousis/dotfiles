@@ -10,7 +10,8 @@ local options = {
   wrap = false,
   scrolloff = 8,        -- always show min 8 lines above and below cursor
   sidescrolloff = 8,    -- same as scrolloff but horizontally (works only if wrap is false)
-  smartcase = true,     -- only care about case if search pattern includes capital letters
+  ignorecase = true,    -- ignore case while searching (used in combination with smartcase = true
+  smartcase = true,     -- override ignorecase if search pattern includes capital letters
   mouse = "a",
   showmode = false,     -- hide mode at the bottom of the window (-- INSERT --, -- VISUAL -- etc.)
   splitbelow = true,    -- create new horizontal splits below
