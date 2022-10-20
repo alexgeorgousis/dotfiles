@@ -79,6 +79,7 @@
     signing.key = "B770E04EDC3185F9";
     extraConfig = {
       pull.rebase = true;
+      push.autoSetupRemote = true;
       rebase.autosquash = true;  # automatically squash fixup commits
       diff.tool = "vimdiff";     # run `git difftool [-y]` to get side-by-side diff using vimdiff
     };
