@@ -75,7 +75,7 @@
 
     # Managing dotfiles
     hm   = "home-manager";
-    hms  = "home-manager switch";
+    hms  = "yadm alt; home-manager switch";  # run yadm alt first to regenerate home.nix from template
     hme  = "vim ~/.config/nixpkgs/home.nix##template.j2cli";
     evim = "vim $HOME/.config/astronvim/lua/user/init.lua";
     ezsh = "vim $HOME/.config/nixpkgs/zsh.nix";
