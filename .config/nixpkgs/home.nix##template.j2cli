@@ -67,6 +67,9 @@
     picom            # compositor - used to enable visual window features like transparency
     nitrogen         # wallpaper manager
     dmenu
+    discord
+    arandr
+    pcmanfm
     {% endif %}
   ];
 

@@ -48,6 +48,9 @@
   hardware.bluetooth.enable = true;
   hardware.pulseaudio.enable = true;
   services.blueman.enable = true;
+
+  # Enable USB automounting for pcmanfm (source: https://nixos.wiki/wiki/PCManFM)
+  services.gvfs.enable = true;
   
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -68,6 +71,19 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Enable VirtualBox
+  virtualisation.virtualbox = {
+    host = {
+      enable = true;
+      enableExtensionPack = true;
+    };
+    guest = {
+      enable = true;
+      x11 = true;
+    };
+  };
+  users.extraGroups.vboxusers.members = [ "alex" ];
 
   # Automatically run garbage collection
   nix.gc = {
