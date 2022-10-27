@@ -51,6 +51,8 @@
 
   # Enable USB automounting for pcmanfm (source: https://nixos.wiki/wiki/PCManFM)
   services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.devmon.enable = true;
   
   # Set your time zone.
   time.timeZone = "Europe/London";
