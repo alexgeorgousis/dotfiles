@@ -37,6 +37,7 @@
   
     vim = "nvim";
     
+    ls = "exa";
     # Aliases for frequently accessed repos
     ncr = "cd $HOME/repos/glados/disco-ml-nbcu-ncr";
     dep = "cd $HOME/repos/glados/disco-mlops-deployments";
@@ -80,6 +81,19 @@
     evim = "vim $HOME/.config/astronvim/lua/user/init.lua";
     ezsh = "vim $HOME/.config/nixpkgs/zsh.nix";
 
+    # CLI alternatives
+    la    = "exa --all";
+    lt    = "exa --tree";
+    ll    = "exa --long --group --git";
+    lla   = "exa --long --group --git --all";
+    llt   = "exa --long --group --git --tree";
+    cat   = "bat";
+    find  = "fd";
+    df    = "duf";
+    top   = "htop";
+    ps    = "procs";
+    mkdir = "mkdir -p";
+
   };
 
   # Global aliases work anywhere in a command (e.g. `watch k get pods`)
@@ -92,21 +106,8 @@
     kcgc = "kubectl config get-contexts";
     kcuc = "kubectl config use-context";
     
-    # CLI alternatives
-    ls    = "exa";
-    la    = "exa --all";
-    lt    = "exa --tree";
-    ll    = "exa --long --group --git";
-    lla   = "exa --long --group --git --all";
-    llt   = "exa --long --group --git --tree";
-    cat   = "bat";
-    find  = "fd";
-    df    = "duf";
-    top   = "htop";
-    ps    = "procs";
-    grep  = "rg";
-    G     = "|rg";
-    mkdir = "mkdir -p";
+    grep = "rg";
+    G    = "|rg";
     
   };
 
