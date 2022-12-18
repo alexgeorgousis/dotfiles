@@ -33,9 +33,3 @@ in the home directory is the way to fix it. Strange, but it works.
 You can toggle window transparency using `Cmd` + `u` (this hotkey is set in iTerm2 by default). This can be useful
 because you can set the transparency to a high value and then quickly turn it off if you move the terminal on top of
 another window.
-
-## AstroNvim
-I'm using [AstroNvim](https://astronvim.github.io/) as my Neovim config. Because it's a git repo,
-I've added it to the project as a git submodule. Read the
-[official docs](https://www.git-scm.com/book/en/v2/Git-Tools-Submodules) on how to work with submodules.
-
