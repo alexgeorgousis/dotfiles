@@ -33,3 +33,19 @@ in the home directory is the way to fix it. Strange, but it works.
 You can toggle window transparency using `Cmd` + `u` (this hotkey is set in iTerm2 by default). This can be useful
 because you can set the transparency to a high value and then quickly turn it off if you move the terminal on top of
 another window.
+
+## Troubleshooting
+### OSX
+#### Nix commands not found after OS update
+TL;DR: Append the following to `/etc/zshrc`:
+```bash
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
+```
+
+Every OS upgrade on OSX wipes the system-wide `zshrc` file (`/etc/zshrc`) which removes the line that sources `nix-daemon.sh` which adds `~/.nix-profile/bin` to your `PATH`. So all nix commands are still there, they're just not in the `PATH`.
+
+Is there a way around this? Can I source the nix daemon in my user-specific `.zshrc` and use that instead (effectively ignoring the system-wide one)?
