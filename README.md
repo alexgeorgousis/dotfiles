@@ -53,7 +53,7 @@ Every OS upgrade on OSX wipes the system-wide `zshrc` file (`/etc/zshrc`) which 
 Is there a way around this? Can I source the nix daemon in my user-specific `.zshrc` and use that instead (effectively ignoring the system-wide one)?
 
 ## Linux
-#### Could not find 'openssl'
+### Could not find 'openssl'
 I first encountered this problem on PopOS while trying to install the [sccache rust crate](https://github.com/mozilla/sccache) via `cargo install sccache`.
 
 Solution: `sudo apt install libssl-dev` ([source](https://github.com/mozilla/sccache))
