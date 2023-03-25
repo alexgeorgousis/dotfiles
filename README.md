@@ -54,7 +54,7 @@ Is there a way around this? Can I source the nix daemon in my user-specific `.zs
 
 ## Linux
 ### Could not find 'openssl'
-I first encountered this problem on PopOS while trying to install the [sccache rust crate](https://github.com/mozilla/sccache) via `cargo install sccache`.
+I first encountered this problem on PopOS while trying to install the [sccache rust crate](https://github.com/mozilla/sccache) via `cargo install sccache`. But I assume it could could happen with other packages that depend on `openssl`.
 
 Solution: `sudo apt install libssl-dev` ([source](https://github.com/mozilla/sccache))
 
@@ -145,3 +145,34 @@ Notes:
   /usr/bin/openssl
   ```
 - There is no nix package for `libssl-dev` at the time of writing, that's why I installed it with the distro package manager. Plus, this is likely a distro-specific issue anyway, so I wouldn't wanna contaminate `home.nix` with that package.
+
+### Alacritty Error creating GL context
+I encountered this while installing [alacritty](https://github.com/alacritty/alacritty/tree/master) on Pop!\_OS using Nix (home-manager). When I try to run `alacritty` I get the following error:
+
+```
+Error: Error creating GL context; Received multiple errors:
+	Could not create EGL display object
+	`glXQueryExtensionsString` found no glX extensions
+
+Error: "Event loop terminated with code: 1"
+```
+
+#### Solution 1 (tested)
+Install alacritty using the distro package manager: `sudo apt install alacritty`
+
+The solution suggests that this is a problem with the Nix package for alacritty on non-NixOS distros.
+
+#### Solution 2 (not tested)
+This is a [known issue](https://github.com/NixOS/nixpkgs/issues/122671) on non-NixOS platforms and there is a GL wrapper for Nix called [nixGL](https://github.com/NixOS/nixpkgs/issues/122671) that [solves](https://github.com/NixOS/nixpkgs/issues/122671#issuecomment-1049355204) the problem.
+
+However, this solution involves installing the nixGL package from a specific nix channel and then using it in front of any nix packages that have the GL issue:
+```bash
+# install nixGL
+nix-channel --add https://github.com/guibou/nixGL/archive/main.tar.gz nixgl && nix-channel --update
+nix-env -iA nixgl.auto.nixGLDefault   # or replace `nixGLDefault` with your desired wrapper
+
+# run alacritty through nixGL
+nixGL alacritty
+```
+
+I don't like either of these steps. At the very least I want to be able to install nixGL via home manager so I don't rely on this documentation every time I do this setup on a new machine. Installing alacritty via the distro package manager until this problem is officially fixed seems easier to do.
