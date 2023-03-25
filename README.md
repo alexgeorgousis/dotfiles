@@ -53,6 +53,11 @@ Every OS upgrade on OSX wipes the system-wide `zshrc` file (`/etc/zshrc`) which 
 Is there a way around this? Can I source the nix daemon in my user-specific `.zshrc` and use that instead (effectively ignoring the system-wide one)?
 
 ## Linux
+
+### Pop!\_OS
+#### Remove window title bars
+Open the Extensions application via the launcher, go to the Pop Shell settings, and toggle "Show window titles" off ([source](https://www.reddit.com/r/pop_os/comments/g79rxx/remove_title_bar_in_2004/)).
+
 ### Could not find 'openssl'
 I first encountered this problem on PopOS while trying to install the [sccache rust crate](https://github.com/mozilla/sccache) via `cargo install sccache`. But I assume it could could happen with other packages that depend on `openssl`.
 
