@@ -203,3 +203,13 @@ nixGL alacritty
 ```
 
 I don't like either of these steps. At the very least I want to be able to install nixGL via home manager so I don't rely on this documentation every time I do this setup on a new machine. Installing alacritty via the distro package manager until this problem is officially fixed seems easier to do.
+
+### sudo: [command]: command not found
+I encountered this error when running `sudo vim`, but I assume it can happen with any command. The problem seems to be that `sudo` is sometimes configured to (1) reset the environment and (2) only look through a set of "secure" directories for programs (as opposed to looking through the `PATH`. I don't have a source for this explanation, or the solution below, because ChatGPT gave me the answer, but it's a pretty simple fix:
+
+Open the `sudo` config file `/etc/sudoers.tmp` using:
+```
+sudo visudo
+```
+
+Delete the lines that start with `Defaults env_reset` and `Defaults secure_path="..."`. Presumably the `env_reset` line resets environment variables (including `PATH`?) and `secure_path` specifies the list of directories to look through. I don't have examples of these lines because I've already removed them from my `sudoers` file and don't know how to reset it.
