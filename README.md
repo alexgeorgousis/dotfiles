@@ -80,7 +80,7 @@ Is there a way around this? Can I source the nix daemon in my user-specific `.zs
 #### Remove window title bars
 Open the Extensions application via the launcher, go to the Pop Shell settings, and toggle "Show window titles" off ([source](https://www.reddit.com/r/pop_os/comments/g79rxx/remove_title_bar_in_2004/)).
 
-### Could not find 'openssl'
+#### Could not find 'openssl'
 I first encountered this problem on PopOS while trying to install the [sccache rust crate](https://github.com/mozilla/sccache) via `cargo install sccache`. But I assume it could could happen with other packages that depend on `openssl`.
 
 Solution: `sudo apt install libssl-dev` ([source](https://github.com/mozilla/sccache))
@@ -173,7 +173,7 @@ Notes:
   ```
 - There is no nix package for `libssl-dev` at the time of writing, that's why I installed it with the distro package manager. Plus, this is likely a distro-specific issue anyway, so I wouldn't wanna contaminate `home.nix` with that package.
 
-### Alacritty Error creating GL context
+#### Alacritty Error creating GL context
 I encountered this while installing [alacritty](https://github.com/alacritty/alacritty/tree/master) on Pop!\_OS using Nix (home-manager). When I try to run `alacritty` I get the following error:
 
 ```
@@ -184,12 +184,12 @@ Error: Error creating GL context; Received multiple errors:
 Error: "Event loop terminated with code: 1"
 ```
 
-#### Solution 1 (tested)
+##### Solution 1 (tested)
 Install alacritty using the distro package manager: `sudo apt install alacritty`
 
 The solution suggests that this is a problem with the Nix package for alacritty on non-NixOS distros.
 
-#### Solution 2 (not tested)
+##### Solution 2 (not tested)
 This is a [known issue](https://github.com/NixOS/nixpkgs/issues/122671) on non-NixOS platforms and there is a GL wrapper for Nix called [nixGL](https://github.com/NixOS/nixpkgs/issues/122671) that [solves](https://github.com/NixOS/nixpkgs/issues/122671#issuecomment-1049355204) the problem.
 
 However, this solution involves installing the nixGL package from a specific nix channel and then using it in front of any nix packages that have the GL issue:
@@ -204,7 +204,7 @@ nixGL alacritty
 
 I don't like either of these steps. At the very least I want to be able to install nixGL via home manager so I don't rely on this documentation every time I do this setup on a new machine. Installing alacritty via the distro package manager until this problem is officially fixed seems easier to do.
 
-### sudo: [command]: command not found
+#### sudo: [command]: command not found
 I encountered this error when running `sudo vim`, but I assume it can happen with any command. The problem seems to be that `sudo` is sometimes configured to (1) reset the environment and (2) only look through a set of "secure" directories for programs (as opposed to looking through the `PATH`. I don't have a source for this explanation, or the solution below, because ChatGPT gave me the answer, but it's a pretty simple fix:
 
 Open the `sudo` config file `/etc/sudoers.tmp` using:
@@ -213,3 +213,48 @@ sudo visudo
 ```
 
 Delete the lines that start with `Defaults env_reset` and `Defaults secure_path="..."`. Presumably the `env_reset` line resets environment variables (including `PATH`?) and `secure_path` specifies the list of directories to look through. I don't have examples of these lines because I've already removed them from my `sudoers` file and don't know how to reset it.
+
+#### Boot menu doesn't appear
+When restarting my PC, I want to be presented with a menu that show all my options os OS's I can boot into. This didn't show up by default after installing Pop!\_OS so I had to manually edit the boot settings in the BIOS each time.
+
+The intuitive summary of the solution is: Pop!\_OS uses `systemd-boot` instead of GRUB (I think Ubuntu uses GRUB and it shows a boot menu by default), but `systemd-boot` also has a boot menu. I just had to increase the timeout so it wouldn't flash quickly and disappear, and also add an entry for Windows in the list of OS's it was aware of. Here are the specific steps:
+1. Edit the `systemd-boot` boot loader config to increase the timeout:
+	1. `sudo vim /boot/efi/loader/loader.conf`
+	2. Find the line that starts with `timeout` (you can add it if it doesn't exist)
+	3. Increase the number right after `timeout` (I set it to `timeout 10` which means 10 seconds)
+	4. Testing: Reboot and check that you can now see the boot menu
+2. Check that the following file exists: `/boot/efi/EFI/Microsoft/Boot/bootmgfw.efi` (in my case, the entire `Microsoft/` directory was missing) - if the file exists, proceed to step 4
+3. If the file doesn't exist (and likely the entire `Microsoft/` directory) that means it's mounted onto a different partition on your hard disk than the partition that Pop!\_OS (and therefore the `systemd-boot` boot loader) is mounted on. So follow these hacky steps to copy it over:
+	1. Find the partition that Windows is mounted on using `lsblk` (in my case, Windows was mounted on the first partition, `nvme0n1p1` - if this isn't clear, it's easy to verify by mounting the partition and inspecting the files inside it, as we do in the following steps):
+	```
+	$ lsblk -f
+	NAME          FSTYPE FSVER LABEL     UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+	sda
+	sdb
+	zram0                                                                                    [SWAP]
+	nvme0n1
+	├─nvme0n1p1   vfat   FAT32           F44A-C48C
+	├─nvme0n1p2
+	├─nvme0n1p3   ntfs                   ECB44B80B44B4C70
+	├─nvme0n1p4   ntfs                   D2D6AAD9D6AABCDB
+	├─nvme0n1p5   vfat   FAT32 BOOT      86E7-0FB4                             695.5M    30% /boot/efi
+	├─nvme0n1p6   swap   1     swao      1feeb445-1442-481a-896b-3a23131db44c
+	│ └─cryptswap swap   1     cryptswap 81382ea2-1d40-4db8-9540-4a874d69d7e4                [SWAP]
+	└─nvme0n1p7   ext4   1.0   root      106660f6-f54c-451b-bbdb-7818f76e8c43  116.9G    32% /
+	```
+	2. Temporarily mount the partition onto a directory in your current partition and check the `Microsoft/` directory is in there:
+	```
+	$ sudo mount dev/nvme0n1p1 /mnt
+	$ sudo ls /mnt/EFI/Microsoft
+	Boot Recovery
+	```
+	3. Copy the `Microsoft/` directory to where `systemd-boot` seems to store its EFI stuff (I don't really understand the details):
+	`$ sudo cp -f /mnt/EFI/Microsoft /boot/efi/EFI/`
+	4. (Cleanup) Unmount the Windows EFI partition (for me this happens automatically on reboot, but idk): `sudo unmount /mnt`
+4. Create a new entry for Windows so the boot loader can find it and show it in the boot menu:
+	```
+	$ sudo vim /boot/efi/loader/entries/windows.conf
+	title Windows
+	efi /boot/efi/EFI/Microsoft/Boot/bootmgfw.efi
+	```
+5. Reboot and check if there's an entry for Windows in the boot menu and if selecting it indeed boots you into Windows.
