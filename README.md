@@ -3,6 +3,9 @@
 Approach explained in
 [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles).
 
+# Smart caps lock
+[Guide](https://gist.github.com/tanyuan/55bca522bf50363ae4573d4bdcf06e2e?permalink_comment_id=4271644) to map caps lock to escape and control for any OS.
+
 # yadm
 I'm using [yadm](https://yadm.io/) to manage these dotfiles. Unfortunately there's not a nix package for it yet,
 so I've installed it manually under ~/.cli/bin.
