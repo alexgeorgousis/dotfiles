@@ -6,16 +6,6 @@ Approach explained in
 # Smart caps lock
 [Guide](https://gist.github.com/tanyuan/55bca522bf50363ae4573d4bdcf06e2e?permalink_comment_id=4271644) to map caps lock to escape and control for any OS.
 
-# yadm
-I'm using [yadm](https://yadm.io/) to manage these dotfiles. Unfortunately there's not a nix package for it yet,
-so I've installed it manually under ~/.cli/bin.
-
-TODO: How to make a config file or directory OS-specific
-
-TODO: How to turn a config file into a template
-
-TODO: How to edit a template (and apply the changes)
-
 # iTerm2
 ## Clear Buffer keybind
 
