@@ -29,22 +29,6 @@ The steps are the following:
 - If you've setup your dotfiles from this repo, you should already have the [Hack Nerd Font](https://www.programmingfonts.org/#hack) set up with Alacritty.
 
 # Troubleshooting
-## OSX
-### Nix commands not found after OS update
-TL;DR: Append the following to `/etc/zshrc`:
-```bash
-# Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
-# End Nix
-```
-
-Source: https://github.com/NixOS/nix/issues/3616
-
-Every OS upgrade on OSX wipes the system-wide `zshrc` file (`/etc/zshrc`) which removes the line that sources `nix-daemon.sh` which adds `~/.nix-profile/bin` to your `PATH`. So all nix commands are still there, they're just not in the `PATH`.
-
-Is there a way around this? Can I source the nix daemon in my user-specific `.zshrc` and use that instead (effectively ignoring the system-wide one)?
 
 ## Linux
 
