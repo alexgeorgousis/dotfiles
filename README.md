@@ -26,13 +26,13 @@
     ``` 
     - Note: You might encounter this problem while running the above commands: `WARNING: UNPROTECTED PRIVATE KEY FILE!`. You need to run `chmod 600 ~/.ssh/<private_key>` to restrict the permissions on your private keys.
 1. Run `home-manager switch` to set everything up.
-2. Set `zsh` as your default shell by running the following:
+1. Set `zsh` as your default shell by running the following:
     ```bash
     echo $HOME/.nix-profile/bin/zsh | sudo tee -a /etc/shells
     chsh -s $(which zsh)
     echo "Logout and log back in so the change can take effect."
     ```
-3. Map CapsLock to Ctrl and Escape by running the following:
+1. Map CapsLock to Ctrl and Escape by running the following:
     ```bash
     sudo apt install build-essential -y  # this will install make, which is needed to build keyd from source.
     git clone https://github.com/rvaiya/keyd.git
@@ -43,13 +43,20 @@
     sudo systemctl enable keyd --now
     rm -rf ~/keyd/ # cleanup: delete the repo
     ``` 
-
+1. Install Alacritty
+    - Unfortunately the Nix package seeems to have problems. It throws `Error: Error { raw_code: None, raw_os_message: None, kind: NotSupported("provided display handle is not supported") }`.
+    ```bash
+    sudo apt install alacritty -y
+    ```
 
 # Fonts
+
 ## How to set up Nerd Fonts
+
 [Nerd Fonts](https://www.nerdfonts.com/font-downloads) are fonts that have been extended (patched) with icons that can be displayed inside terminal emulators.
 
 ### Tutorial
+
 Source: https://www.youtube.com/watch?v=mQdB_kHyZn8
 
 The steps are the following:
