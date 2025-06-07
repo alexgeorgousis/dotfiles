@@ -1,7 +1,32 @@
 # dotfiles
 
-Approach explained in
-[The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles).
+# Setup Guide
+
+1. (Optional) Install Chrome and sign in to Google to make your life easier (e.g. bookmarks).
+2. Install `git` and setup your GItHub SSH key.
+1. Install Nix by running `sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon` ([source](https://nixos.org/download/#download-nix)).
+1. Install `home-manager` by running the following ([source](https://nix-community.github.io/home-manager/index.xhtml#sec-install-standalone)):
+    ```bash
+    nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+    nix-channel --update
+    nix-shell '<home-manager>' -A install
+
+    # Remove the auto-generated default home.nix file. It will be replaced by the one in this repo later in the setup.
+    rm ~/.config/home-manager/home.nix
+    ``` 
+1. Setup this dotfiles repo by running the following ([source](https://www.atlassian.com/git/tutorials/dotfiles)):
+    ```bash
+    alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+    echo ".cfg" >> .gitignore
+    git clone --bare git@github.com:alexgeorgousis/dotfiles.git $HOME/.cfg
+    alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+    rm ~/.gitignore  # remove .gitignore so that it can be overridden by the one in the dotfiles repo
+    config checkout
+    config config --local status.showUntrackedFiles no
+    ``` 
+    - Note: You might encounter this problem while running the above commands: `WARNING: UNPROTECTED PRIVATE KEY FILE!`. You need to run `chmod 600 ~/.ssh/<private_key>` to restrict the permissions on your private keys.
+1. Run `home-manager switch` to set everything up.
+
 
 # Fonts
 ## How to set up Nerd Fonts
