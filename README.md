@@ -32,6 +32,17 @@
     chsh -s $(which zsh)
     echo "Logout and log back in so the change can take effect."
     ```
+3. Map CapsLock to Ctrl and Escape by running the following:
+    ```bash
+    sudo apt install build-essential -y  # this will install make, which is needed to build keyd from source.
+    git clone https://github.com/rvaiya/keyd.git
+    cd keyd
+    make
+    sudo make install
+    cd
+    sudo systemctl enable keyd --now
+    rm -rf ~/keyd/ # cleanup: delete the repo
+    ``` 
 
 
 # Fonts
