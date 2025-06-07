@@ -73,7 +73,7 @@
     userName = "Alex Georgousis";
     userEmail = "alex.georgousis@sky.uk";
     signing = {
-      key = "~/.ssh/id_nbcugithub";
+      key = "~/.ssh/default";
       signByDefault = true;
     };
     extraConfig = {
