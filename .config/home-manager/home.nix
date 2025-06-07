@@ -20,6 +20,7 @@
     ripgrep # grep replacement
     procs # ps replacement
     wget
+    curl
     watch
     jq
     # yq from nix has issues for some reason, so I installed it manually
