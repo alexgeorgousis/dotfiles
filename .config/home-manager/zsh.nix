@@ -21,7 +21,6 @@
     bindkey -s '^g' 'git status\n'            # Ctrl+g clears the terminal and runs git status
     bindkey -s '^o' 'omz reload\n'            # Ctrl+o clears the screen and reloads terminal (to get the startup output re-printed)
     bindkey -s '^k' 'fzf-change-k8s-context\n'  # Function defined in ~/.config/home-manager/zsh_functions
-    bindkey -s '^f' 'find-project\n'            # find-project is a script located in ~/scripts/
 
     ### zsh prompt customisation ###
     function kubectl_prompt() {
