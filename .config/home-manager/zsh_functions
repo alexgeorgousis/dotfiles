@@ -1,0 +1,76 @@
+function fzf-change-k8s-context() {
+  local contexts=$(kubectl config get-contexts -o name)
+  local selected_context=$(echo "$contexts" | fzf --height=10%)
+  
+  if [ -n "$selected_context" ]; then
+    kctx "$selected_context"
+  fi
+}
+
+function kctx() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: kctx <context>"
+    return 1
+  fi
+
+  if [[ "$1" == "-" ]]; then
+    if [[ -z "$PREV_KUBECONTEXT" ]]; then
+      echo "No previous context found."
+      return 1
+    fi
+    local current_context="$KUBECONTEXT"
+    export KUBECONTEXT="$PREV_KUBECONTEXT"
+    export PREV_KUBECONTEXT="$current_context"
+    echo "Switched back to previous context: $KUBECONTEXT"
+    return 0
+  fi
+
+  # Split KUBECONFIG using ':' as the delimiter and stores the split elements in an array
+  local files=("${(@s/:/)KUBECONFIG}")
+  local context="$1"
+  local found_context=false
+  for file in "${files[@]}"; do
+    # Look through the kubeconfig files for the context passed as arg
+    if kubectl --kubeconfig="$file" config get-contexts -o name | grep -q "$context"; then
+      found_context=true
+      break
+    fi
+  done
+
+  if "$found_context"; then
+    export KUBECONTEXT="$context"
+    kubectl config use-context $context
+    return 0
+  else
+    echo "Context $context not found in any of the files in KUBECONFIG=$KUBECONFIG"
+    return 1
+  fi
+}
+
+function kns() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: kns <namespace>"
+    return 1
+  fi
+
+  if [[ "$1" == "-" ]]; then
+    if [[ -z "$PREV_KUBENAMESPACE" ]]; then
+      echo "No previous namespace found."
+      return 1
+    fi
+    local current_namespace="$KUBENAMESPACE"
+    export KUBENAMESPACE="$PREV_KUBENAMESPACE"
+    export PREV_KUBENAMESPACE="$current_namespace"
+    echo "Switched back to previous namespace: $KUBENAMESPACE"
+    return 0
+  fi
+
+  local new_namespace="$1"
+  export PREV_KUBENAMESPACE="$KUBENAMESPACE"
+  export KUBENAMESPACE=$new_namespace
+  echo "Namespace switched to $new_namespace"
+}
+
+function kprod() {
+  export KUBECONFIG="$KUBECONFIG:$HOME/.kube/prod.config:$HOME/.kube/bibcd.config"
+}
