@@ -26,6 +26,12 @@
     ``` 
     - Note: You might encounter this problem while running the above commands: `WARNING: UNPROTECTED PRIVATE KEY FILE!`. You need to run `chmod 600 ~/.ssh/<private_key>` to restrict the permissions on your private keys.
 1. Run `home-manager switch` to set everything up.
+2. Set `zsh` as your default shell by running the following:
+    ```bash
+    echo $HOME/.nix-profile/bin/zsh | sudo tee -a /etc/shells
+    chsh -s $(which zsh)
+    echo "Logout and log back in so the change can take effect."
+    ```
 
 
 # Fonts
