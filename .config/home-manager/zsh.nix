@@ -22,6 +22,10 @@
     bindkey -s '^o' 'omz reload\n'            # Ctrl+o clears the screen and reloads terminal (to get the startup output re-printed)
     bindkey -s '^k' 'fzf-change-k8s-context\n'  # Function defined in ~/.config/home-manager/zsh_functions
 
+    # Setup ssh
+    eval "$(ssh-agent -s)" 1>/dev/null
+    ssh-add ~/.ssh/default 2>/dev/null
+
     ### zsh prompt customisation ###
     function kubectl_prompt() {
       local color="green"
@@ -45,8 +49,8 @@
     source ~/.config/home-manager/zsh_functions
 
     # gcloud: enable shell command completion for zsh
-    # Note: This assumes gcloud is already installed in ~/bin/ (should be a step in the bootstrap script, which doesn't exist yet)
-    source ~/bin/google-cloud-sdk/completion.zsh.inc
+    # Note: This assumes gcloud is already installed in ~/bin/ (should be a step in the bootstrap script, which doesn't exist yet). That's why I'm suppressing errors, so it doesn't spam me when it doesn't exist.
+    source ~/bin/google-cloud-sdk/completion.zsh.inc 2>/dev/null
   '';
 
   defaultKeymap = "viins";
