@@ -62,6 +62,8 @@
     terraform
     xclip # used to give neovim access to clipboard (so I can paste stuff into neovim)
     zellij
+    fuzzel
+    nerd-fonts.hack
   ];
 
   # Let Home Manager install and manage itself.
