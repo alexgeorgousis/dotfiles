@@ -48,6 +48,18 @@
     ```bash
     sudo apt install alacritty -y
     ```
+1. Install Sway
+    - Again, unfortunately, the Nix package for sway (or swayfx) throws an error on startup (i.e. when running `sway`):
+        ```
+        00:00:00.007 [wlr] [render/egl.c:208] EGL_EXT_platform_base not supported
+        00:00:00.007 [wlr] [render/egl.c:523] Failed to create EGL context
+        00:00:00.007 [wlr] [render/fx_renderer/fx_renderer.c:283] Could not initialize EGL
+        00:00:00.007 [sway/server.c:236] Failed to create renderer
+        ```
+    ```bash
+    sudo apt install sway -y
+    ```
+    - Also unfortunately, swayfx seems to require building from source and I don't really wanna bother with all that (and the potential issues that might come up) so I'm sticking with standard sway for now.
 
 # Fonts
 
