@@ -16,7 +16,7 @@ set $right l
 # Your preferred terminal emulator
 set $term alacritty
 # Your preferred application launcher
-set $menu wmenu-run
+set $menu fuzzel
 
 ### Output configuration
 #
@@ -61,13 +61,13 @@ set $menu wmenu-run
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+t exec $term
 
-    # Close focused window
-    bindsym $mod+c kill
+    # Kill focused window
+    bindsym $mod+x kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+space exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -153,7 +153,7 @@ set $menu wmenu-run
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    # bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
