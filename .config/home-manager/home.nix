@@ -111,72 +111,74 @@
 
   programs.vscode = {
     enable = true;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
-      vscodevim.vim
-      golang.go
-      ms-python.python
-      rust-lang.rust-analyzer
-      github.copilot
-      tamasfe.even-better-toml
-      eamodio.gitlens
-      enkia.tokyo-night
-      hediet.vscode-drawio
-    ];
-    userSettings = {
-      "vim.vimrc.enable" = true;
-      "vim.vimrc.path" = "$HOME/.config/vscode/vimrc";
-      # -- vscode neovim extension settings -- #
-      # I commented them out because lsp features don't work out of the box for some reason (I get an error saying the lsp server isn't attached)
-      # TODO: I tried using $HOME here instead of hardcoding the full path, but the plugin threw an error for some reason :shrug: 
-      # "vscode-neovim.neovimExecutablePaths.darwin" = "/Users/agi53/.nix-profile/bin/nvim";
-      # No clue what this setting does, but it's part of the vscode neovim extension installation instructions (https://github.com/vscode-neovim/vscode-neovim#installation)
-      # "extensions.experimental.affinity" = {
-      #   "asvetliakov.vscode-neovim" = 1;
-      # };
-      "editor.minimap.enabled" = false;
-      "workbench.startupEditor" = "none";
-      "editor.formatOnSave" = true;
-      "extensions.ignoreRecommendations" = true;
-      "git.openRepositoryInParentFolders" = "never";
-      "window.openFoldersInNewWindow" = "on";
-      "workbench.activityBar.location" = "hidden";
-      "extensions.autoUpdate" = false;
-      "update.showReleaseNotes" = false;
-      "workbench.colorTheme" = "Tokyo Night Storm";
-      "[toml]" = {
-        "editor.formatOnSave" = false;
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        vscodevim.vim
+        golang.go
+        ms-python.python
+        rust-lang.rust-analyzer
+        github.copilot
+        tamasfe.even-better-toml
+        eamodio.gitlens
+        enkia.tokyo-night
+        hediet.vscode-drawio
+      ];
+      userSettings = {
+        "vim.vimrc.enable" = true;
+        "vim.vimrc.path" = "$HOME/.config/vscode/vimrc";
+        # -- vscode neovim extension settings -- #
+        # I commented them out because lsp features don't work out of the box for some reason (I get an error saying the lsp server isn't attached)
+        # TODO: I tried using $HOME here instead of hardcoding the full path, but the plugin threw an error for some reason :shrug: 
+        # "vscode-neovim.neovimExecutablePaths.darwin" = "/Users/agi53/.nix-profile/bin/nvim";
+        # No clue what this setting does, but it's part of the vscode neovim extension installation instructions (https://github.com/vscode-neovim/vscode-neovim#installation)
+        # "extensions.experimental.affinity" = {
+        #   "asvetliakov.vscode-neovim" = 1;
+        # };
+        "editor.minimap.enabled" = false;
+        "workbench.startupEditor" = "none";
+        "editor.formatOnSave" = true;
+        "extensions.ignoreRecommendations" = true;
+        "git.openRepositoryInParentFolders" = "never";
+        "window.openFoldersInNewWindow" = "on";
+        "workbench.activityBar.location" = "hidden";
+        "extensions.autoUpdate" = false;
+        "update.showReleaseNotes" = false;
+        "workbench.colorTheme" = "Tokyo Night Storm";
+        "[toml]" = {
+          "editor.formatOnSave" = false;
+        };
+        "files.watcherExclude" = {
+          "**/.bloop" = true;
+          "**/.metals" = true;
+          "**/.ammonite" = true;
+        };
+        "github.copilot.enable" = {
+          "scala" = false;
+        };
+        "gopls" = {
+          "buildFlags" = ["-tags=unit,decoupled,integration,integrated,acceptance"];
+        };
       };
-      "files.watcherExclude" = {
-        "**/.bloop" = true;
-        "**/.metals" = true;
-        "**/.ammonite" = true;
-      };
-      "github.copilot.enable" = {
-        "scala" = false;
-      };
-      "gopls" = {
-        "buildFlags" = ["-tags=unit,decoupled,integration,integrated,acceptance"];
-      };
+      keybindings = [
+          {
+            key = "ctrl+shift+cmd+v";
+            command = "toggleVim";
+          }
+          # The combination of the following 2 keybindings maps jk to escape in insert mode (https://github.com/vscode-neovim/vscode-neovim#composite-escape-keys)
+          {
+            command = "vscode-neovim.compositeEscape1";
+            key = "j";
+            when = "neovim.mode == insert && editorTextFocus";
+            args = "j";
+          }
+          {
+            command = "vscode-neovim.compositeEscape2";
+            key = "k";
+            when = "neovim.mode == insert && editorTextFocus";
+            args = "k";
+          }
+      ];
     };
-    keybindings = [
-        {
-          key = "ctrl+shift+cmd+v";
-          command = "toggleVim";
-        }
-        # The combination of the following 2 keybindings maps jk to escape in insert mode (https://github.com/vscode-neovim/vscode-neovim#composite-escape-keys)
-        {
-          command = "vscode-neovim.compositeEscape1";
-          key = "j";
-          when = "neovim.mode == insert && editorTextFocus";
-          args = "j";
-        }
-        {
-          command = "vscode-neovim.compositeEscape2";
-          key = "k";
-          when = "neovim.mode == insert && editorTextFocus";
-          args = "k";
-        }
-    ];
   };
 
   programs.sbt = {
