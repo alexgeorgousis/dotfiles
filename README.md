@@ -3,7 +3,9 @@
 # Setup Guide
 
 1. (Optional) Install Chrome and sign in to Google to make your life easier (e.g. bookmarks).
-2. Install `git` and setup your GItHub SSH key.
+1. Install `git` and setup your GItHub SSH key.
+    - `git` will eventually be managed by `home-manager` but you need it to clone this repo.
+    - Make sure your SSH keys are called `default` and `default.pub` (explained [below](#github-ssh-keys)). 
 1. Install Nix by running `sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon` ([source](https://nixos.org/download/#download-nix)).
 1. Install `home-manager` by running the following ([source](https://nix-community.github.io/home-manager/index.xhtml#sec-install-standalone)):
     ```bash
@@ -60,6 +62,10 @@
     sudo apt install sway -y
     ```
     - Also unfortunately, swayfx seems to require building from source and I don't really wanna bother with all that (and the potential issues that might come up) so I'm sticking with standard sway for now.
+
+# GitHub SSH Keys
+
+In `home-manager` you can see `git` is configured to use `~/.ssh/default` as the default key for auth and signing. This is to allow different machines to use different keys without changing the `home-manager` config. If you need to use different keys for different repos, then you'll have to generate those keys separately and configure those repos to use them manually (perhaps until I figure out a way to enable that feature).
 
 # Fonts
 
