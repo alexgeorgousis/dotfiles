@@ -62,9 +62,14 @@
         - It has worked by leaving it in the user config so I'm not sure why it doesn't always work. Also committing `/etc/keyd/default.conf` isn't an option because it's outside the scope of the repo.
 1. Install Alacritty
     - Unfortunately the Nix package seeems to have problems. It throws `Error: Error { raw_code: None, raw_os_message: None, kind: NotSupported("provided display handle is not supported") }`.
-    ```bash
-    sudo apt install alacritty -y
-    ```
+    - If you're on Ubuntu 24.04 run:
+        ```bash
+        sudo apt install alacritty -y
+        ```
+    - If you're on Ubuntu 22.04 you need to add a repository first before installing alacritty. Run:
+        ```bash
+        sudo add-apt-repository ppa:aslatter/ppa -y && sudo apt install alacritty -y
+        ```
 1. Install Sway
     - Again, unfortunately, the Nix package for sway (or swayfx) throws an error on startup (i.e. when running `sway`):
         ```
