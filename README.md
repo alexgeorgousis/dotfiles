@@ -50,12 +50,16 @@
     sudo apt install build-essential -y  # this will install make, which is needed to build keyd from source.
     git clone https://github.com/rvaiya/keyd.git
     cd keyd
-    make
-    sudo make install
+    make && sudo make install
     cd
     sudo systemctl enable keyd --now
     rm -rf ~/keyd/ # cleanup: delete the repo
-    ``` 
+    ```
+    - If the remapping hasn't worked, it's probably because the `keyd` README says the config needs to be in `/etc/keyd/default.conf` and not in `~/.config/keyd/default.conf`. So run the following to copy it there:
+        ```bash
+        sudo cp ~/.config/keyd/default.conf /etc/keyd/default.conf
+        ```
+        - It has worked by leaving it in the user config so I'm not sure why it doesn't always work. Also committing `/etc/keyd/default.conf` isn't an option because it's outside the scope of the repo.
 1. Install Alacritty
     - Unfortunately the Nix package seeems to have problems. It throws `Error: Error { raw_code: None, raw_os_message: None, kind: NotSupported("provided display handle is not supported") }`.
     ```bash
