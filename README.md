@@ -112,4 +112,14 @@ The steps are the following:
 
 - If you've setup your dotfiles from this repo, you should already have the [Hack Nerd Font](https://www.programmingfonts.org/#hack) set up with Alacritty.
 
+# Disable laptop screen when lid is closed
+
+By default, sway still detects laptop screens even if the laptop lid is closed. So you can switch to the workspace on the laptop screen or move the mouse off the main screen. This is annoying and I haven't found a good solution (I documented what ChatGPT recommended in a comment in the sway config).
+
+The way to do it manually, thankfully, is quite simple:
+```bash
+# This assumes the name of the laptop display is eDP-1. You can check by running swaymsg -t get_outputs.
+swaymsg output eDP-1 disable
+```
+
 # Troubleshooting
