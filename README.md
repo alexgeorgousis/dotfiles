@@ -10,6 +10,15 @@
     ```bash
     sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
     ```
+    - If you get `/dev/fd/63: 122: /tmp/nix-binary-tarball-unpack.lqZd6YG1Rm/unpack/nix-2.29.0-x86_64-linux/install: Permission denied` it's probably because your `/tmp/` directory has been mounted with the `noexec` option, which means nothing inside it can be executed. Run the following to temporarily change that (this will be reverted the next time you reboot):
+        ```bash
+        sudo mount -o remount,exec /tmp
+        ```
+    - To verify it's fixed, run the following:
+        ```bash
+        mount | grep /tmp
+        ```
+        - You should see `/tmp/` and no mention of `noexec` 
 1. Install `home-manager` by running the following ([source](https://nix-community.github.io/home-manager/index.xhtml#sec-install-standalone)):
     ```bash
     nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
