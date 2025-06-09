@@ -64,6 +64,10 @@
     zellij
     fuzzel
     nerd-fonts.hack
+
+    # Sway packages
+    swayidle
+    swaylock-effects
   ];
 
   # Let Home Manager install and manage itself.
