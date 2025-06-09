@@ -6,7 +6,10 @@
 1. Install `git` and setup your GItHub SSH key.
     - `git` will eventually be managed by `home-manager` but you need it to clone this repo.
     - Make sure your SSH keys are called `default` and `default.pub` (explained [below](#github-ssh-keys)). 
-1. Install Nix by running `sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon` ([source](https://nixos.org/download/#download-nix)).
+1. Install Nix by running the following ([source](https://nixos.org/download/#download-nix)):
+    ```bash
+    sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
+    ```
 1. Install `home-manager` by running the following ([source](https://nix-community.github.io/home-manager/index.xhtml#sec-install-standalone)):
     ```bash
     nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
