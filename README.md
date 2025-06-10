@@ -98,3 +98,24 @@ swaymsg output eDP-1 disable
 ```
 
 # Troubleshooting
+
+## Unable to login to Slack due to issues with Microsoft Intune Portal
+
+What roughly happens is:
+1. I open Slack
+2. I click the green button to sign in.
+3. It opens a browser and takes me to a Microsoft login page (typical SSO process).
+4. It says my organisation requires this device to be registered with Intune Portal so I need to Get the App (which links to the Microsoft docs to set things up).
+    - The problem at this point is that I've already got Intune Portal installed and have already completed the entire registration process.
+    - All that needs to happen is I need to open the Intune Portal app and sign in.
+5. I open Intune Portal and click Sign In.
+6. Intune Portal opens a new window (which I assume is its attempt to open an embedded browser) which takes me through the normal Microsoft MFA login process.
+7. I complete sign in and then it says "Get the app" (which is wrong).
+8. I click on Get the App and the window goes blank.
+
+The "solution" (which I haven't confirmed) is
+1. Switch to a Gnome session (it all works there)
+2. Open Intune Portal, sign in and wait until it does its compliance check
+3. Sign in to sway and open Slack - it might just work at this point; if not:
+4. Right clink to copy the slack sign in link and paste it into Edge - it might work at this pont.
+5. If not, find the intune-portal PID running in gnome and kill it. Launch intune portal in sway. Now it might work.
