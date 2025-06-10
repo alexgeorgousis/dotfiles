@@ -70,7 +70,3 @@ function kns() {
   export KUBENAMESPACE=$new_namespace
   echo "Namespace switched to $new_namespace"
 }
-
-function kprod() {
-  export KUBECONFIG="$KUBECONFIG:$HOME/.kube/prod.config:$HOME/.kube/bibcd.config"
-}
