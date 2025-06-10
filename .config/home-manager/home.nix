@@ -68,6 +68,10 @@
     # Sway packages
     swayidle
     swaylock-effects
+
+    # Corporate apps
+    slack
+    teams-for-linux
   ];
 
   # Let Home Manager install and manage itself.
