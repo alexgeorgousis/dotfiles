@@ -72,8 +72,6 @@
     # Corporate apps
     slack
     teams-for-linux
-
-    kubectl
   ];
 
   # Let Home Manager install and manage itself.
