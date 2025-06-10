@@ -24,7 +24,7 @@
 
     # Setup ssh
     eval "$(ssh-agent -s)" 1>/dev/null
-    ssh-add ~/.ssh/default 2>/dev/null
+    find ~/.ssh -type f ! -name '*.pub' -exec ssh-add {} 2>/dev/null \; # this weird looking command finds all private ssh keys in ~/.ssh and adds them with ssh-add
 
     ### zsh prompt customisation ###
     function kubectl_prompt() {
