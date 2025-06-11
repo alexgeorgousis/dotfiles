@@ -91,6 +91,14 @@
     sudo apt install -y google-cloud-cli-gke-gcloud-auth-plugin
     gcloud init
     ```
+1. Install `aws` CLI (steps taken from [official installation guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#getting-started-install-instructions)):
+    ```bash
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    sudo ./aws/install
+    rm -rf aws/ awscliv2.zip
+    aws --version # checking installation was successful
+    ```
 
 # GitHub SSH Keys
 
