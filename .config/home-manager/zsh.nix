@@ -157,10 +157,6 @@
     mkdir = "mkdir -p";
     watch = "watch --color --no-title"; # Visual improvements to the watch command
 
-    # Use the samlaz tool to authenticate to the AWS EKS (Showmax) cluster that Cid is deployed to
-    # This assumes samlaz has been installed (installation instructions here: https://github.com/nbcudtc/gtvd-cengtools/blob/samlaz-2.2/cmd/samlaz/README.md#install)
-    aws-login = "samlaz --enterprise-app nbcucloud-peak-res-disco-mgmt --role-name nbcu-ad-bibcd_developers-mgmt";
-
     # Login to the Core Platform NBCU dev cluster using their dodgy custom osprey tool
     # This assumes you have followed the instructions to install and set up osprey: https://core-docs.dev.ce.eu-central-1-aws.npottdc.sky/docs/tenant-wiki/onboarding/new-team-onboarding/prerequisites/
     core-login = "~/bin/osprey -X user login --group dev";
