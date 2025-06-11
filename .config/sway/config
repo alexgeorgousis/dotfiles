@@ -245,17 +245,15 @@ exec waybar
 #
 # Window appearance
 #
-# TODO: Remove window title bars but keep borders
-default_border normal
-default_floating_border normal
+# Remove window title bars but keep borders
+default_border pixel 1
+default_floating_border pixel 1
+smart_borders on
+
+# Tokyo Night Theme Colors for borders
+client.focused   #7aa2f7 #7aa2f7 #7aa2f7 #7aa2f7
+client.unfocused #1a1b26 #1a1b26 #1a1b26 #1a1b26
 
 # Gaps :)
 gaps inner 4
 gaps outer 4
-
-# Tokyo Night Theme Colors (Night variant)
-client.focused          #7aa2f7 #1a1b26 #7aa2f7 #7aa2f7
-client.unfocused        #1a1b26 #1a1b26 #a9b1d6 #444b6a
-client.focused_inactive #1a1b26 #1a1b26 #7aa2f7 #1a1b26
-client.urgent           #f7768e #1a1b26 #f7768e #f7768e
-client.background       #1a1b26
