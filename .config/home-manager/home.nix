@@ -67,14 +67,19 @@
     libyaml
     gh
     terraform
-    xclip # used to give neovim access to clipboard (so I can paste stuff into neovim)
     zellij
     nerd-fonts.hack
 
     # Sway
+    # Note: Sway itself is (unfortunately) installed manually at the moment - see the Setup Guide in the README for more info.
     swayidle
     swaylock-effects
     fuzzel
+    wl-clipboard # used to give neovim access to clipboard (so I can paste stuff into neovim)
+    waybar # status bar (where the workspace numbers are)
+    bluez # bluetooth core tool
+    blueman # bluetooth GUI widget for waybar
+    xdg-desktop-portal-wlr # Wayland portal backend - needed for waybar and I'm assuming lots of other things
 
     # Corporate apps
     slack

@@ -1,0 +1,27 @@
+* {
+  font-family: "Hack Nerd Font", monospace;
+  font-size: 13px;
+  border: none;
+  padding: 0 8px;
+  margin: 0;
+  color: #c0caf5;
+  background: transparent;
+}
+
+window#waybar {
+  background: #1a1b26;
+  border-bottom: 2px solid #7aa2f7;
+}
+
+#clock {
+  background: #1a1b26;
+  color: #7aa2f7;
+}
+
+#custom-bluetooth.on {
+  color: #9ece6a;
+}
+
+#custom-bluetooth.off {
+  color: #f7768e;
+}
