@@ -26,26 +26,34 @@
     # yq from nix has issues for some reason, so I installed it manually
     # yq
     asdf-vm
-    docker
-    colima # docker runtime - open source replacement for Docker Desktop app
-    k9s # config in ~/.config/k9s/config.yaml
     argo
     argocd
     gopls  # go language server
-    kubernetes-helm
+
+    # Docker
+    docker
     docker-compose
+    colima # docker runtime - open source replacement for Docker Desktop app
+
+    # Kubernetes
+    kubectl
+    kubecolor
+    k9s # config in ~/.config/k9s/config.yaml
+    kubernetes-helm
+    helmsman # used to run minikube tests for bibcd-genesys modules
+    kubebuilder
+
     # used to manage rust - includes rust compiler, cargo pkg manager, and rust-analyzer LSP server
     # to use rust-analyzer you'll need to install it with rustup component add rust-analyzer
     # to check that you have it, run `rust-analyzer` in terminal (don't worry about the actual output, just make sure
     # it doesn't output an error)
     rustup
-    zig # I currently use zig to cross-compile rust code (lol)
     bacon # runs rust checks, build, tests etc automatically
+
+    zig # I currently use zig to cross-compile rust code (lol)
     protobuf
-    kubecolor
     coreutils # only used for Cid development
     # fluxcd # flux CLI tool - the most recent version of the nix pkg has hardcoded apiVersion of helmrelease kind, which is lower than what we have in our clusters, so I had to download a lower version with homebrew using: brew install fluxcd/tap/flux@2.1
-    helmsman # used to run minikube tests for bibcd-genesys modules
     vault # used by Content Discovery teams to manage secrets - homepage: https://www.vaultproject.io/
     git-crypt # used to read secrets in bibcd repo as a maintainer: https://github.com/sky-uk/bibcd/blob/master/docs/maintainer-guide/maintainer-secret-management.md
     twine # used to manually publish the BiBCD 1.0 deployer for testing
@@ -58,16 +66,15 @@
     # this is required by ruby, which I need to build the career matrix website locally, which is in the prs-engineering repo (basically, a very niche use case)
     libyaml
     gh
-    kubebuilder
     terraform
     xclip # used to give neovim access to clipboard (so I can paste stuff into neovim)
     zellij
-    fuzzel
     nerd-fonts.hack
 
-    # Sway packages
+    # Sway
     swayidle
     swaylock-effects
+    fuzzel
 
     # Corporate apps
     slack
