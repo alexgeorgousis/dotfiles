@@ -82,6 +82,15 @@
     sudo apt install sway -y
     ```
     - Also unfortunately, swayfx seems to require building from source and I don't really wanna bother with all that (and the potential issues that might come up) so I'm sticking with standard sway for now.
+1. Install `gcloud` (steps taken from [official installation guide](https://cloud.google.com/sdk/docs/install#deb) for Ubuntu/Debian):
+    ```bash
+    sudo apt update -y && sudo apt install -y apt-transport-https ca-certificates gnupg curl
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+    echo "deb [trusted=yes] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+    sudo apt update && sudo apt install -y google-cloud-cli
+    sudo apt install -y google-cloud-cli-gke-gcloud-auth-plugin
+    gcloud init
+    ```
 
 # GitHub SSH Keys
 
