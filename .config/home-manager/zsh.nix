@@ -29,13 +29,7 @@
     ### zsh prompt customisation ###
     function kubectl_prompt() {
       local color="green"
-      if [[
-        "$KUBECONTEXT" == *"prod"*     ||
-        "$KUBECONTEXT" == bibcd        ||
-        "$KUBECONTEXT" == bibcd-gke-eu ||
-        "$KUBECONTEXT" == bibcd-gke-us ||
-        "$KUBECONTEXT" == bibcd-eks
-      ]]; then
+      if [[ "$KUBECONTEXT" == *"prod"* ]]; then
         color="red"
       fi
       echo "%{$fg[$color]%}[$KUBECONTEXT/$KUBENAMESPACE]%{$reset_color%}✨"
