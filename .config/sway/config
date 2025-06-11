@@ -51,18 +51,11 @@ set $menu fuzzel
 #   on-lid-open 'swaymsg output eDP-1 enable'
 
 ### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+
+# Razer Naga Trinigy (Mouse) - configure speed
+input "5426:103:Razer_Razer_Naga_Trinity" {
+    pointer_accel -0.5
+}
 
 ### Key bindings
 #
