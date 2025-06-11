@@ -82,7 +82,7 @@
     sudo apt install sway -y
     ```
     - Also unfortunately, swayfx seems to require building from source and I don't really wanna bother with all that (and the potential issues that might come up) so I'm sticking with standard sway for now.
-1. Install `gcloud` (steps taken from [official installation guide](https://cloud.google.com/sdk/docs/install#deb) for Ubuntu/Debian):
+1. (Optional) Install `gcloud` (steps taken from [official installation guide](https://cloud.google.com/sdk/docs/install#deb) for Ubuntu/Debian):
     ```bash
     sudo apt update -y && sudo apt install -y apt-transport-https ca-certificates gnupg curl
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
@@ -91,7 +91,7 @@
     sudo apt install -y google-cloud-cli-gke-gcloud-auth-plugin
     gcloud init
     ```
-1. Install `aws` CLI (steps taken from [official installation guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#getting-started-install-instructions)):
+1. (Optional) Install `aws` CLI (steps taken from [official installation guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#getting-started-install-instructions)):
     ```bash
     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
     unzip awscliv2.zip
