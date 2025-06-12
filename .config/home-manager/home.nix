@@ -8,6 +8,8 @@
 
   home.stateVersion = "22.05";
 
+  fonts.fontconfig.enable = true;
+
   # Packages that should be installed to the user profile
   home.packages = with pkgs; [
     neovim
@@ -52,7 +54,7 @@
 
     zig # I currently use zig to cross-compile rust code (lol)
     protobuf
-    coreutils # only used for Cid development
+    coreutils
     # fluxcd # flux CLI tool - the most recent version of the nix pkg has hardcoded apiVersion of helmrelease kind, which is lower than what we have in our clusters, so I had to download a lower version with homebrew using: brew install fluxcd/tap/flux@2.1
     vault # used by Content Discovery teams to manage secrets - homepage: https://www.vaultproject.io/
     git-crypt # used to read secrets in bibcd repo as a maintainer: https://github.com/sky-uk/bibcd/blob/master/docs/maintainer-guide/maintainer-secret-management.md
@@ -68,7 +70,8 @@
     gh
     terraform
     zellij
-    nerd-fonts.hack
+
+    nerd-fonts.jetbrains-mono
 
     # Sway
     # Note: Sway itself is (unfortunately) installed manually at the moment - see the Setup Guide in the README for more info.
