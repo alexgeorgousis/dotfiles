@@ -255,8 +255,8 @@ bar {
 # Window appearance
 #
 # Remove window title bars but keep borders
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 smart_borders on
 
 # Tokyo Night Theme Colors for borders
