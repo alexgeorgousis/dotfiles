@@ -99,6 +99,14 @@
     rm -rf aws/ awscliv2.zip
     aws --version # checking installation was successful
     ```
+1. (Optional) Install `flux` CLI (available as a Nix package but the version has issues (see home.nix for details)):
+    ```bash
+    wget https://github.com/fluxcd/flux2/releases/download/v2.1.0/flux_2.1.0_linux_amd64.tar.gz
+    mv flux_2.1.0_linux_amd64.tar.gz ~/bin/
+    cd ~/bin
+    tar -xzf flux_2.1.0_linux_amd64.tar.gz
+    rm flux_2.1.0_linux_amd64.tar.gz
+    ```
 
 # GitHub SSH Keys
 
