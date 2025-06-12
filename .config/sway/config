@@ -264,5 +264,6 @@ client.focused   #7aa2f7 #7aa2f7 #7aa2f7 #7aa2f7
 client.unfocused #1a1b26 #1a1b26 #1a1b26 #1a1b26
 
 # Gaps :)
+smart_gaps on
 gaps inner 4
 gaps outer 4
