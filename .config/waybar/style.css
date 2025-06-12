@@ -22,6 +22,12 @@ window#waybar {
   margin-left: 0;
 }
 
+#workspaces button.focused {
+  background-color: #22344a; /* Darker blue that fits Tokyo Night */
+  color: #c0caf5; /* Light blue-ish text for contrast */
+  border-radius: 4px; /* subtle rounding */
+}
+
 #network {
   color: #000000;
   background: #7aa2f7; /* Blue */

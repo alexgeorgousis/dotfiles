@@ -56,6 +56,9 @@ require("lazy").setup({
 			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
 			vim.cmd.colorscheme("tokyonight-night")
 
+			-- Clear background for transparency (transparency is configured by Terminal emulator)
+			vim.cmd.hi([[Normal guibg=none ctermbg=none]])
+
 			-- You can configure highlights by doing something like:
 			vim.cmd.hi("Comment gui=none")
 		end,

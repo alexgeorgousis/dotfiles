@@ -265,5 +265,5 @@ client.unfocused #1a1b26 #1a1b26 #1a1b26 #1a1b26
 
 # Gaps :)
 smart_gaps on
-gaps inner 4
-gaps outer 4
+gaps inner 6
+gaps outer 0

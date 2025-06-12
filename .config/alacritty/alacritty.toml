@@ -12,7 +12,7 @@ program = "zellij"
 padding.x = 16
 padding.y = 14
 decorations = "None"
-opacity = 0.98
+opacity = 0.95
 
 #######################
 # Theme (Tokyo Night) #
