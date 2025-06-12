@@ -14,11 +14,6 @@ padding.y = 14
 decorations = "None"
 opacity = 0.98
 
-[keyboard]
-bindings = [
-{ key = "F11", action = "ToggleFullscreen" }
-]
-
 #######################
 # Theme (Tokyo Night) #
 #######################
@@ -51,4 +46,10 @@ white = '#acb0d0'
 
 [colors.selection]
 background = '#7aa2f7'
+
+[font]
+normal = { family = "Hack Nerd Font", style = "Regular" }
+bold = { family = "Hack Nerd Font", style = "Bold" }
+italic = { family = "Hack Nerd Font", style = "Italic" }
+bold_italic = { family = "Hack Nerd Font", style = "Bold Italic" }
 
