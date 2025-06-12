@@ -13,9 +13,49 @@ window#waybar {
   border-bottom: 2px solid #7aa2f7;
 }
 
+.module {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+#workspaces {
+  margin-left: 0;
+}
+
+#network {
+  color: #000000;
+  background: #7aa2f7; /* Blue */
+}
+
+#cpu {
+  color: #000000;
+  background: #9ece6a; /* Green */
+}
+
+#memory {
+  color: #000000;
+  background: #bb9af7; /* Magenta */
+}
+
+#temperature {
+  color: #000000;
+  background: #7dcfff; /* Cyan */
+}
+
 #clock {
-  background: #1a1b26;
-  color: #7aa2f7;
+  color: #000000;
+  background: #e0af68; /* Yellow */
+}
+
+#battery {
+  color: #000000;
+  background: #9ece6a; /* Green for good status */
+}
+
+/* Optional: style battery critical */
+#battery.critical {
+  color: #000000;
+  background: #f7768e; /* Red */
 }
 
 #custom-bluetooth.on {
