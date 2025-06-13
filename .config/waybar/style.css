@@ -58,7 +58,6 @@ window#waybar {
   background: #9ece6a; /* Green for good status */
 }
 
-/* Optional: style battery critical */
 #battery.critical {
   color: #000000;
   background: #f7768e; /* Red */
