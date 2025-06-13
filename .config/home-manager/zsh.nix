@@ -74,9 +74,9 @@
     # Source: https://github.com/abiosoft/colima/blob/main/docs/FAQ.md#cannot-connect-to-the-docker-daemon-at-unixvarrundockersock-is-the-docker-daemon-running
     # Set the location that colima (docker runtime) sets up the docker socket.
     # This is needed because the default location for the docker socket is unix:///var/run/docker.sock whereas
-    # colima sets it to unix:///Users/$HOME/.colima/default/docker.sock, and some applications (e.g. minikube) expect it to be at the
+    # colima sets it to unix:///Users/$HOME/.config/colima/default/docker.sock, and some applications (e.g. minikube) expect it to be at the
     # default location, so they fail.
-    DOCKER_HOST = "unix://$HOME/.colima/default/docker.sock";
+    DOCKER_HOST = "unix://$HOME/.config/colima/default/docker.sock";
 
     # Used to access secrets stored in Sky Vault (for BiBCD development)
     VAULT_ADDR = "https://vault.disco.europe-west1.mgmt-gcp.skyott.com";            # EU
