@@ -56,7 +56,7 @@
     protobuf
     coreutils
     # fluxcd # flux CLI tool - the most recent version of the nix pkg has hardcoded apiVersion of helmrelease kind, which is lower than what we have in our clusters, so I had to download a lower version with homebrew using: brew install fluxcd/tap/flux@2.1
-    vault # used by Content Discovery teams to manage secrets - homepage: https://www.vaultproject.io/
+    vault
     git-crypt # used to read secrets in bibcd repo as a maintainer: https://github.com/sky-uk/bibcd/blob/master/docs/maintainer-guide/maintainer-secret-management.md
     twine # used to manually publish the BiBCD 1.0 deployer for testing
     jenkins # used to run Jenkins locally (for BiBCD development work) - run using jenkins-cli
@@ -84,9 +84,9 @@
     blueman # bluetooth GUI widget for waybar
     xdg-desktop-portal-wlr # Wayland portal backend - needed for waybar and I'm assuming lots of other things
 
-    # Corporate apps
+    # Apps
     slack
-    teams-for-linux
+    spotify
   ];
 
   # Let Home Manager install and manage itself.
