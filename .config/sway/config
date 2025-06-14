@@ -21,7 +21,8 @@ set $menu fuzzel
 ### Output configuration
 #
 # Default wallpaper
-output * bg ~/Pictures/night-sky.jpg fill
+output * bg ~/.config/sway/backgrounds/nord.png fill
+# output * bg ~/.config/sway/backgrounds/palm-trees.jpg fill
 #
 # Example configuration:
 #
