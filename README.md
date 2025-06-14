@@ -70,6 +70,12 @@
         ```bash
         sudo add-apt-repository ppa:aslatter/ppa -y && sudo apt install alacritty -y
         ```
+1. Install xdg-desktop-portal-wlr (requirement for graphical services running in Sway)
+    - Install by running:
+    ```bash
+    sudo apt update -y && sudo apt install xdg-desktop-portal-wlr -y
+    ```
+    - Unfortunately I couldn't get the Nix package to fully work (see https://github.com/alexgeorgousis/dotfiles/issues/18 for details).
 1. Install Sway
     - Again, unfortunately, the Nix package for sway (or swayfx) throws an error on startup (i.e. when running `sway`):
         ```
