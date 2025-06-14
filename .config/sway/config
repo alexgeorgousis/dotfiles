@@ -14,9 +14,13 @@ set $term alacritty
 # Your preferred application launcher
 set $menu fuzzel
 
-# Source: https://github.com/emersion/xdg-desktop-portal-wlr#running
-# include /etc/sway/config.d/*
-# exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+# Sources:
+# - https://github.com/emersion/xdg-desktop-portal-wlr#running
+# - https://wiki.archlinux.org/title/XDG_Desktop_Portal#:~:text=Sway%20provides%20a%20drop%2Din%20file%20which%20does%20this%20automatically%2C%20see%20Sway%23Configuration
+# These seem to tell xdg-portal-desktop to start using the portals configured in ~/.config/xdg-desktop-portal/sway-portals.conf
+# which are gtk (default) and wlr (for screensharing and screenshots) instead of gnome, which seems to be its default.
+include /etc/sway/config.d/*
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 ### Output configuration
 #
