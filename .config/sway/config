@@ -54,14 +54,6 @@ bindswitch lid:off output eDP-1 enable
 #          timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 #          before-sleep 'swaylock -f -c 000000'
 
-# Disable laptop screen when laptop lid is closed. This is what ChatGPT suggested.
-# This will obviously only work on laptops.
-# It also assumes that the output display is called eDP-1. You can check this by running swaymsg -t get_outputs.
-# It also doesn't work! So try to find a workaround. You can always run the disable command manually though.
-# exec swayidle -w \
-#   on-lid-close 'swaymsg output eDP-1 disable' \
-#   on-lid-open 'swaymsg output eDP-1 enable'
-
 ### Input configuration
 
 # Razer Naga Trinigy (Mouse) - configure speed
