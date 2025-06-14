@@ -260,9 +260,9 @@ bar {
 # Window appearance
 #
 # Remove window title bars but keep borders
-default_border pixel 2
-default_floating_border pixel 2
 smart_borders on
+default_border pixel 4
+default_floating_border pixel 4
 
 # Tokyo Night Theme Colors for borders
 client.focused   #7aa2f7 #7aa2f7 #7aa2f7 #7aa2f7
@@ -271,4 +271,4 @@ client.unfocused #1a1b26 #1a1b26 #1a1b26 #1a1b26
 # Gaps :)
 smart_gaps on
 gaps inner 6
-gaps outer 0
+gaps top 24
