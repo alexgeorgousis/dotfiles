@@ -5,13 +5,13 @@
   "spacing": 4,
   "modules-left": ["sway/workspaces"],
   "modules-right": [
+    "custom/bluetooth",
     "network",
     "cpu",
     "memory",
     "temperature",
-    "clock",
     "battery",
-    "custom/bluetooth"
+    "clock"
   ],
 
   // Modules configuration
@@ -68,7 +68,7 @@
     "states": {
       "good": 95,
       "warning": 30,
-      "critical": 15
+      "critical": 20
     },
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",

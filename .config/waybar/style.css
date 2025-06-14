@@ -63,10 +63,14 @@ window#waybar {
   background: #f7768e; /* Red */
 }
 
+#custom-bluetooth {
+  color: #000000;
+}
+
 #custom-bluetooth.on {
-  color: #9ece6a;
+  background: #9ece6a;
 }
 
 #custom-bluetooth.off {
-  color: #f7768e;
+  background: #f7768e;
 }
