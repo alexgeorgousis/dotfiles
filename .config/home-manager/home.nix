@@ -82,6 +82,8 @@
     waybar # status bar (where the workspace numbers are)
     bluez # bluetooth core tool
     blueman # bluetooth GUI widget for waybar
+    grim     # Takes screenshots
+    slurp    # Select area (used for screenshots)
 
     # xdg-desktop-portal backend for wlroots (which is used by Sway) - used for screencasting (e.g. screensharing) and screenshots
     # https://github.com/emersion/xdg-desktop-portal-wlr
