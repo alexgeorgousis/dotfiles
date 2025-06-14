@@ -153,6 +153,8 @@ The "solution" (which I haven't confirmed) is
 
 ## Waybar doesn't load
 
-This happens because the xdg-desktop-portal service (or whatever it's called) fails to load. I haven't gotten to the bottom of this, but a workaround seems to be logging into a GNOME session (which presumably loads the service successfully) and then switching to a TTY to load sway.
+~This happens because the xdg-desktop-portal service fails to load. I haven't gotten to the bottom of this, but a workaround seems to be logging into a GNOME session (which presumably loads the service successfully) and then switching to a TTY to load sway.~
 
-Needs investigation to find the root cause and a more permanent solution.
+~Needs investigation to find the root cause and a more permanent solution.~
+
+I got to the bottom of this and solved it as a side-effect of https://github.com/alexgeorgousis/dotfiles/issues/18.
