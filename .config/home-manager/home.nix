@@ -82,7 +82,16 @@
     waybar # status bar (where the workspace numbers are)
     bluez # bluetooth core tool
     blueman # bluetooth GUI widget for waybar
-    xdg-desktop-portal-wlr # Wayland portal backend - needed for waybar and I'm assuming lots of other things
+
+    # xdg-desktop-portal backend for wlroots (which is used by Sway) - used for screencasting (e.g. screensharing) and screenshots
+    # https://github.com/emersion/xdg-desktop-portal-wlr
+    # I couldn't make the nix version work :(
+    # More details in https://github.com/alexgeorgousis/dotfiles/issues/18#issuecomment-2972818055
+    # xdg-desktop-portal-wlr
+
+    # Used by pipewire which is used to authenticate screensharing
+    # Arch Wiki: https://wiki.archlinux.org/title/WirePlumber
+    wireplumber
 
     # Apps
     slack
