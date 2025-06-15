@@ -76,7 +76,10 @@
     # Sway
     # Note: Sway itself is (unfortunately) installed manually at the moment - see the Setup Guide in the README for more info.
     swayidle
-    swaylock-effects
+    # Disabled because I couldn't make the authentication worked.
+    # See https://github.com/alexgeorgousis/dotfiles/issues/26
+    # Instead I'm installing vanilla swaylock using apt :(
+    # swaylock-effects
     fuzzel
     wl-clipboard # used to give neovim access to clipboard (so I can paste stuff into neovim)
     waybar # status bar (where the workspace numbers are)
