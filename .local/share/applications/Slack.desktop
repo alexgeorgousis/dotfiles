@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Slack
+Exec=microsoft-edge --app=https://app.slack.com/client/E03D4T4JK63/C08KVSZN7QU --name=Slack --class=Slack
+Terminal=False
+Type=Application
+# Annoyingly, fuzzel doesn't seem to expand shell variables so $HOME or $USER don't work here - have to hardcode the username :(
+Icon=/home/agi53/.local/share/applications/icons/Slack.png
+Categories=GTK;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupNotify=true

@@ -101,7 +101,6 @@
     # wireplumber
 
     # Apps
-    slack
     spotify
   ];
 
