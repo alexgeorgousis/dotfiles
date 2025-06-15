@@ -17,6 +17,12 @@
   };
 
   initContent = ''
+    # Launches sway at startup.
+    # The logic reads: If you're not already in a graphical session, and you're on the first TTY, then launch sway.
+    if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+      exec WLR_RENDERER_ALLOW_SOFTWARE=1 sway --unsupported-gpu
+    fi
+
     bindkey -M viins 'jk' vi-cmd-mode           # map 'jk' to Esc
     bindkey -s '^g' 'git status\n'            # Ctrl+g clears the terminal and runs git status
     bindkey -s '^o' 'omz reload\n'            # Ctrl+o clears the screen and reloads terminal (to get the startup output re-printed)
