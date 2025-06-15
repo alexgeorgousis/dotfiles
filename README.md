@@ -158,3 +158,15 @@ The "solution" (which I haven't confirmed) is
 ~Needs investigation to find the root cause and a more permanent solution.~
 
 I got to the bottom of this and solved it as a side-effect of https://github.com/alexgeorgousis/dotfiles/issues/18.
+
+## Cannot connect bluetooth device
+
+If you're running `bluetoothctl` and then `connect <DEVICE_ID>` and you're getting `Failed to connect: org.bluez.Error.Failed br-connection-profile-unavailable` then run the following to fix it:
+
+```bash
+pulseaudio --daemonize
+```
+
+Source: https://bbs.archlinux.org/viewtopic.php?pid=2050153#p2050153
+
+No idea what this command does or why it fixes the problem, but I've gone a rabbit hole and I just wanted it to work.

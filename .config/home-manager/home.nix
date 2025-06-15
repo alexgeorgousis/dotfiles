@@ -80,10 +80,11 @@
     fuzzel
     wl-clipboard # used to give neovim access to clipboard (so I can paste stuff into neovim)
     waybar # status bar (where the workspace numbers are)
-    bluez # bluetooth core tool
-    blueman # bluetooth GUI widget for waybar
+    # bluez # bluetooth core tool
+    # blueman # bluetooth GUI
     grim     # Takes screenshots
     slurp    # Select area (used for screenshots)
+    pwvucontrol # pipewire audio control (used in waybar)
 
     # xdg-desktop-portal backend for wlroots (which is used by Sway) - used for screencasting (e.g. screensharing) and screenshots
     # https://github.com/emersion/xdg-desktop-portal-wlr
@@ -93,7 +94,8 @@
 
     # Used by pipewire which is used to authenticate screensharing
     # Arch Wiki: https://wiki.archlinux.org/title/WirePlumber
-    wireplumber
+    # Disabled and installed with apt instead because I was having issues with the wireplumber systemd service (which is a recurring theme with Nix packages that require services).
+    # wireplumber
 
     # Apps
     slack

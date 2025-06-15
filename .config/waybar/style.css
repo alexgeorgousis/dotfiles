@@ -74,3 +74,9 @@ window#waybar {
 #custom-bluetooth.off {
   background: #f7768e;
 }
+
+#pulseaudio {
+  color: #000000;
+  background: #e0af68; /* Yellow */
+}
+
