@@ -49,6 +49,15 @@ input "5426:103:Razer_Razer_Naga_Trinity" {
     pointer_accel -0.5
 }
 
+### Launch core apps on startup
+# Exec command taken from the corresponding desktop file for each app
+exec swaymsg "workspace 1; exec google-chrome --profile-directory='Outlook' --app=https://outlook.office.com --name=Outlook --class=Outlook"
+exec swaymsg "workspace 2; exec google-chrome --profile-directory='Notion'--app=https://notion.so --name=Notion --class=Notion"
+exec swaymsg "workspace 3; exec alacritty"
+exec swaymsg "workspace 4; exec google-chrome"
+exec swaymsg "workspace 5; exec microsoft-edge --app=https://app.slack.com/client/E03D4T4JK63/C08KVSZN7QU --name=Slack --class=Slack"
+exec swaymsg "workspace 7; exec spotify"
+
 ### Key bindings
 #
 # Basics:
