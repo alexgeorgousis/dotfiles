@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Outlook
-Exec=google-chrome --app=https://outlook.office.com --name=Outlook --class=Outlook
+Exec=google-chrome --profile-directory="Outlook" --app=https://outlook.office.com --name=Outlook --class=Outlook
 Terminal=False
 Type=Application
 # Annoyingly, fuzzel doesn't seem to expand shell variables so $HOME or $USER don't work here - have to hardcode the username :(
