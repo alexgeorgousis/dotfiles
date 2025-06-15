@@ -76,6 +76,11 @@
     sudo apt update -y && sudo apt install xdg-desktop-portal-wlr -y
     ```
     - Unfortunately I couldn't get the Nix package to fully work (see https://github.com/alexgeorgousis/dotfiles/issues/18 for details).
+1. Install swaylock (used by Sway)
+    - Yet again, cannot get get Nix version to work (see https://github.com/alexgeorgousis/dotfiles/issues/26).
+    ```bash
+    sudo apt update && sudo apt install swaylock -y
+    ```
 1. Install Sway
     - Again, unfortunately, the Nix package for sway (or swayfx) throws an error on startup (i.e. when running `sway`):
         ```
