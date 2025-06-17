@@ -65,8 +65,6 @@
     # Source: https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-Gke
     USE_GKE_GCLOUD_AUTH_PLUGIN = "True";
 
-    XDG_CONFIG_HOME = "$HOME/.config";
-
     EDITOR = "nvim";
 
 
@@ -83,10 +81,6 @@
     # VAULT_ADDR = "https://vault.disco.us-west2.mgmt-gcp.geoott.com";              # NBCU
     # VAULT_ADDR = "https://vault.mgmt.us-west-2.disco.mgmt-awslocal.nbcuott.com";  # AWS
 
-    # Used to access the contexts Jenkins is deployed in. This concatenates the main kubeconfig file with the one that contains
-    # the Jenkis contexts. kubectl will use this env var when looking for contexts.
-    # NOTE: The default config only includes non-prod envs. If you want to use all envs you can append the prod.config and bibcd.config to KUBECONFIG:
-      # export KUBECONFIG=$KUBECONFIG:~/.kube/bibcd.config:~/kube/prod.config
     KUBECONFIG = "$HOME/.kube/config";
 
     # Used to determine the context and namespace to use for kubectl.
@@ -156,10 +150,6 @@
     ps = "procs";
     mkdir = "mkdir -p";
     watch = "watch --color --no-title"; # Visual improvements to the watch command
-
-    # Login to the Core Platform NBCU dev cluster using their dodgy custom osprey tool
-    # This assumes you have followed the instructions to install and set up osprey: https://core-docs.dev.ce.eu-central-1-aws.npottdc.sky/docs/tenant-wiki/onboarding/new-team-onboarding/prerequisites/
-    core-login = "~/bin/osprey -X user login --group dev";
 
     # kubectl - use kubecolor for colouring and use custom env vars to determine current context and namespace instead of kubeconfig file.
     k    = "kubecolor --context=$KUBECONTEXT --namespace=$KUBENAMESPACE";
