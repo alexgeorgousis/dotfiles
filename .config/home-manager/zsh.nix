@@ -116,7 +116,7 @@
     vim = "nvim";
     hm = "home-manager";
     hms = "home-manager switch";
-    hme = "home-manager edit";
+    hme = "vim $HOME/.config/home-manager/home.nix";
     ezsh = "vim $HOME/.config/home-manager/zsh.nix";
 
     # CLI alternatives
