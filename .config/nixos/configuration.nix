@@ -71,11 +71,16 @@
       "wheel" # Enable ‘sudo’ for the user.
       "networkmanager"
     ];
+    shell = pkgs.zsh;
   };
 
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
+  programs = {
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
+
+    zsh.enable = true;
   };
 
   nixpkgs.config.allowUnfree = true;
