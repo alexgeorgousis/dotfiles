@@ -24,6 +24,7 @@
     watch
     jq
     unzip
+    fastfetch # faster neofetch
 
     asdf-vm
     argo
@@ -50,18 +51,18 @@
 
     protobuf
     coreutils
-    neofetch
     zellij
 
     nerd-fonts.hack
 
     # Wayland
-    fuzzel       # app launcher
-    wl-clipboard # used to give neovim access to clipboard (so I can paste stuff into neovim)
-    waybar       # status bar (where the workspace numbers are)
-    grim         # Takes screenshots
-    slurp        # Select area (used for screenshots)
-    pwvucontrol  # pipewire audio control GUI (used in waybar)
+    fuzzel              # app launcher
+    wl-clipboard        # used to give neovim access to clipboard (so I can paste stuff into neovim)
+    waybar              # status bar (where the workspace numbers are)
+    grim                # Takes screenshots
+    slurp               # Select area (used for screenshots)
+    pwvucontrol         # pipewire audio control GUI (used in waybar)
+    kdePackages.dolphin # file manager
 
     # Apps
     spotify
