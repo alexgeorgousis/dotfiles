@@ -54,8 +54,6 @@
     fuzzel       # app launcher
     wl-clipboard # used to give neovim access to clipboard (so I can paste stuff into neovim)
     waybar       # status bar (where the workspace numbers are)
-    # bluez # bluetooth core tool
-    # blueman # bluetooth GUI
     grim         # Takes screenshots
     slurp        # Select area (used for screenshots)
     pwvucontrol  # pipewire audio control GUI (used in waybar)
@@ -63,9 +61,6 @@
     # Apps
     spotify
   ];
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 
   programs.zsh = import ./zsh.nix;
 
@@ -107,6 +102,9 @@
   };
 
   fonts.fontconfig.enable = true;
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 
   home.username = "alex";
   home.homeDirectory = "/home/alex";

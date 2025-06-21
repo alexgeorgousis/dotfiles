@@ -42,6 +42,12 @@
     source ~/.config/home-manager/zsh_functions
   '';
 
+  profileExtra = ''
+   if [[ "$XDG_CURRENT_DESKTOP" != "Hyprland" ]]; then
+     exec Hyprland
+   fi
+  '';
+
   defaultKeymap = "viins";
 
   sessionVariables = {

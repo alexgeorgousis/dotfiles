@@ -66,6 +66,9 @@
     };
   };
 
+  # Login automatically
+  services.getty.autologinUser = "alex";
+
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
