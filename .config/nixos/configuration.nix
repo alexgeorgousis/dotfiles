@@ -2,12 +2,13 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
+      inputs.xremap-flake.nixosModules.default
     ];
 
   boot.loader = {
@@ -33,33 +34,38 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
   # console = {
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-
-  
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
+  # Enable sound
   services.pipewire = {
     enable = true;
     pulse.enable = true;
   };
+
+  # Map capslock to esc + ctrl
+  services.xremap = {
+    withHypr = true;
+    config = {
+      modmap = [
+        {
+          name = "CapsLock to Ctrl/Esc";
+          remap = {
+            CapsLock = {
+              held = "Ctrl_L";
+              alone = "Esc";
+              alone_timeout = 50;
+            };
+          };
+        }
+      ];
+    };
+  };
+
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -72,6 +78,13 @@
       "networkmanager"
     ];
     shell = pkgs.zsh;
+  };
+
+  # Allow user to manage inputs (needed for xremap)
+  hardware.uinput.enable = true;
+  users.groups = {
+    uinput.members = [ "alex" ];
+    input.members  = [ "alex" ];
   };
 
   programs = {
