@@ -3,8 +3,14 @@
 {
   home.packages = with pkgs; [
     alacritty
+
+    # Neovim
     neovim
     lazygit
+    gccgo15 # C compiler - required by LayzVim - source: https://www.lazyvim.org/#%EF%B8%8F-requirements
+    gopls   # go language server
+
+    # Utils
     silver-searcher # used by FZF (:Ag) and CtrlSF to search for text in files
     eza # prettier ls
     bat # prettier cat
@@ -17,11 +23,10 @@
     curl
     watch
     jq
-    # yq from nix has issues for some reason, so install it manually
-    # yq
+    unzip
+
     asdf-vm
     argo
-    gopls  # go language server
 
     # Docker
     docker
