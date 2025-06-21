@@ -87,6 +87,10 @@
     input.members  = [ "alex" ];
   };
 
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   programs = {
     hyprland = {
       enable = true;
