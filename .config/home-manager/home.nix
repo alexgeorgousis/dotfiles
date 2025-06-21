@@ -2,8 +2,9 @@
 
 {
   home.packages = with pkgs; [
-    neovim
     alacritty
+    neovim
+    lazygit
     silver-searcher # used by FZF (:Ag) and CtrlSF to search for text in files
     eza # prettier ls
     bat # prettier cat
