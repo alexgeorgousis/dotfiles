@@ -103,6 +103,7 @@
 
     # Apps
     spotify
+    telegram-desktop
   ];
 
   # Let Home Manager install and manage itself.
