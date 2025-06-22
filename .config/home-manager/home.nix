@@ -7,8 +7,9 @@
     # Neovim
     neovim
     lazygit
-    gccgo15 # C compiler - required by LayzVim - source: https://www.lazyvim.org/#%EF%B8%8F-requirements
-    gopls   # go language server
+    difftastic  # not strictly for neovim but I mostly got it for lazygit.nvim
+    gccgo15     # C compiler - required by LayzVim - source: https://www.lazyvim.org/#%EF%B8%8F-requirements
+    gopls       # go language server
 
     # Utils
     silver-searcher # used by FZF (:Ag) and CtrlSF to search for text in files
@@ -25,6 +26,7 @@
     jq
     unzip
     fastfetch # faster neofetch
+    tldr
 
     asdf-vm
     argo
@@ -42,12 +44,14 @@
     helmsman # used to run minikube tests for bibcd-genesys modules
     kubebuilder
 
+    # Development
     # used to manage rust - includes rust compiler, cargo pkg manager, and rust-analyzer LSP server
     # to use rust-analyzer you'll need to install it with rustup component add rust-analyzer
     # to check that you have it, run `rust-analyzer` in terminal (don't worry about the actual output, just make sure
     # it doesn't output an error)
     rustup
     bacon # runs rust checks, build, tests etc automatically
+    gnumake
 
     protobuf
     coreutils
@@ -66,6 +70,7 @@
 
     # Apps
     spotify
+    telegram-desktop
   ];
 
   programs.zsh = import ./zsh.nix;
@@ -87,6 +92,7 @@
         format = "ssh";
         ssh.allowedSignersFile = "~/.ssh/allowed_signers";
       };
+      diff.external = "difft";
     };
   };
 
