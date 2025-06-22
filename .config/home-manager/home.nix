@@ -8,7 +8,7 @@
     neovim
     lazygit
     difftastic  # not strictly for neovim but I mostly got it for lazygit.nvim
-    gccgo15     # C compiler - required by LayzVim - source: https://www.lazyvim.org/#%EF%B8%8F-requirements
+    gcc         # C compiler - required by LayzVim - source: https://www.lazyvim.org/#%EF%B8%8F-requirements
     gopls       # go language server
 
     # Utils
