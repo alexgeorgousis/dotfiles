@@ -67,6 +67,8 @@
     slurp               # Select area (used for screenshots)
     pwvucontrol         # pipewire audio control GUI (used in waybar)
     kdePackages.dolphin # file manager
+    hyprpaper           # wallpaper manager backend
+    waypaper            # wallpaper manager frontend (GUI)
 
     # Apps
     spotify
