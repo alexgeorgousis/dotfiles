@@ -16,7 +16,7 @@
         ./.config/nixos/configuration.nix
         ./.config/nixos/hardware-configuration.nix
         home-manager.nixosModules.home-manager {
-	  home-manager.extraSpecialArgs = { inherit inputs; };
+          home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.alex = import ./.config/home-manager/home.nix;
