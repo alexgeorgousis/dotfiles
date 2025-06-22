@@ -31,6 +31,7 @@
     argo
     argocd
     gopls  # go language server
+    difftastic
 
     # Docker
     docker
@@ -126,6 +127,7 @@
         format = "ssh";
         ssh.allowedSignersFile = "~/.ssh/allowed_signers";
       };
+      diff.external = "difft";
     };
     diff-so-fancy = {
       enable = true;
