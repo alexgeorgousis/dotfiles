@@ -28,23 +28,23 @@ window#waybar {
 }
 
 #network {
-  color: #000000;
-  background: #7aa2f7; /* Blue */
+  color: #7aa2f7;  /* Blue */
+  background: #1a1b26;
 }
 
 #cpu {
-  color: #000000;
-  background: #9ece6a; /* Green */
+  color: #9ece6a;  /* Green */
+  background: #1a1b26;
 }
 
 #memory {
-  color: #000000;
-  background: #bb9af7; /* Magenta */
+  color: #bb9af7;  /* Magenta */
+  background: #1a1b26;
 }
 
 #temperature {
-  color: #000000;
-  background: #7dcfff; /* Cyan */
+  color: #7dcfff;  /* Cyan */
+  background: #1a1b26;
 }
 
 #clock {
@@ -52,13 +52,13 @@ window#waybar {
 }
 
 #battery {
-  color: #000000;
-  background: #9ece6a; /* Green for good status */
+  color: #9ece6a;  /* Green for good status */
+  background: #1a1b26;
 }
 
 #battery.critical {
-  color: #000000;
-  background: #f7768e; /* Red */
+  color: #f7768e; /* Red */
+  background: #1a1b26;
 }
 
 #custom-bluetooth {
@@ -66,15 +66,15 @@ window#waybar {
 }
 
 #custom-bluetooth.on {
-  background: #9ece6a;
+  color: #9ece6a;
 }
 
 #custom-bluetooth.off {
-  background: #f7768e;
+  color: #f7768e;
 }
 
 #pulseaudio {
-  color: #000000;
-  background: #e0af68; /* Yellow */
+  color: #e0af68;  /* Yellow */
+  background: #1a1b26;
 }
 
