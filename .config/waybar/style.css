@@ -32,21 +32,6 @@ window#waybar {
   background: #1a1b26;
 }
 
-#cpu {
-  color: #9ece6a;  /* Green */
-  background: #1a1b26;
-}
-
-#memory {
-  color: #bb9af7;  /* Magenta */
-  background: #1a1b26;
-}
-
-#temperature {
-  color: #7dcfff;  /* Cyan */
-  background: #1a1b26;
-}
-
 #clock {
   color: #c0caf5;
 }
