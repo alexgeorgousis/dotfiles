@@ -124,6 +124,7 @@
     hms = "home-manager switch";
     hme = "vim $HOME/.config/home-manager/home.nix";
     ezsh = "vim $HOME/.config/home-manager/zsh.nix";
+    nrs = "sudo nixos-rebuild switch --flake ~/#alex";
 
     # CLI alternatives
     grep = "rg";
