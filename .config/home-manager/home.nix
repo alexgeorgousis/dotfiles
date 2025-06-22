@@ -96,6 +96,9 @@
       };
       diff.external = "difft";
     };
+    diff-so-fancy = {
+      enable = true;
+    };
   };
 
   programs.fzf = {
