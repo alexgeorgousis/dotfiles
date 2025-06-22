@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Notion
+Exec=google-chrome-stable --app=https://notion.so --name=Notion --class=Notion
+Terminal=False
+Type=Application
+# Annoyingly, fuzzel doesn't seem to expand shell variables so $HOME or $USER don't work here - have to hardcode the username :(
+Icon=/home/alex/.local/share/applications/icons/Notion.png
+Categories=GTK;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupNotify=true
