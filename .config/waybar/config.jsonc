@@ -4,6 +4,7 @@
   "height": 30,
   "spacing": 4,
   "modules-left": ["sway/workspaces"],
+  "modules-center": ["clock"],
   "modules-right": [
     "custom/bluetooth",
     "pulseaudio",
@@ -12,7 +13,6 @@
     "memory",
     "temperature",
     "battery",
-    "clock"
   ],
 
   // Modules configuration
@@ -58,7 +58,7 @@
   },
 
   "clock": {
-    "format": "{:%d-%m-%Y %H:%M:%S}"
+    "format": "{:%H:%M | %A %d %b}"
   },
 
   "battery": {

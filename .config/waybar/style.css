@@ -1,5 +1,5 @@
 * {
-  font-family: "JetBrains Nerd Font", monospace;
+  font-family: "Hack Nerd Font", monospace;
   font-size: 13px;
   border: none;
   padding: 0 8px;
@@ -24,7 +24,6 @@ window#waybar {
 
 #workspaces button.focused {
   background-color: #22344a; /* Darker blue that fits Tokyo Night */
-  color: #c0caf5; /* Light blue-ish text for contrast */
   border-radius: 4px; /* subtle rounding */
 }
 
@@ -49,8 +48,7 @@ window#waybar {
 }
 
 #clock {
-  color: #000000;
-  background: #e0af68; /* Yellow */
+  color: #c0caf5;
 }
 
 #battery {
