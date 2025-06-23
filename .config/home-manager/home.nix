@@ -27,6 +27,7 @@
     unzip
     fastfetch # faster neofetch
     tldr
+    killall   # kills all processes by name, e.g. killall google-chrome-stable
 
     asdf-vm
     argo
