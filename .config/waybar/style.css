@@ -1,6 +1,6 @@
 * {
-  font-family: "JetBrains Nerd Font", monospace;
-  font-size: 13px;
+  font-family: "Hack Nerd Font", monospace;
+  font-size: 14px;
   border: none;
   padding: 0 8px;
   margin: 0;
@@ -28,29 +28,24 @@ window#waybar {
   border-radius: 4px; /* subtle rounding */
 }
 
-#network {
-  color: #000000;
-  background: #7aa2f7; /* Blue */
-}
-
-#cpu {
-  color: #000000;
-  background: #9ece6a; /* Green */
-}
-
-#memory {
-  color: #000000;
-  background: #bb9af7; /* Magenta */
-}
-
-#temperature {
-  color: #000000;
-  background: #7dcfff; /* Cyan */
-}
-
 #clock {
-  color: #000000;
-  background: #e0af68; /* Yellow */
+  color: #c0caf5;
+}
+
+#network {
+  color: #7aa2f7; /* Blue */
+}
+
+#pulseaudio {
+  color: #e0af68; /* Yellow */
+}
+
+#custom-bluetooth.on {
+  color: #9ece6a; /* Green */
+}
+
+#custom-bluetooth.off {
+  background: #f7768e;
 }
 
 #battery {
@@ -61,22 +56,5 @@ window#waybar {
 #battery.critical {
   color: #000000;
   background: #f7768e; /* Red */
-}
-
-#custom-bluetooth {
-  color: #000000;
-}
-
-#custom-bluetooth.on {
-  background: #9ece6a;
-}
-
-#custom-bluetooth.off {
-  background: #f7768e;
-}
-
-#pulseaudio {
-  color: #000000;
-  background: #e0af68; /* Yellow */
 }
 
