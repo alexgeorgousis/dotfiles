@@ -118,6 +118,28 @@
 
   };
 
+  # GIMP ToolKit (GTK) as far as I understands is used by GUI apps like Waypaper to draw things like their background colours.
+  # So I'm configuring it here to use a tokyonight theme.
+  gtk = {
+    enable = true;
+
+    theme = {
+      name = "Tokyonight-Dark-B";  # choose variant, see README
+      package = pkgs.tokyonight-gtk-theme;
+    };
+
+    iconTheme = {
+      name = "Tokyonight-Dark";
+    };
+
+    cursorTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+  };
+
+  home.sessionVariables.GTK_THEME = "Tokyonight-Dark-B";
+
   fonts.fontconfig.enable = true;
 
   # Let Home Manager install and manage itself.
