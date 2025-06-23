@@ -70,6 +70,7 @@
     kdePackages.dolphin # file manager
     hyprpaper           # wallpaper manager backend
     waypaper            # wallpaper manager frontend (GUI)
+    hyprlock            # hyprland lock screen
     # Hyprland "Must Haves" - source: wiki.hypr.land/Useful-Utilities/Must-have
     dunst  # notification daemon
     hyprpolkitagent # hyprland authentication daemon, used to bring up popup when GUI apps want to request elevated permissions
