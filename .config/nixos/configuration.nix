@@ -106,20 +106,6 @@
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    kitty
-    google-chrome
-    git
-
-    # Hyprland "Must Have" - source: wiki.hypr.land/Useful-Utilities/Must-have
-    dunst  # notification daemon - 
-    hyprpolkitagent # hyprland authentication daemon, used to bring up popup when GUI apps want to request elevated permissions
-  ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
