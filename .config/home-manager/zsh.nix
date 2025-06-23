@@ -32,11 +32,13 @@
       if [[ "$KUBECONTEXT" == *"prod"* ]]; then
         color="red"
       fi
-      echo "%{$fg[$color]%}[$KUBECONTEXT/$KUBENAMESPACE]%{$reset_color%}✨"
+      echo "%{$fg[$color]%}[$KUBECONTEXT/$KUBENAMESPACE]%{$reset_color%} %{$fg[yellow]%} "
     }
-    PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%c%{$reset_color%} "
+    PROMPT="%{$fg_bold[green]%}➜%{$reset_color%} "
+    PROMPT+="%{$fg_bold[magenta]%}[$(git --git-dir=$HOME/.cfg --work-tree=$HOME rev-parse --abbrev-ref HEAD)] "
+    PROMPT+="%{$fg[cyan]%}%c%{$reset_color%} "
     PROMPT+='$(git_prompt_info) '
-    PROMPT+='$(kubectl_prompt) '
+    PROMPT+="$(kubectl_prompt) "
 
     # Functions used as commands (moved to separate file because nix doesn't like some special bash characterslike '@'
     source ~/.config/home-manager/zsh_functions
