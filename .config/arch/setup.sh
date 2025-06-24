@@ -32,6 +32,8 @@ pacman_packages=(
 	"waybar"
 	"qemu-base go docker" # colima dependencies
 	"bluez bluez-utils bluez-deprecated-tools blueman" # source: https://wiki.archlinux.org/title/Bluetooth#Installation
+	"fuzzel"
+	"telegram-desktop"
 )
 
 aur_packages=(
