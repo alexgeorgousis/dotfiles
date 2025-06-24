@@ -31,6 +31,7 @@ pacman_packages=(
 	"kubectl"
 	"waybar"
 	"qemu-base go docker" # colima dependencies
+	"bluez bluez-utils bluez-deprecated-tools blueman" # source: https://wiki.archlinux.org/title/Bluetooth#Installation
 )
 
 aur_packages=(
@@ -102,3 +103,9 @@ fi
 ####################
 # Misc Setup Stuff #
 ####################
+
+# Get bluetooth working - source: https://wiki.archlinux.org/title/Bluetooth#Installation
+if ! systemctl is-active --quiet bluetooth; then
+	sudo systemctl enable bluetooth
+	sudo systemctl start bluetooth
+fi
