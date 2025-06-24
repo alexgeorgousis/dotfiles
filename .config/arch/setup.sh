@@ -6,36 +6,42 @@ set -e
 # Install packages #
 ####################
 
-# NOTE: I write out the full pacman command each time so I can leave comments at the end. This isn't possible if I use \ to do this multiline style and I haven't found a better solution yet.
+pacman_packages=(
+	"git"
+	"base"-devel
+	"less"
+	"tldr"
+	"wl"-clipboard
+	"alacritty"
+	"zellij"
+	"ttf"-hack-nerd
+	"zsh"
+	"zsh"-autosuggestions
+	"zsh"-syntax-highlighting
+	"neovim"
+	"eza"
+	"bat"
+	"fd"
+	"duf"
+	"htop"
+	"ripgrep"
+	"procs"
+	"fastfetch"
+	"fzf"
+	"kubectl"
+	"waybar"
+	"qemu-base go docker" # colima dependencies
+)
+
+aur_packages=(
+	"google-chrome"
+	"xremap-x11-bin"
+	"lima-bin" # colima dependency
+)
 
 sudo pacman -Syu # update and upgrade to make sure pacman has the latest packages
-sudo pacman -S --noconfirm --needed git
-sudo pacman -S --noconfirm --needed base-devel
-sudo pacman -S --noconfirm --needed less
-sudo pacman -S --noconfirm --needed tldr
-sudo pacman -S --noconfirm --needed wl-clipboard
-sudo pacman -S --noconfirm --needed alacritty
-sudo pacman -S --noconfirm --needed zellij
-sudo pacman -S --noconfirm --needed ttf-hack-nerd
-sudo pacman -S --noconfirm --needed zsh
-sudo pacman -S --noconfirm --needed zsh-autosuggestions
-sudo pacman -S --noconfirm --needed zsh-syntax-highlighting
-sudo pacman -S --noconfirm --needed neovim
-sudo pacman -S --noconfirm --needed eza
-sudo pacman -S --noconfirm --needed bat
-sudo pacman -S --noconfirm --needed fd
-sudo pacman -S --noconfirm --needed duf
-sudo pacman -S --noconfirm --needed htop
-sudo pacman -S --noconfirm --needed ripgrep
-sudo pacman -S --noconfirm --needed procs
-sudo pacman -S --noconfirm --needed fastfetch
-sudo pacman -S --noconfirm --needed fzf
-sudo pacman -S --noconfirm --needed kubectl
-sudo pacman -S --noconfirm --needed qemu-base go docker # colima dependencies
-
-yay -S --noconfirm --needed google-chrome
-yay -S --noconfirm --needed xremap-x11-bin
-yay -S --noconfirm --needed lima-bin # colima dependency
+sudo pacman -S --noconfirm --needed ${pacman_packages[@]}
+yay -S --noconfirm --needed ${aur_packages[@]}
 
 # Install colima - source: https://github.com/abiosoft/colima/blob/main/docs/INSTALL.md#binary
 # NOTE: There is an AUR package for colima, colima-bin, but it fails with a weird validation check error, so I chose the manual installation method instead.
