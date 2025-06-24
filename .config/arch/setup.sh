@@ -4,7 +4,9 @@ sudo pacman -S --noconfirm --needed \
 	less \
 	tldr \
 	wl-clipboard \
-	alacritty
+	alacritty \
+	zellij \
+	ttf-hack-nerd
 
 yay -S --noconfirm --needed \
        	google-chrome \
