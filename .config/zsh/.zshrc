@@ -1,3 +1,7 @@
+#########################
+# OhMyZsh Configuration #
+#########################
+
 # Path to your Oh My Zsh installation.
 export ZSH="$ZDOTDIR/ohmyzsh"
 
@@ -35,13 +39,27 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export EDITOR='nvim'
+# <ENV VARS> #
 
-# KEYBINDS #
+export EDITOR='nvim'
+export PATH=~/.asdf/shims/:$PATH
+
+# </ENV VARS> #
+
+
+# <KEYBINDS> #
+
 source $ZDOTDIR/key-bindings.zsh
 
-# ALIASES #
+# </KEYBINDS> #
+
+
+# <ALIASES> #
+
 source $ZDOTDIR/aliases.zsh
+
+# </ALIASES> #
+
 
 # MISC #
 

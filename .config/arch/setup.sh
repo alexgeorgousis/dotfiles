@@ -40,6 +40,8 @@ aur_packages=(
 	"google-chrome"
 	"xremap-x11-bin"
 	"lima-bin" # colima dependency
+	"pop-bin"
+	"asdf-vm"
 )
 
 sudo pacman -Syu # update and upgrade to make sure pacman has the latest packages
