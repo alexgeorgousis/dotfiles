@@ -8,16 +8,16 @@ set -e
 
 pacman_packages=(
 	"git"
-	"base"-devel
+	"base-devel"
 	"less"
 	"tldr"
-	"wl"-clipboard
+	"wl-clipboard"
 	"alacritty"
 	"zellij"
-	"ttf"-hack-nerd
+	"ttf-hack-nerd"
 	"zsh"
-	"zsh"-autosuggestions
-	"zsh"-syntax-highlighting
+	"zsh-autosuggestions"
+	"zsh-syntax-highlighting"
 	"neovim"
 	"eza"
 	"bat"
@@ -34,6 +34,7 @@ pacman_packages=(
 	"bluez bluez-utils bluez-deprecated-tools blueman" # source: https://wiki.archlinux.org/title/Bluetooth#Installation
 	"fuzzel"
 	"telegram-desktop"
+	"pavucontrol"
 )
 
 aur_packages=(
