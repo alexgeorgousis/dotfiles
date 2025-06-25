@@ -71,6 +71,7 @@
     gh
     terraform
     zellij
+    tldr
 
     nerd-fonts.jetbrains-mono
 
