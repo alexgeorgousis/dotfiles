@@ -36,8 +36,8 @@ alias ezsh="vim $HOME/.config/zsh/.zshrc"
 # CLI alternatives
 alias grep="rg"
 alias -g G="|rg -i"
-alias ls="eza"
-alias lt="eza --tree"
+alias ls="eza --group"  # --group displays the group that owns files, which is disabled by default! source: https://github.com/ogham/exa/issues/1118
+alias lt="ls --tree"
 alias cat="bat"
 alias df="duf"
 alias top="htop"
