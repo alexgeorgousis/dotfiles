@@ -30,7 +30,7 @@ pacman_packages=(
 	"fzf"
 	"kubectl"
 	"waybar"
-	"qemu-base go docker" # colima dependencies
+	"docker"
 	"bluez bluez-utils bluez-deprecated-tools blueman" # source: https://wiki.archlinux.org/title/Bluetooth#Installation
 	"fuzzel"
 	"telegram-desktop"
@@ -40,7 +40,6 @@ pacman_packages=(
 aur_packages=(
 	"google-chrome"
 	"xremap-x11-bin"
-	"lima-bin" # colima dependency
 	"pop-bin"
 	"asdf-vm"
 )
@@ -48,13 +47,6 @@ aur_packages=(
 sudo pacman -Syu # update and upgrade to make sure pacman has the latest packages
 sudo pacman -S --noconfirm --needed ${pacman_packages[@]}
 yay -S --noconfirm --needed ${aur_packages[@]}
-
-# Install colima - source: https://github.com/abiosoft/colima/blob/main/docs/INSTALL.md#binary
-# NOTE: There is an AUR package for colima, colima-bin, but it fails with a weird validation check error, so I chose the manual installation method instead.
-if ! command -v colima >/dev/null 2>&1; then
-	curl -LO https://github.com/abiosoft/colima/releases/latest/download/colima-$(uname)-$(uname -m)
-	sudo install colima-$(uname)-$(uname -m) /usr/local/bin/colima
-fi
 
 ###############################
 # Change capslock to esc/ctrl #
@@ -64,7 +56,7 @@ fi
 # They need a reboot to take effect. When I first tried this it didn't work and I kept trying to troubleshoot and eventually it magically worked (though I don't think I did anything to make that happen).
 # One thing that ChatGPT said is that in order for the rule to take effect you need to be in a proper logind session which means you need to login via your login manager and not a TTY. No idea if that's correct though.
 
-# Add user to the input group if he's not there already.
+# Add user to the input group if they're not there already.
 # To confirm this has worked run `groups user` and look for `input` in the list.
 if ! id -nG $USER | grep -qw input; then
 	sudo gpasswd -a $USER input
@@ -113,4 +105,19 @@ fi
 if ! systemctl is-active --quiet bluetooth; then
 	sudo systemctl enable bluetooth
 	sudo systemctl start bluetooth
+fi
+
+# Run Docker daemon
+if ! systemctl is-active --quiet docker; then
+	sudo systemctl enable --now docker
+fi
+
+# Add user to docker group if not already there (needed for permissions).
+if ! id -nG $USER | grep -qw docker; then
+	sudo gpasswd -a $USER docker
+fi
+
+# Set docker.sock group to docker if not set already
+if [[ $(stat -c '%G' "/var/run/docker.sock") != "docker" ]]; then
+	sudo chgrp docker /var/run/docker.sock
 fi
