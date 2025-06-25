@@ -47,6 +47,12 @@
     source ~/bin/google-cloud-sdk/completion.zsh.inc 2>/dev/null
   '';
 
+  profileExtra = ''
+   if [[ "$XDG_SESSION_TYPE" != "wayland" ]]; then
+     WLR_RENDERER_ALLOW_SOFTWARE=1 sway --unsupported-gp
+   fi
+  '';
+
   defaultKeymap = "viins";
 
   sessionVariables = {
