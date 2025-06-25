@@ -35,6 +35,7 @@ pacman_packages=(
 	"fuzzel"
 	"telegram-desktop"
 	"pavucontrol"
+	"lsof"
 )
 
 aur_packages=(
