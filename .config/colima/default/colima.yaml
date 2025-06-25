@@ -29,6 +29,9 @@ runtime: docker
 #          colima-profile_name for other profiles
 hostname: colima
 
+firmware:
+  legacyBIOS: true
+
 # Kubernetes configuration for the virtual machine.
 kubernetes:
   # Enable kubernetes.
