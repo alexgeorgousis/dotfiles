@@ -36,6 +36,7 @@ pacman_packages=(
 	"telegram-desktop"
 	"pavucontrol"
 	"lsof"
+	"difftastic"
 )
 
 aur_packages=(
