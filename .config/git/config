@@ -6,3 +6,5 @@
 [pager]
 	diff = false
 	log = false
+[pull]
+	rebase = true
