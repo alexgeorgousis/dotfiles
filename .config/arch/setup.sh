@@ -15,6 +15,7 @@ pacman_packages=(
 	"alacritty"
 	"zellij"
 	"ttf-hack-nerd"
+	"ttf-jetbrains-mono-nerd"
 	"zsh"
 	"zsh-autosuggestions"
 	"zsh-syntax-highlighting"
