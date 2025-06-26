@@ -38,6 +38,7 @@ pacman_packages=(
 	"pavucontrol"
 	"lsof"
 	"difftastic"
+	"fish"
 )
 
 aur_packages=(
