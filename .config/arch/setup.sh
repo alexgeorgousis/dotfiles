@@ -8,7 +8,7 @@ set -e
 
 pacman_packages=(
 	"git"
-	"base-devel"
+	"base-devel" # needed to get yay
 	"less"
 	"tldr"
 	"wl-clipboard"
@@ -44,10 +44,22 @@ aur_packages=(
 	"xremap-x11-bin"
 	"pop-bin"
 	"asdf-vm"
+	"spotify"
 )
 
 sudo pacman -Syu # update and upgrade to make sure pacman has the latest packages
+
 sudo pacman -S --noconfirm --needed ${pacman_packages[@]}
+
+# Install yay before using it if it doesn't already exist
+if ! command -v yay &>/dev/null; then
+	git clone https://aur.archlinux.org/yay-bin.git
+	cd yay-bin
+	makepkg -si --noconfirm
+	cd ~
+	rm -rf yay-bin
+fi
+
 yay -S --noconfirm --needed ${aur_packages[@]}
 
 ###############################
