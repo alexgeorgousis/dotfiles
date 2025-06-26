@@ -5,3 +5,4 @@
 	external = difft
 [pager]
 	diff = false
+	log = false
