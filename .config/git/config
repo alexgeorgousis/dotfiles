@@ -1,10 +1,16 @@
 [user]
 	name = Alex Georgousis
 	email = alex.georgousis@hey.com
+
 [diff]
 	external = difft
+
 [pager]
 	diff = false
 	log = false
+
 [pull]
 	rebase = true
+
+[push]
+	autoSetupRemote = true
