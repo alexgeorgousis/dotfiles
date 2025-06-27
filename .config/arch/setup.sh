@@ -104,7 +104,9 @@ if ! command -v fisher &>/dev/null; then
 	fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
 fi
 
-# Install plugins with Fisher
+# Install plugins
+fisher install PatrickF1/fzf.fish
+fisher install vitallium/tokyonight-fish && fish_config theme save "TokyoNight Night"
 
 
 ####################
