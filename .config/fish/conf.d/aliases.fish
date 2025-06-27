@@ -3,6 +3,23 @@ alias vim="nvim"
 alias ezsh="vim $HOME/.config/zsh/.zshrc"
 
 # Git aliases
+alias gst="git status"
+alias gl="git pull"
+alias gp="git push"
+alias gpf='git push --force-with-lease --force-if-includes'
+alias glp="git log --pretty=format:'%C(yellow)%h%C(cyan)%x09%an%Creset%x09%C(magenta)%ar%x09%Creset%s' -20"
+alias gsw="git switch"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gd="git diff"
+alias gau="git add -u"
+alias gaa="git add --all"
+alias gc="git commit --verbose"
+alias gc!="git commit --amend"
+alias grb="git rebase"
+alias grbm="git rebase $git_main_branch"
+alias grbmi="git rebase $git_main_branch --interactive"
+alias gcm="git checkout $git_main_branch"
 alias glp="git log --pretty=format:'%C(yellow)%h%C(cyan)%x09%an%Creset%x09%C(magenta)%ar%x09%Creset%s' -20"
 
 # Git aliases for dotfiles
