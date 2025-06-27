@@ -30,7 +30,6 @@
     ``` 
 1. Setup this dotfiles repo by running the following ([source](https://www.atlassian.com/git/tutorials/dotfiles)):
     ```bash
-    alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
     echo ".cfg" >> .gitignore
     git clone --bare git@github.com:alexgeorgousis/dotfiles.git $HOME/.cfg
     alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
