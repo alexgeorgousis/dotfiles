@@ -11,6 +11,8 @@ Official guide [here](https://wiki.archlinux.org/title/Iwd#Connect_to_a_network)
 4. Type in your password when requested
 5. You should see the `connect` command from above (which is still running) go to `connecting` and then `connected`
 
+## Partitioning for dual boot
+
 # Knowledge
 
 I don't have a better place to put this so it's going here for now. This is a copy-paste of a [comment]() on a YouTube video that briefly (and very clearly) explains the confusing mess of compositors vs window managers vs desktop environments: 
