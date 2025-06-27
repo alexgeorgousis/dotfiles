@@ -100,13 +100,26 @@ if [ $SHELL != $(which fish) ]; then
 fi
 
 # Install Fisher if it's not already installed
-if ! command -v fisher &>/dev/null; then
+if ! command -v fish -c "fisher" &>/dev/null; then
 	fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
 fi
 
 # Install plugins
-fisher install PatrickF1/fzf.fish
-fisher install vitallium/tokyonight-fish && fish_config theme save "TokyoNight Night"
+plugins=(
+	"PatrickF1/fzf.fish"
+	"vitallium/tokyonight-fish"
+	"jorgebucaran/autopair.fish"
+)
+for p in ${plugins[@]}; do
+	if ! fish -c "fisher list" | grep -i $p &>/dev/null; then
+		fish -c "fisher install $p"
+	fi
+done
+
+# Set theme
+# NOTE: I've commented this out because I can't figure out how to check if the theme is already set so fish always asks me "do you want to override the current theme [y/N]" and waits for input.
+# It's an easy command to write out manually anyway.
+# fish -c "fish_config theme save 'TokyoNight Night'"
 
 
 ####################
