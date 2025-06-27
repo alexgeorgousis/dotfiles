@@ -1,4 +1,8 @@
-# Installation Tips
+# Requirements
+
+# Installation
+
+# Arch Installation Tips
 
 ## Connecting to WiFi
 
