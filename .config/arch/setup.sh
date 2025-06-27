@@ -90,28 +90,22 @@ if [ ! -e /etc/udev/rules.d/99-input.rules ]; then
 	echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess"' | sudo tee /etc/udev/rules.d/99-input.rules
 fi
 
-#############
-# Zsh setup #
-#############
+##############
+# Fish setup #
+##############
 
-# Set zsh as default shell
-if [ -z $ZDOTDIR ]; then
-	echo "export ZDOTDIR=$HOME/.config/zsh" | sudo tee /etc/zsh/zshenv
+# Set fish as default shell
+if [ $SHELL != $(which fish) ]; then
+	chsh -s $(which fish)
 fi
 
-if [ $SHELL != $(which zsh) ]; then
-	chsh -s $(which zsh)
+# Install Fisher if it's not already installed
+if ! command -v fisher &>/dev/null; then
+	fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
 fi
 
-# Install ohmyzsh if it's not already installed
-if [ ! -d "${ZSH:-$HOME/.oh-my-zsh}" ]; then
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
+# Install plugins with Fisher
 
-# Install oh-my-zsh custom plugins
-if [ ! -d "$HOME/.config/zsh/ohmyzsh/custom/plugins/zsh-vi-mode" ]; then
-	git clone https://github.com/jeffreytse/zsh-vi-mode $HOME/.config/zsh/ohmyzsh/custom/plugins/zsh-vi-mode
-fi
 
 ####################
 # Misc Setup Stuff #
