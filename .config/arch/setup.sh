@@ -16,9 +16,6 @@ pacman_packages=(
 	"zellij"
 	"ttf-hack-nerd"
 	"ttf-jetbrains-mono-nerd"
-	"zsh"
-	"zsh-autosuggestions"
-	"zsh-syntax-highlighting"
 	"neovim"
 	"eza"
 	"bat"
@@ -38,6 +35,7 @@ pacman_packages=(
 	"pavucontrol"
 	"lsof"
 	"difftastic"
+	"fish"
 )
 
 aur_packages=(
@@ -89,28 +87,37 @@ if [ ! -e /etc/udev/rules.d/99-input.rules ]; then
 	echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess"' | sudo tee /etc/udev/rules.d/99-input.rules
 fi
 
-#############
-# Zsh setup #
-#############
+##############
+# Fish setup #
+##############
 
-# Set zsh as default shell
-if [ -z $ZDOTDIR ]; then
-	echo "export ZDOTDIR=$HOME/.config/zsh" | sudo tee /etc/zsh/zshenv
+# Set fish as default shell
+if [ $SHELL != $(which fish) ]; then
+	chsh -s $(which fish)
 fi
 
-if [ $SHELL != $(which zsh) ]; then
-	chsh -s $(which zsh)
+# Install Fisher if it's not already installed
+if ! command -v fish -c "fisher" &>/dev/null; then
+	fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
 fi
 
-# Install ohmyzsh if it's not already installed
-if [ ! -d "${ZSH:-$HOME/.oh-my-zsh}" ]; then
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
+# Install plugins
+plugins=(
+	"PatrickF1/fzf.fish"
+	"vitallium/tokyonight-fish"
+	"jorgebucaran/autopair.fish"
+)
+for p in ${plugins[@]}; do
+	if ! fish -c "fisher list" | grep -i $p &>/dev/null; then
+		fish -c "fisher install $p"
+	fi
+done
 
-# Install oh-my-zsh custom plugins
-if [ ! -d "$HOME/.config/zsh/ohmyzsh/custom/plugins/zsh-vi-mode" ]; then
-	git clone https://github.com/jeffreytse/zsh-vi-mode $HOME/.config/zsh/ohmyzsh/custom/plugins/zsh-vi-mode
-fi
+# Set theme
+# NOTE: I've commented this out because I can't figure out how to check if the theme is already set so fish always asks me "do you want to override the current theme [y/N]" and waits for input.
+# It's an easy command to write out manually anyway.
+# fish -c "fish_config theme save 'TokyoNight Night'"
+
 
 ####################
 # Misc Setup Stuff #
