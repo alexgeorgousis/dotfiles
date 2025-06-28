@@ -36,6 +36,7 @@ pacman_packages=(
 	"lsof"
 	"difftastic"
 	"fish"
+	"hyprshot"
 )
 
 aur_packages=(
