@@ -65,7 +65,7 @@
     sshpass # used by ansible for ssh authentication
     awscli2
     nodejs_20
-    neofetch
+    fastfetch
     # this is required by ruby, which I need to build the career matrix website locally, which is in the prs-engineering repo (basically, a very niche use case)
     libyaml
     gh
