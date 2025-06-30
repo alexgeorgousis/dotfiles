@@ -52,6 +52,7 @@ input "5426:103:Razer_Razer_Naga_Trinity" {
 # Razer Naga Trinigy (Mouse) - configure speed
 input "type:touchpad" {
     tap enabled
+    natural_scroll enabled
 }
 
 ### Key bindings
