@@ -55,6 +55,11 @@ input "type:touchpad" {
     natural_scroll enabled
 }
 
+input "type:keyboard" {
+    repeat_rate 40
+    repeat_delay 200
+}
+
 ### Key bindings
 #
 # Basics:
