@@ -37,6 +37,8 @@ pacman_packages=(
 	"difftastic"
 	"fish"
 	"hyprshot"
+	"hyprpaper"
+	"man-pages man-db"
 )
 
 aur_packages=(
@@ -45,6 +47,7 @@ aur_packages=(
 	"pop-bin"
 	"asdf-vm"
 	"spotify"
+	"waypaper"
 )
 
 sudo pacman -Syu # update and upgrade to make sure pacman has the latest packages
