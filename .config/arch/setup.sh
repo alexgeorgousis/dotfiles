@@ -39,6 +39,7 @@ pacman_packages=(
 	"hyprshot"
 	"hyprpaper"
 	"man-pages man-db"
+	"k9s"
 )
 
 aur_packages=(
@@ -50,7 +51,7 @@ aur_packages=(
 	"waypaper"
 )
 
-sudo pacman -Syu # update and upgrade to make sure pacman has the latest packages
+sudo pacman -Syu --noconfirm --needed # update and upgrade to make sure pacman has the latest packages
 
 sudo pacman -S --noconfirm --needed ${pacman_packages[@]}
 
