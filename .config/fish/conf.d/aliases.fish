@@ -15,12 +15,19 @@ alias gd="git diff"
 alias gau="git add -u"
 alias gaa="git add --all"
 alias gc="git commit --verbose"
-alias gc!="git commit --amend"
+alias gc!="git commit --verbose --amend"
+alias gca="git commit add"
+alias gcam="git commit add -m"
+alias gca!="git commit --verbose --all --amend"
+alias gcau!="git commit --verbose -u --amend"
 alias grb="git rebase"
 alias grbm="git rebase $git_main_branch"
 alias grbmi="git rebase $git_main_branch --interactive"
+alias grbmc="git rebase --continue"
+alias grbma="git rebase --abort"
 alias gcm="git checkout $git_main_branch"
 alias glp="git log --pretty=format:'%C(yellow)%h%C(cyan)%x09%an%Creset%x09%C(magenta)%ar%x09%Creset%s' -20"
+alias grs="git restore"
 
 # Git aliases for dotfiles
 alias config="$(which git) --git-dir=$HOME/.cfg --work-tree=$HOME"
@@ -65,8 +72,8 @@ alias ps="procs"
 alias mkdir="mkdir -p"
 alias watch="watch --color --no-title"; # Visual improvements to the watch comman
 
-# kubectl - use kubecolor for colouring and use custom env vars to determine current context and namespace instead of kubeconfig file.
-alias k="kubecolor --context=$KUBECONTEXT --namespace=$KUBENAMESPACE"
+# kubectl - use custom env vars to determine current context and namespace instead of kubeconfig file.
+alias k="kubectl --context=$KUBECONTEXT --namespace=$KUBENAMESPACE"
 alias kgp="k get pods"
 alias kd="k describe"
 alias kdl="k delete"
