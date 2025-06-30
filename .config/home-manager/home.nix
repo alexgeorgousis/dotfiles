@@ -13,7 +13,6 @@
   # Packages that should be installed to the user profile
   home.packages = with pkgs; [
     neovim
-    silver-searcher # used by FZF (:Ag) and CtrlSF to search for text in files
     eza # prettier ls
     bat # prettier cat
     fd # prettier and better find
@@ -25,8 +24,7 @@
     curl
     watch
     jq
-    # yq from nix has issues for some reason, so I installed it manually
-    # yq
+    yq
     asdf-vm
     argo
     argocd
@@ -35,15 +33,12 @@
 
     # Docker
     docker
-    docker-compose
-    colima # docker runtime - open source replacement for Docker Desktop app
 
     # Kubernetes
     kubectl
-    kubecolor
-    k9s # config in ~/.config/k9s/config.yaml
+    k9s
     kubernetes-helm
-    helmsman # used to run minikube tests for bibcd-genesys modules
+    helmsman
     kubebuilder
 
     # used to manage rust - includes rust compiler, cargo pkg manager, and rust-analyzer LSP server
@@ -53,21 +48,14 @@
     rustup
     bacon # runs rust checks, build, tests etc automatically
 
-    zig # I currently use zig to cross-compile rust code (lol)
     protobuf
     coreutils
-    # fluxcd # flux CLI tool - the most recent version of the nix pkg has hardcoded apiVersion of helmrelease kind, which is lower than what we have in our clusters, so I had to download a lower version with homebrew using: brew install fluxcd/tap/flux@2.1
+    # fluxcd # flux CLI tool - the most recent version has hardcoded apiVersion of helmrelease kind, which is lower than what I have in the clusters I work in, so I had to download a lower version with homebrew using: brew install fluxcd/tap/flux@2.1
     vault
-    git-crypt # used to read secrets in bibcd repo as a maintainer: https://github.com/sky-uk/bibcd/blob/master/docs/maintainer-guide/maintainer-secret-management.md
-    twine # used to manually publish the BiBCD 1.0 deployer for testing
-    jenkins # used to run Jenkins locally (for BiBCD development work) - run using jenkins-cli
-    ansible # used to run operations on K8s nodes remotely - referenced in jenkins maintainers runbook
-    sshpass # used by ansible for ssh authentication
+    git-crypt
+    twine
     awscli2
-    nodejs_20
     fastfetch
-    # this is required by ruby, which I need to build the career matrix website locally, which is in the prs-engineering repo (basically, a very niche use case)
-    libyaml
     gh
     terraform
     tldr
@@ -76,7 +64,7 @@
     nerd-fonts.jetbrains-mono
 
     # Sway
-    # Note: Sway itself is (unfortunately) installed manually at the moment - see the Setup Guide in the README for more info.
+    sway
     swayidle
     # Disabled because I couldn't make the authentication worked.
     # See https://github.com/alexgeorgousis/dotfiles/issues/26
@@ -85,22 +73,19 @@
     fuzzel
     wl-clipboard # used to give neovim access to clipboard (so I can paste stuff into neovim)
     waybar # status bar (where the workspace numbers are)
-    # bluez # bluetooth core tool
-    # blueman # bluetooth GUI
-    grim     # Takes screenshots
-    slurp    # Select area (used for screenshots)
+    bluez # bluetooth core tool
+    blueman # bluetooth GUI
+    grim # Takes screenshots
+    slurp # Select area (used for screenshots)
     pwvucontrol # pipewire audio control (used in waybar)
 
     # xdg-desktop-portal backend for wlroots (which is used by Sway) - used for screencasting (e.g. screensharing) and screenshots
     # https://github.com/emersion/xdg-desktop-portal-wlr
-    # I couldn't make the nix version work :(
-    # More details in https://github.com/alexgeorgousis/dotfiles/issues/18#issuecomment-2972818055
-    # xdg-desktop-portal-wlr
+    xdg-desktop-portal-wlr
 
     # Used by pipewire which is used to authenticate screensharing
     # Arch Wiki: https://wiki.archlinux.org/title/WirePlumber
-    # Disabled and installed with apt instead because I was having issues with the wireplumber systemd service (which is a recurring theme with Nix packages that require services).
-    # wireplumber
+    wireplumber
 
     # Apps
     spotify
