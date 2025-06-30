@@ -49,6 +49,11 @@ input "5426:103:Razer_Razer_Naga_Trinity" {
     pointer_accel -0.5
 }
 
+# Razer Naga Trinigy (Mouse) - configure speed
+input "type:touchpad" {
+    tap enabled
+}
+
 ### Key bindings
 #
 # Basics:
