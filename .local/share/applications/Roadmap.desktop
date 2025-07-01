@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Roadmap
+# To find out which directory a given chrome profile corresponds to do:
+# $ cd ~/.config/google-chrome/
+# $ cat "Local State" | jq '.profile.info_cache'
+Exec=google-chrome-stable --app=https://gspcloud.atlassian.net/jira/plans/875/scenarios/850/timeline?vid=3825 --profile-directory="Profile 1" --name=Roadmap --class=Roadmap --ozone-platform=wayland
+Terminal=False
+Type=Application
+Icon=/home/alex/.local/share/applications/icons/Roadmap.png
+Categories=GTK;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupNotify=true

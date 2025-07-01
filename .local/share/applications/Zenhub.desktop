@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=Zenhub
+# To find out which directory a given chrome profile corresponds to do:
+# $ cd ~/.config/google-chrome/
+# $ cat "Local State" | jq '.profile.info_cache'
+Exec=google-chrome-stable --app=https://app.zenhub.com/workspaces/personalisation-hephaestus-6514493f254a4f1d6556c89a/board --profile-directory="Profile 1" --name=Zenhub --class=Zenhub --ozone-platform=wayland
+Terminal=False
+Type=Application
+# Annoyingly, fuzzel doesn't seem to accept ~, $HOME or $USER - have to hardcode the username :(
+Icon=/home/alex/.local/share/applications/icons/Zenhub.png
+Categories=GTK;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupNotify=true
