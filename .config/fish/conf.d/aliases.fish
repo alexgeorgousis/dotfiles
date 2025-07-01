@@ -37,7 +37,8 @@ alias cglg="config log --stat"
 alias cglp="config log --pretty=format:'%C(yellow)%h%C(cyan)%x09%an%Creset%x09%C(magenta)%ar%x09%Creset%s' -20"
 alias cga="config add"
 alias cgap="config add --patch"; # This will prompt you to add (or not add) each hunk of a file independently, so you can choose to only add certain hunks, and then you can restore the rest
-alias cgau="config add --update"; # Stages all currently tracked file
+alias cgau="config add --update"; # Stages all currently tracked files
+alias cgaa="config add --all"; # Stages all currently tracked and untracked files
 alias cgc="config commit --verbose"
 alias "cgc!"="config commit --verbose --amend"
 alias cgp="config push"
