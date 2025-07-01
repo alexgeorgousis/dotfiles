@@ -40,10 +40,11 @@ pacman_packages=(
 	"hyprpaper"
 	"man-pages man-db"
 	"k9s"
+	"gimp"
 )
 
 aur_packages=(
-	"google-chrome"
+	"brave-bin"
 	"xremap-x11-bin"
 	"pop-bin"
 	"asdf-vm"

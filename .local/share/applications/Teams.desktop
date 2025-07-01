@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Teams
-Exec=google-chrome-stable --app=https://teams.microsoft.com/v2/ --name=Teams --class=Teams
+Exec=brave --app=https://teams.microsoft.com/v2/ --name=Teams --class=Brave-browser --profile-directory="Profile 2"
 Terminal=False
 Type=Application
 # Annoyingly, fuzzel doesn't seem to expand shell variables so $HOME or $USER don't work here - have to hardcode the username :(

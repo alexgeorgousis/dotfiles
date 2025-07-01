@@ -9,6 +9,8 @@
 # Ignore config of programs I don't want to configure
 .config/spotify/*
 .config/google-chrome/*
+.config/BraveSoftware/*
+.config/kwalletrc
 .config/waypaper/*
 .config/dconf/*
 .config/dolphinrc
@@ -22,6 +24,7 @@
 .config/pulse/*
 .config/htop/*
 .config/QtProject.conf
+.config/GIMP/*
 
 # Ignore everything in .ssh except config
 .ssh/*

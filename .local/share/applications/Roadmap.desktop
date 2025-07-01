@@ -4,7 +4,7 @@ Name=Roadmap
 # To find out which directory a given chrome profile corresponds to do:
 # $ cd ~/.config/google-chrome/
 # $ cat "Local State" | jq '.profile.info_cache'
-Exec=google-chrome-stable --app=https://gspcloud.atlassian.net/jira/plans/875/scenarios/850/timeline?vid=3825 --profile-directory="Profile 1" --name=Roadmap --class=Roadmap
+Exec=brave --app=https://gspcloud.atlassian.net/jira/plans/875/scenarios/850/timeline?vid=3825 --profile-directory="Profile 2" --name=Roadmap --class=Brave-browser
 Terminal=False
 Type=Application
 Icon=/home/alex/.local/share/applications/icons/Roadmap.png

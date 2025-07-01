@@ -1,0 +1,18 @@
+[Desktop Entry]
+Version=1.0
+Name=YouTube
+
+# NOTE: To find out which directory a given Brave profile corresponds to do:
+# $ cd ~/.config/BraveSoftware/Brave-Browser/
+# $ cat "Local State" | jq '.profile.info_cache'
+# NOTE: I don't know why, but writing the command without `sh -c` gives weird results.
+# NOTE: I've set the class to Brave-browser so I can select it in hyprland.conf when setting the windowrule to make it tiled.
+Exec=brave --app=https://www.youtube.com/playlist?list=WL --new-window --name=YouTube --class=Brave-browser --profile-directory="Profile 1"
+
+Terminal=False
+Type=Application
+
+# Annoyingly, fuzzel doesn't seem to accept ~, $HOME or $USER - have to hardcode the username :(
+Icon=/home/alex/.local/share/applications/icons/YouTube.png
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupNotify=true
