@@ -1,0 +1,7 @@
+modmap:
+  - name: CapsLock to Ctrl/Esc
+    remap:
+      CapsLock:
+        held: Ctrl_L
+        alone: Esc
+        alone_timeout: 50
