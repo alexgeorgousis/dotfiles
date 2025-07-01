@@ -1,0 +1,60 @@
+* {
+  font-family: "Hack Nerd Font", monospace;
+  font-size: 14px;
+  border: none;
+  padding: 0 8px;
+  margin: 0;
+  color: #c0caf5;
+  background: transparent;
+}
+
+window#waybar {
+  background: #1a1b26;
+  border-bottom: 2px solid #7aa2f7;
+}
+
+.module {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+#workspaces {
+  margin-left: 0;
+}
+
+#workspaces button.active {
+  background-color: #22344a; /* Darker blue that fits Tokyo Night */
+  color: #c0caf5; /* Light blue-ish text for contrast */
+  border-radius: 4px; /* subtle rounding */
+}
+
+#clock {
+  color: #c0caf5;
+}
+
+#network {
+  color: #7aa2f7; /* Blue */
+}
+
+#pulseaudio {
+  color: #e0af68; /* Yellow */
+}
+
+#custom-bluetooth.on {
+  color: #9ece6a; /* Green */
+}
+
+#custom-bluetooth.off {
+  background: #f7768e;
+}
+
+#battery {
+  color: #000000;
+  background: #9ece6a; /* Green for good status */
+}
+
+#battery.critical {
+  color: #000000;
+  background: #f7768e; /* Red */
+}
+

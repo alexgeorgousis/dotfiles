@@ -1,0 +1,77 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 4,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "custom/bluetooth",
+    "battery",
+  ],
+
+  // Modules configuration
+  "hyprland/workspaces": {
+    // "disable-scroll": true,
+    // "all-outputs": true,
+    // "warp-on-scroll": false,
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "1": "󰴢",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "󰹑",
+      "7": "󰇎",
+      "focused": "",
+    }
+  },
+
+  "network": {
+    "format-wifi": "{essid} ",
+    "format-ethernet": "Connected 󰈀",
+    "tooltip": false,
+    "format-disconnected": "Disconnected ⚠",
+  },
+
+  "clock": {
+    // "format": "{:%H:%M | %A %d %b}"
+    "format": "{:%A %d %b - %H:%M}"
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{capacity}% {icon}",
+    "format-full": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰂄",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "custom/bluetooth": {
+    "exec": "~/.config/waybar/scripts/bluetooth.sh",
+    "interval": 10,
+    "return-type": "json",
+    "on-click": "blueman-manager",
+    "tooltip": false
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "󰝟 {format_source}",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+}
