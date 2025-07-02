@@ -19,4 +19,5 @@ set fish_greeting ""
 # NOTE: -g is --global and -x is --export - read more here: https://fishshell.com/docs/current/language.html#shell-variables
 
 set -gx EDITOR nvim
-set -gx PATH ~/.asdf/shims $PATH
+set -gx GEM_HOME $(gem env user_gemhome)
+set -gx PATH ~/.asdf/shims $GEM_HOME/bin $PATH

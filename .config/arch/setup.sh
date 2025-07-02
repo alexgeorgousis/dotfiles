@@ -41,6 +41,7 @@ pacman_packages=(
 	"man-pages man-db"
 	"k9s"
 	"gimp"
+	"ruby ruby-irb"
 )
 
 aur_packages=(
@@ -55,6 +56,9 @@ aur_packages=(
 sudo pacman -Syu --noconfirm --needed # update and upgrade to make sure pacman has the latest packages
 
 sudo pacman -S --noconfirm --needed ${pacman_packages[@]}
+
+# Install Ruby on Rails
+gem install rails
 
 # Install yay before using it if it doesn't already exist
 if ! command -v yay &>/dev/null; then
