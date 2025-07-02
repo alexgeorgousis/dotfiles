@@ -43,6 +43,7 @@ pacman_packages=(
 	"gimp"
 	"ruby ruby-irb"
 	"nodejs"
+	"unzip"
 )
 
 aur_packages=(
