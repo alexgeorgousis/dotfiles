@@ -85,6 +85,8 @@ apt_packages=(
 	"google-chrome"
 	"spotify"
 	"telegram-desktop"
+
+	"ruby ruby-irb"
 )
 
 sudo apt update && sudo apt upgrade -y
