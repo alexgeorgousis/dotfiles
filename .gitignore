@@ -26,6 +26,8 @@
 .config/QtProject.conf
 .config/GIMP/*
 .config/github-copilot/*
+.config/session/*
+.config/baloofileinformationrc
 
 # Ignore everything in .ssh except config
 .ssh/*
@@ -54,3 +56,4 @@ go/*
 .irb_history
 .bundle/*
 .node_repl_history
+

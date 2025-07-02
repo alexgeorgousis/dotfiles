@@ -13,7 +13,6 @@ pacman_packages=(
 	"tldr"
 	"wl-clipboard"
 	"alacritty"
-	"zellij"
 	"ttf-hack-nerd"
 	"ttf-jetbrains-mono-nerd"
 	"neovim"
@@ -44,6 +43,7 @@ pacman_packages=(
 	"ruby ruby-irb"
 	"nodejs"
 	"unzip"
+	"tmux"
 )
 
 aur_packages=(
@@ -59,8 +59,10 @@ sudo pacman -Syu --noconfirm --needed # update and upgrade to make sure pacman h
 
 sudo pacman -S --noconfirm --needed ${pacman_packages[@]}
 
-# Install Ruby on Rails
-gem install rails
+# Install Ruby on Rails if not already installed
+if ! command -v rails &>/dev/null; then
+	gem install rails
+fi
 
 # Install yay before using it if it doesn't already exist
 if ! command -v yay &>/dev/null; then
