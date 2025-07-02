@@ -25,6 +25,7 @@
 .config/htop/*
 .config/QtProject.conf
 .config/GIMP/*
+.config/github-copilot/*
 
 # Ignore everything in .ssh except config
 .ssh/*
@@ -51,3 +52,4 @@ Pictures/screenshots/*
 repos/*
 go/*
 .irb_history
+.bundle/*

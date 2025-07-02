@@ -42,6 +42,7 @@ pacman_packages=(
 	"k9s"
 	"gimp"
 	"ruby ruby-irb"
+	"nodejs"
 )
 
 aur_packages=(
