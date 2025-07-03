@@ -70,8 +70,8 @@
     libyaml
     gh
     terraform
-    zellij
     tldr
+    tmux
 
     nerd-fonts.jetbrains-mono
 
