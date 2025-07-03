@@ -86,7 +86,7 @@ apt_packages=(
 	"spotify"
 	"telegram-desktop"
 
-	"ruby ruby-irb"
+	"ruby-full"
 )
 
 sudo apt update && sudo apt upgrade -y
