@@ -3,6 +3,7 @@
 .config/fish/*
 !.config/fish/conf.d/
 !.config/fish/conf.d/**
+!.config/fish/config.fish
 .config/fish/conf.d/fzf.fish
 .config/fish/conf.d/autopair.fish
 
@@ -45,6 +46,8 @@
 Downloads/*
 Pictures/screenshots/*
 .asdf/*
+.rbenv/*
+!.rbenv/version
 .minikube/*
 .gnupg/*
 .kube/*

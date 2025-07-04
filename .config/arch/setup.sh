@@ -40,7 +40,7 @@ pacman_packages=(
 	"man-pages man-db"
 	"k9s"
 	"gimp"
-	"ruby ruby-irb"
+	"rbenv ruby-build"
 	"nodejs"
 	"unzip"
 	"tmux"
@@ -58,11 +58,6 @@ aur_packages=(
 sudo pacman -Syu --noconfirm --needed # update and upgrade to make sure pacman has the latest packages
 
 sudo pacman -S --noconfirm --needed ${pacman_packages[@]}
-
-# Install Ruby on Rails if not already installed
-if ! command -v rails &>/dev/null; then
-	gem install rails
-fi
 
 # Install yay before using it if it doesn't already exist
 if ! command -v yay &>/dev/null; then
@@ -156,4 +151,21 @@ fi
 # Set docker.sock group to docker if not set already
 if [[ $(stat -c '%G' "/var/run/docker.sock") != "docker" ]]; then
 	sudo chgrp docker /var/run/docker.sock
+fi
+
+# Install Ruby on Rails if not already installed
+if ! command -v rails &>/dev/null; then
+	gem install rails
+fi
+
+# Install bundler if not already installed
+if ! command -v bundler &>/dev/null; then
+	# Install bundler if it's not already installed
+	gem install bundler
+fi
+
+# Install ruby-lsp if not already installed
+if ! command -v ruby-lsp &>/dev/null; then
+	# Install bundler if it's not already installed
+	gem install ruby-lsp
 fi

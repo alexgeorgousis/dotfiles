@@ -198,7 +198,10 @@ return {
 				},
 			},
 			bashls = {},
-			ruby_lsp = {},
+			ruby_lsp = {
+				mason = false, -- As per the official docs: https://shopify.github.io/ruby-lsp/editors.html#lazyvim-lsp
+				cmd = { vim.fn.expand("~/.rbenv/shims/ruby-lsp") },
+			},
 		}
 
 		-- Ensure the servers and tools above are installed

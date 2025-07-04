@@ -19,5 +19,7 @@ set fish_greeting ""
 # NOTE: -g is --global and -x is --export - read more here: https://fishshell.com/docs/current/language.html#shell-variables
 
 set -gx EDITOR nvim
-set -gx GEM_HOME (gem env user_gemhome &> /dev/null)
-set -gx PATH ~/.asdf/shims $GEM_HOME/bin $PATH
+set -gx PATH ~/.asdf/shims ~/.rbenv/shims $PATH
+
+# For some reason (I don't know why), GEM_HOME is set globally to an empty list, which causes issues with rbenv, so I have to unset it explictly.
+set -e GEM_HOME
