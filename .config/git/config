@@ -1,0 +1,16 @@
+[user]
+	name = Alex Georgousis
+	email = alex.georgousis@sky.uk
+
+[diff]
+	external = difftastic
+
+[pager]
+	diff = false
+	log = false
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
