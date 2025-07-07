@@ -11,7 +11,7 @@ set $down j
 set $up k
 set $right l
 set $term alacritty
-set $menu fuzzel
+set $menu wofi --show drun
 set $browser google-chrome-stable
 
 # Sources:
