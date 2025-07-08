@@ -9,7 +9,7 @@
 
 # Ignore config of programs I don't want to configure
 .config/spotify/*
-.config/google-chrome/*
+.config/google-chrome*/*
 .config/BraveSoftware/*
 .config/kwalletrc
 .config/waypaper/*
