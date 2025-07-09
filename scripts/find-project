@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+project=$(find ~/repos ~/.config -mindepth 1 -maxdepth 1 -type d | fzf)
+
+if [[ -z $project ]]; then
+    exit 0
+fi
+
+# Get the project name by extracting the last part of the project path and replacing any '.' with '_'
+project_name=$(basename "$project" | tr . _)
+tmux_running=$(pgrep tmux)
+
+# If tmux isn't running (or I'm not inside a tmux session) create a new session for the selected project
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    tmux new-session -s $project_name -c $project
+    exit 0
+fi
+
+# If tmux is running, but there is no session for the current project, create a new session for the selected project
+if ! tmux has-session -t=$project 2> /dev/null; then
+    tmux new-session -ds $project_name -c $project
+fi
+
+# Switch to the session for the selected project (if already in a sesion, it switches to it; if outside tmux, it attaches to it)
+tmux switch-client -t $project_name
