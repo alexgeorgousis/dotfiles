@@ -8,4 +8,8 @@ function fish_user_key_bindings
         bind --mode default \cg clear-screen "git status" repaint
         bind --mode insert \cg clear-screen "git status" repaint
         bind --mode visual \cg clear-screen "git status" repaint
+
+        bind --mode default \cf ~/scripts/find-project
+        bind --mode insert \cf ~/scripts/find-project
+        bind --mode visual \cf ~/scripts/find-project
 end
