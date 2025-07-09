@@ -1,0 +1,18 @@
+[Desktop Entry]
+Version=1.0
+Name=Basecamp
+
+# NOTE: To find out which directory a given Brave profile corresponds to do:
+# $ cd ~/.config/BraveSoftware/Brave-Browser/
+# $ cat "Local State" | jq '.profile.info_cache'
+# NOTE: I don't know why, but writing the command without `sh -c` gives weird results.
+Exec=sh -c "brave --new-window --ozone-platform=wayland --app='https://3.basecamp.com/5992643' --profile-directory='Profile 1' --name=Basecamp --class=Brave-browser"
+
+Terminal=false
+Type=Application
+
+# Annoyingly, fuzzel doesn't seem to accept ~, $HOME or $USER - have to hardcode the username :(
+Icon=/home/alex/.local/share/applications/icons/Basecamp.png
+Categories=GTK;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupNotify=true
