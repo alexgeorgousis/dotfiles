@@ -138,6 +138,16 @@ if ! systemctl is-active --quiet bluetooth; then
 	sudo systemctl start bluetooth
 fi
 
+# Enable autologin. Assumes you're logging in with sddm.
+SDDM_CONF="/etc/sddm.conf"
+if [ ! -f "$SDDM_CONF" ]; then
+	sudo tee "$SDDM_CONF" > /dev/null <<EOF
+	[Autologin]
+	User=$(whoami)
+	Session=hyprland-uwsm.desktop
+EOF
+fi
+
 # Run Docker daemon
 if ! systemctl is-active --quiet docker; then
 	sudo systemctl enable --now docker
