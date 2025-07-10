@@ -1,24 +1,33 @@
 #!/usr/bin/env bash
 
-project=$(find ~/repos ~/.config -mindepth 1 -maxdepth 1 -type d | fzf)
+project_dir=$(find ~/repos ~/.config -mindepth 1 -maxdepth 1 -type d | fzf)
 
-if [[ -z $project ]]; then
+# Get the project name by extracting the last part of the project path and replacing any '.' with '_'
+project_name=$(basename "$project_dir" | tr . _)
+
+if [[ -z $project_dir ]]; then
     exit 0
 fi
 
-# Get the project name by extracting the last part of the project path and replacing any '.' with '_'
-project_name=$(basename "$project" | tr . _)
+create_session() {
+    # -n Code renames the default window to Code
+    tmux new-session -ds $project_name -c $project_dir -n Code
+    tmux new-window -t $project_name -c $project_dir -n Terminal
+    tmux new-window -t $project_name -c $project_dir -n Server
+}
+
 tmux_running=$(pgrep tmux)
 
 # If tmux isn't running (or I'm not inside a tmux session) create a new session for the selected project
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $project_name -c $project
+    create_session
+    tmux attach
     exit 0
 fi
 
-# If tmux is running, but there is no session for the current project, create a new session for the selected project
-if ! tmux has-session -t=$project 2> /dev/null; then
-    tmux new-session -ds $project_name -c $project
+# If tmux is running, but there is no existing session for the selected project, create a new session for the selected project.
+if ! tmux has-session -t=$project_dir 2> /dev/null; then
+    create_session
 fi
 
 # Switch to the session for the selected project (if already in a sesion, it switches to it; if outside tmux, it attaches to it)
