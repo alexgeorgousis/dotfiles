@@ -46,6 +46,7 @@ alias top="htop"
 alias ps="procs"
 alias mkdir="mkdir -p"
 alias watch="watch --color --no-title"; # Visual improvements to the watch comman
+alias fd="fdfind"
 
 # kubectl - use custom env vars to determine current context and namespace instead of kubeconfig file.
 alias k="kubectl --context=$KUBECONTEXT --namespace=$KUBENAMESPACE"
@@ -64,3 +65,7 @@ alias ks="k9s --context=$KUBECONTEXT --namespace=$KUBENAMESPACE"
 # Make other k8s tools get kube context and namespace from env vars like kubectl
 alias argo="argo --context=$KUBECONTEXT --namespace=$KUBENAMESPACE"
 alias helm="helm --namespace=$KUBENAMESPACE"
+
+# Misc
+alias r="bin/rails"
+alias dev="bin/dev"
