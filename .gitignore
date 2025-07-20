@@ -48,6 +48,8 @@
 .config/microsoft-*/*
 .config/osprey/*
 .config/wireplumber/*
+.config/evince/*
+.config/nautilus/*
 .config/user-dirs*
 .docker/*
 .rbenv/
@@ -56,6 +58,8 @@
 .vpn/*
 snap/*
 .fzf/
+.npm/
+.openjfx/
 
 # Ignore everything in .ssh except config
 .ssh/*
@@ -72,6 +76,7 @@ snap/*
 *.log
 .bash*
 Downloads/*
+Documents/*
 Pictures/screenshots/*
 .asdf/*
 .rbenv/*
@@ -87,6 +92,7 @@ go/*
 .irb_history
 .bundle/*
 .node_repl_history
+.python_history
 .boto
 .lesshst
 .vault-token
