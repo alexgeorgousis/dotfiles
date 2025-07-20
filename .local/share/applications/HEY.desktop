@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=HEY
+Comment=HEY Email + Calendar
+Exec=google-chrome --app=https://app.hey.com --name=Basecamp --class=Basecamp
+Terminal=false
+Type=Application
+
+# Annoyingly, fuzzel doesn't seem to accept ~, $HOME or $USER - have to hardcode the username :(
+Icon=/home/agi53/.local/share/applications/icons/HEY.png
+Categories=GTK;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupNotify=true
