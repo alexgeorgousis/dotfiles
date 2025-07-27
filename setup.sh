@@ -48,6 +48,7 @@ pacman_packages=(
 
 aur_packages=(
 	"brave-bin"
+	"zen-browser-bin"
 	"xremap-x11-bin"
 	"pop-bin"
 	"asdf-vm"
