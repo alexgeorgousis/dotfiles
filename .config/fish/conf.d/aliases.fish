@@ -69,3 +69,4 @@ alias helm="helm --namespace=$KUBENAMESPACE"
 # Misc
 alias r="bin/rails"
 alias dev="bin/dev"
+alias ta="tmux a"
