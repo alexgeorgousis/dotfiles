@@ -2,6 +2,9 @@
 # Basic Setup #
 ###############
 
+[terminal]
+shell = "tmux"
+
 [env]
 TERM = "xterm-256color"
 
