@@ -51,6 +51,7 @@
 .config/evince/*
 .config/nautilus/*
 .config/user-dirs*
+.config/JetBrains/*
 .docker/*
 .rbenv/
 .rustup/*
@@ -60,6 +61,9 @@ snap/*
 .fzf/
 .npm/
 .openjfx/
+.java/*
+.gradle/*
+.jdks/*
 
 # Ignore everything in .ssh except config
 .ssh/*
@@ -97,3 +101,4 @@ go/*
 .lesshst
 .vault-token
 bin/
+.ideavimrc
