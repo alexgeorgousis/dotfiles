@@ -13,5 +13,9 @@ function fish_user_key_bindings
         bind --mode insert \cf ~/scripts/find-project
         bind --mode visual \cf ~/scripts/find-project
 
+        bind --mode default \ck ~/scripts/find-cluster repaint
+        bind --mode insert \ck ~/scripts/find-cluster repaint
+        bind --mode visual \ck ~/scripts/find-cluster repaint
+
         fzf --fish | source
 end
