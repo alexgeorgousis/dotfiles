@@ -3,11 +3,8 @@ Version=1.0
 Name=HEY
 Comment=HEY Email + Calendar
 
-# NOTE: To find out which directory a given Brave profile corresponds to do:
-# $ cd ~/.config/BraveSoftware/Brave-Browser/
-# $ cat "Local State" | jq '.profile.info_cache'
 # NOTE: I don't know why, but writing the command without `sh -c` gives weird results.
-Exec=sh -c "brave --new-window --ozone-platform=wayland --app='https://app.hey.com' --profile-directory='Profile 1' --name=HEY --class=Brave-browser"
+Exec=sh -c "brave --new-window --ozone-platform=wayland --app='https://app.hey.com' --name=HEY --class=Brave-browser"
 
 Terminal=false
 Type=Application
