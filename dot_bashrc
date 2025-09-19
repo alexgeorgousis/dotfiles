@@ -2,7 +2,8 @@
 # (don't mess with these directly, just overwrite them here!)
 source ~/.local/share/omarchy/default/bash/rc
 
-# Add your own exports, aliases, and functions here.
+
+### --- Aliases --- ###
 
 alias c='chezmoi'
 
@@ -11,3 +12,9 @@ if command -v chezmoi >/dev/null 2>&1; then
     eval "$(chezmoi completion bash)"
     complete -o default -F __start_chezmoi c
 fi
+
+
+### --- Keybinds --- ###
+
+bind -x '"\C-f":"~/scripts/find-project"'
+bind -x '"\C-g":"tput clear; git status"'
