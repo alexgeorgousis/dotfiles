@@ -6,14 +6,14 @@ source ~/.local/share/omarchy/default/bash/rc
 ### --- Aliases --- ###
 
 alias c='chezmoi'
-alias ta='tmux attach'
-
 # Enable completion for chezmoi alias
 if command -v chezmoi >/dev/null 2>&1; then
     eval "$(chezmoi completion bash)"
     complete -o default -F __start_chezmoi c
 fi
 
+
+alias ta='tmux attach'
 
 ### --- Keybinds --- ###
 
