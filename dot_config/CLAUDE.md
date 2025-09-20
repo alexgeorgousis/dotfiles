@@ -13,11 +13,12 @@ I am running a Linux system and need help with configuration, setup, and adminis
 
 ### CRITICAL RULES:
 1. **Push file changes via chezmoi after modifications**
-2. **NEVER modify system files without explicit permission**
-3. **Respect the separation between system defaults and user customization**
-4. **Check for existing configurations before creating new ones**
-5. **Follow the principle of least privilege** - Use sudo only when necessary
-6. **Document all changes made to the system**
+2. **PREFER DECLARATIVE CONFIGURATION** - Always make changes in config files rather than runtime commands when possible (e.g., use Hyprland config files instead of xset, systemd config instead of runtime toggles)
+3. **NEVER modify system files without explicit permission**
+4. **Respect the separation between system defaults and user customization**
+5. **Check for existing configurations before creating new ones**
+6. **Follow the principle of least privilege** - Use sudo only when necessary
+7. **Document all changes made to the system**
 
 ### Configuration Hierarchy (DO NOT VIOLATE):
 1. User-specific configs in `~/.config/` (preferred)
@@ -62,10 +63,11 @@ systemctl --user status/start/stop/enable/disable [service]
 ```
 
 ### Configuration Files:
-1. Use proper format (YAML, TOML, JSON, INI) as expected by application
-2. Include comments explaining customizations
-3. Keep original structure intact
-4. Use includes/sources when possible instead of modifying main files
+1. **ALWAYS choose declarative config over runtime commands** - Check for existing config files first before using imperative commands like xset, gsettings, etc.
+2. Use proper format (YAML, TOML, JSON, INI) as expected by application
+3. Include comments explaining customizations
+4. Keep original structure intact
+5. Use includes/sources when possible instead of modifying main files
 
 ### Environment Variables:
 ```bash
