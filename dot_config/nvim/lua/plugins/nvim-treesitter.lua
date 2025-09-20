@@ -1,6 +1,7 @@
   -- Highlight, edit, and navigate code
   return {
 	  "nvim-treesitter/nvim-treesitter",
+	  priority = 1000, -- Load before other plugins that depend on it
 	  build = ":TSUpdate",
 	  main = "nvim-treesitter.configs", -- Sets main module to use for opts
 	  -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
