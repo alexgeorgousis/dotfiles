@@ -15,6 +15,16 @@ fi
 
 alias ta='tmux attach'
 
+# Git aliases
+alias gaa='git add --all'
+alias gau='git add -u'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gc!='git commit --amend'
+alias gca!='git commit -a --amend'
+alias gp='git push'
+alias gpf='git push --force'
+
 ### --- Keybinds --- ###
 
 bind -x '"\C-f":"~/scripts/find-project"'
