@@ -5,6 +5,7 @@ source ~/.local/share/omarchy/default/bash/rc
 
 ### --- Aliases --- ###
 
+alias grep='rg'
 alias c='chezmoi'
 # Enable completion for chezmoi alias
 if command -v chezmoi >/dev/null 2>&1; then
