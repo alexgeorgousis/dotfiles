@@ -19,6 +19,7 @@ alias ta='tmux attach'
 # Git aliases
 alias gaa='git add --all'
 alias gau='git add -u'
+alias gb='git branch'
 alias gc='git commit --verbose'
 alias gca='git commit -a --verbose'
 alias gc!='git commit --amend --verbose'
