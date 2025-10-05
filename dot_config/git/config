@@ -1,0 +1,14 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
+[user]
+	name = Alex Georgousis
+	email = alex.georgousis@hey.com
+[push]
+	autoSetupRemote = true
