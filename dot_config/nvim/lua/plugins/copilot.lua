@@ -5,9 +5,9 @@ return {
 	"github/copilot.vim",
 	event = "InsertEnter",
 	config = function()
-		-- Use Ctrl+Y to accept suggestions
+		-- Use Tab to accept suggestions
 		vim.g.copilot_no_tab_map = true
-		vim.api.nvim_set_keymap("i", "<C-Y>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+		vim.api.nvim_set_keymap("i", "<Tab>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
 		-- Use Ctrl+] for next suggestion, Ctrl+[ for previous
 		vim.api.nvim_set_keymap("i", "<C-]>", "<Plug>(copilot-next)", {})
