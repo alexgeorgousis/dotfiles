@@ -45,7 +45,18 @@ sudo pacman -S lib32-mesa lib32-gnutls
 
 ### 4. Install Wine dependencies (.NET and browser support)
 
-Error without this (run installer manually to see):
+```bash
+sudo pacman -S wine-mono wine-gecko winetricks
+sudo systemctl restart systemd-binfmt
+```
+
+**Important:** Restart Lutris completely after installing these packages to ensure library detection.
+
+### 5. Install .NET Framework and Visual C++ runtimes in Wine prefix
+
+Battle.net installer requires .NET Framework 4.8 and Visual C++ 2019 runtime.
+
+Error without this (test by running installer manually):
 ```bash
 export WINEPREFIX=$HOME/Games/battlenet && $HOME/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/bin/wine $HOME/.cache/lutris/installer/battlenet/setup/Battle.net-Setup.exe
 ```
@@ -55,10 +66,15 @@ Error message:
 wine: failed to open "$HOME/.cache/lutris/installer/battlenet/setup/Battle.net-Setup.exe": c0000135
 ```
 
-(Error code `c0000135` = missing DLL, typically .NET Framework or Visual C++ runtime)
+(Error code `c0000135` = missing DLL)
 
-Solution:
+Solution - install runtimes using winetricks:
 ```bash
-sudo pacman -S wine-mono wine-gecko
-sudo systemctl restart systemd-binfmt
+# Install .NET Framework 4.8 (takes 5-10 minutes, lots of warnings are normal)
+WINEPREFIX=$HOME/Games/battlenet winetricks dotnet48
+
+# Install Visual C++ 2019 runtime
+WINEPREFIX=$HOME/Games/battlenet winetricks vcrun2019
 ```
+
+After these installations, the Battle.net installer should work in Lutris.
