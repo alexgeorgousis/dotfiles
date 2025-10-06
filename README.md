@@ -33,7 +33,7 @@ sudo pacman -S lib32-freetype2
 
 #### 3. Install 32-bit OpenGL, Vulkan, and TLS libraries
 
-Error without this (from Lutris logs):
+Error without this (check with `tail -100 ~/.cache/lutris/lutris.log`):
 ```
 [ERROR:2025-10-06 08:53:08,756:startup]: i386 libGL.so.1 missing (needed by opengl)
 [ERROR:2025-10-06 08:53:08,756:startup]: i386 libvulkan.so.1 missing (needed by vulkan)
