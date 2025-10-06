@@ -34,6 +34,7 @@ alias glp='git log --pretty=format:'\''%C(yellow)%h%C(cyan)%x09%an%Creset%x09%C(
 alias grs='git restore'
 alias gst='git status'
 alias gd='git diff'
+alias grbm='git rebase main'
 
 ### --- Keybinds --- ###
 
