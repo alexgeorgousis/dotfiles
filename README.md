@@ -42,3 +42,23 @@ Solution:
 ```bash
 sudo pacman -S lib32-mesa lib32-gnutls
 ```
+
+### 4. Install Wine dependencies (.NET and browser support)
+
+Error without this (run installer manually to see):
+```bash
+export WINEPREFIX=$HOME/Games/battlenet && $HOME/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/bin/wine $HOME/.cache/lutris/installer/battlenet/setup/Battle.net-Setup.exe
+```
+
+Error message:
+```
+wine: failed to open "$HOME/.cache/lutris/installer/battlenet/setup/Battle.net-Setup.exe": c0000135
+```
+
+(Error code `c0000135` = missing DLL, typically .NET Framework or Visual C++ runtime)
+
+Solution:
+```bash
+sudo pacman -S wine-mono wine-gecko
+sudo systemctl restart systemd-binfmt
+```
