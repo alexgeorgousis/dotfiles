@@ -13,6 +13,11 @@ For running Windows games through Lutris (e.g., Battle.net, WoW), you need 32-bi
 sudo pacman -S lib32-vulkan-icd-loader lib32-vulkan-radeon
 
 # 32-bit FreeType fonts (for Wine applications)
+# Error without this:
+# Wine cannot find the FreeType font library.  To enable Wine to
+# use TrueType fonts please install a version of FreeType greater than
+# or equal to 2.0.5.
+# Initial process has exited (return code: 256)
 sudo pacman -S lib32-freetype2
 ```
 
