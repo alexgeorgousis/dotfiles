@@ -5,6 +5,7 @@ source ~/.local/share/omarchy/default/bash/rc
 
 ### --- Aliases --- ###
 
+alias l='ls'
 alias grep='rg'
 alias c='chezmoi'
 # Enable completion for chezmoi alias
