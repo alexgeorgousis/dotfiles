@@ -15,6 +15,8 @@ PACKAGES=(
     claude-code
     tmux
     ghostty
+    github-cli
+    keyd
 )
 
 sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"
@@ -34,6 +36,37 @@ if [ ! -f "$SSH_KEY" ]; then
     cat "${SSH_KEY}.pub"
 else
     echo "SSH key already exists at: $SSH_KEY"
+fi
+
+# ============================================================
+# Keyd Setup (CapsLock as Esc/Ctrl) - Laptop only
+# ============================================================
+# Check if this is a laptop by looking for battery in /sys/class/power_supply
+if [ -d /sys/class/power_supply/BAT* ] 2>/dev/null || [ -d /sys/class/power_supply/BAT0 ] 2>/dev/null; then
+    echo ""
+    echo "==> Setting up keyd for CapsLock remapping (laptop detected)..."
+
+    KEYD_CONFIG="/etc/keyd/default.conf"
+    if [ ! -f "$KEYD_CONFIG" ]; then
+        echo "Creating keyd configuration..."
+        sudo mkdir -p /etc/keyd
+        sudo tee "$KEYD_CONFIG" > /dev/null << 'EOF'
+[ids]
+
+*
+
+[main]
+
+capslock = overload(control, esc)
+EOF
+        echo "Enabling keyd service..."
+        sudo systemctl enable --now keyd
+    else
+        echo "Keyd config already exists at: $KEYD_CONFIG"
+    fi
+else
+    echo ""
+    echo "==> Skipping keyd setup (desktop detected)"
 fi
 
 # ============================================================
