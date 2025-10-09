@@ -20,6 +20,23 @@ PACKAGES=(
 sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"
 
 # ============================================================
+# SSH Key Setup
+# ============================================================
+echo ""
+echo "==> Setting up SSH key for GitHub..."
+
+SSH_KEY="$HOME/.ssh/github"
+if [ ! -f "$SSH_KEY" ]; then
+    echo "Generating SSH key pair for GitHub..."
+    ssh-keygen -t ed25519 -f "$SSH_KEY" -C "github" -N ""
+    echo "SSH key generated at: $SSH_KEY"
+    echo "Public key:"
+    cat "${SSH_KEY}.pub"
+else
+    echo "SSH key already exists at: $SSH_KEY"
+fi
+
+# ============================================================
 # Tmux Plugin Manager Setup
 # ============================================================
 echo ""
