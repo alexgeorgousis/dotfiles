@@ -35,7 +35,7 @@ else
 fi
 
 echo "Installing tmux plugins..."
-"$TPM_DIR/bin/install_plugins"
+TMUX_PLUGIN_MANAGER_PATH="$HOME/.config/tmux/plugins" "$TPM_DIR/bin/install_plugins"
 
 # ============================================================
 # Done
