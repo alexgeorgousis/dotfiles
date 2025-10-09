@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# Bootstrap script for new machine setup
+
+set -e
+
+echo "==> Starting machine bootstrap..."
+
+# ============================================================
+# Package Installation
+# ============================================================
+echo ""
+echo "==> Installing packages..."
+
+PACKAGES=(
+    claude-code
+    tmux
+    ghostty
+)
+
+sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"
+
+# ============================================================
+# Tmux Plugin Manager Setup
+# ============================================================
+echo ""
+echo "==> Setting up Tmux Plugin Manager (TPM)..."
+
+TPM_DIR="$HOME/.config/tmux/plugins/tpm"
+if [ ! -d "$TPM_DIR" ]; then
+    echo "Installing TPM..."
+    git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
+else
+    echo "TPM already installed, updating..."
+    git -C "$TPM_DIR" pull
+fi
+
+echo "Installing tmux plugins..."
+"$TPM_DIR/bin/install_plugins"
+
+# ============================================================
+# Done
+# ============================================================
+echo ""
+echo "==> Bootstrap complete!"
