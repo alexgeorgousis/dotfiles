@@ -17,6 +17,7 @@ PACKAGES=(
     ghostty
     github-cli
     keyd
+    telegram-desktop
 )
 
 sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"
