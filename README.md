@@ -2,7 +2,21 @@
 
 Personal dotfiles for Omarchy Linux managed with chezmoi.
 
-## Gaming / Lutris / Wine Setup
+# Gaming
+
+## Play Battle.net Games Via Steam
+
+Reddit guide: https://www.reddit.com/r/linux_gaming/comments/1hpj9af/running_blizzard_battlenet_games_using_steamproton/
+
+1. Download the [battle.net](https://download.battle.net/?product=bnetdesk) installer
+2. In steam, go to games > add non steam game, choose the installer it will add Battle.net-setup.exe to your library.
+3. In the steam library, right click Battle.net-setup.exe -> properties  -> compatibility -> tick Force the use of a specific Steam Play compatibility tool -> Proton 10.0-2 (beta) - I had issues with non-beta versions.
+4. Click Play and Battle.net will install and run.
+5. So that you don't run the installer each time, make it run the battle.net launcher instead of the installer. Fully exit battle.net, then run `find ~/.local/share/Steam/ -name 'Battle.net Launcher.exe'` to get the full path to the launcher executable.
+6. In the steam library, right click Battle.net-setup.exe again and press properties, then in the target field enter the path you got from the find command. Be sure to enclose it in single quotes (because the filename has a space in it), it should look something like '/home/<user>/.local/share/Steam/steamapps/compatdata/4232122757/pfx/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe'
+7. Now when you run it from Steam, the launcher should open and you're ready to install your games.
+
+## (Old) Lutris Attempt
 
 For running Windows games through Lutris (e.g., Battle.net, WoW), you need 32-bit graphics and font libraries.
 
