@@ -2,7 +2,7 @@
 # Sequential app launcher for Hyprland
 # Launches each app and waits for its window to appear before launching the next
 
-{{- if .is_laptop }}
+{{- if and (hasKey . "is_laptop") .is_laptop }}
 SLEEP_DURATION=4
 {{- else }}
 SLEEP_DURATION=1
