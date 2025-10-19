@@ -7,6 +7,7 @@ vim.keymap.set({ "n", "v" }, "L", "$", { desc = "Use L to move to end of the lin
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save buffer" })
 vim.keymap.set("n", "<leader>q", ":qa<CR>", { desc = "Quit neovim" })
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from clipboard" })
 
 vim.keymap.set(
 	"n",
