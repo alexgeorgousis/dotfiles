@@ -16,6 +16,7 @@ fi
 
 
 alias ta='tmux attach'
+alias kamal='dotenv kamal'
 
 # Git aliases
 alias ga='git add'
