@@ -2,3 +2,8 @@ Host github.com
     HostName github.com
     User git
     IdentityFile ~/.ssh/github
+
+Host pi.local
+    HostName pi.local
+    User alex
+    IdentityFile ~/.ssh/pi-alex
