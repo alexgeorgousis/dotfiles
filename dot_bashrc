@@ -7,20 +7,7 @@ export PATH="$HOME/.claude/local:$PATH"
 
 ### --- Aliases --- ###
 
-alias l='ls'
-alias grep='rg'
-alias c='chezmoi'
-# Enable completion for chezmoi alias
-if command -v chezmoi >/dev/null 2>&1; then
-    eval "$(chezmoi completion bash)"
-    complete -o default -F __start_chezmoi c
-fi
-
-
-alias ta='tmux attach'
-alias kamal='dotenv kamal'
-
-# Git aliases
+# Git
 alias ga='git add'
 alias gaa='git add --all'
 alias gau='git add -u'
@@ -39,6 +26,24 @@ alias grs='git restore'
 alias gst='git status'
 alias gd='git diff'
 alias grbm='git rebase main'
+
+# chezmoi
+alias c='chezmoi'
+# Enable completion for chezmoi alias
+if command -v chezmoi >/dev/null 2>&1; then
+    eval "$(chezmoi completion bash)"
+    complete -o default -F __start_chezmoi c
+fi
+
+# tmux
+alias t='tmux'
+alias ta='tmux attach'
+
+# Misc
+alias l='ls'
+alias grep='rg'
+alias kamal='dotenv kamal'
+alias tf='terraform'
 
 ### --- Keybinds --- ###
 
