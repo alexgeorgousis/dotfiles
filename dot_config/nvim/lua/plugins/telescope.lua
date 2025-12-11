@@ -54,6 +54,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 					"target/", -- ignores all files under any directory called target/ (regardless of where it appears in dir structure) - this is mainly for rust projects who dump a ton of compiled artifacts under target/
 					".asdf/",
 					".kube/",
+					"node_modules",
 				},
 			},
 			pickers = {

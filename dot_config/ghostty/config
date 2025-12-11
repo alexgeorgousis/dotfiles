@@ -19,3 +19,6 @@ shell-integration-features = no-cursor
 
 # Keyboard bindings
 keybind = shift+enter=text:\x1b\r
+
+# Slowdown mouse scrolling
+mouse-scroll-multiplier = 0.95

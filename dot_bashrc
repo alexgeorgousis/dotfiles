@@ -40,7 +40,7 @@ alias t='tmux'
 alias ta='tmux attach'
 
 # Misc
-alias l='ls'
+alias l='ls -lag'
 alias grep='rg'
 alias kamal='dotenv kamal'
 alias tf='terraform'
