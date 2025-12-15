@@ -58,3 +58,8 @@ vim.opt.scrolloff = 5
 
 -- Disable swap files
 vim.opt.swapfile = false
+
+-- Tab and indentation settings
+vim.opt.tabstop = 2 -- Number of spaces tabs count for
+vim.opt.shiftwidth = 2 -- Number of spaces to use for each step of (auto)indent
+vim.opt.expandtab = true -- Use spaces instead of tabs
