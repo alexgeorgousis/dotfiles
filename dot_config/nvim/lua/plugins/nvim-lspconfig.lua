@@ -168,6 +168,7 @@ return {
 			bashls = {},
 			ruby_lsp = {},
 			emmet_language_server = {},
+			terraformls = {},
 		}
 
 		-- Ensure the servers and tools above are installed
