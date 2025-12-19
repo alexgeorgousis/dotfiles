@@ -3,6 +3,11 @@ Host github.com
     User git
     IdentityFile ~/.ssh/github
 
+Host github.spoke
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/spokeldn
+
 Host pi.local
     HostName pi.local
     User alex
