@@ -9,7 +9,7 @@ return {
 
 		-- Useful status updates for LSP.
 		-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-		{ "j-hui/fidget.nvim", opts = {} },
+		{ "j-hui/fidget.nvim",       opts = {} },
 
 		-- Allows extra capabilities provided by nvim-cmp
 		"hrsh7th/cmp-nvim-lsp",
@@ -145,7 +145,7 @@ return {
 			-- But for many setups, the LSP (`ts_ls`) will work just fine
 			ts_ls = {},
 			--
-
+			-- To see the options for `lua_ls`, go to: https://luals.github.io/wiki/settings/
 			lua_ls = {
 				-- cmd = {...},
 				-- filetypes = { ...},
@@ -155,6 +155,8 @@ return {
 						completion = {
 							callSnippet = "Replace",
 						},
+						-- Official docs: https://luals.github.io/wiki/formatter/#default-configuration
+						-- Actual formatting options are (weirdly) only found here: https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/lua.template.editorconfig
 						format = {
 							enable = true,
 							defaultConfig = {
@@ -182,9 +184,6 @@ return {
 		-- You can add other tools here that you want Mason to install
 		-- for you, so that they are available from within Neovim.
 		local ensure_installed = vim.tbl_keys(servers or {})
-		vim.list_extend(ensure_installed, {
-			"stylua", -- Used to format Lua code
-		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 		require("mason-lspconfig").setup({
