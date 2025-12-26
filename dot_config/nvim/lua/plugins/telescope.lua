@@ -55,6 +55,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 					".asdf/",
 					".kube/",
 					"node_modules",
+					".next",
 				},
 			},
 			pickers = {
